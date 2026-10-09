@@ -962,23 +962,22 @@
     <!-- App Spoofing -->
     <!-- Keep each stable profile ID with its label; append local profiles. -->
     <string-array name="perapp_spoof_profiles" translatable="false">
-        <item>BS4C|Black Shark 4 (China)</item>
-        <item>F5|Poco F5</item>
         <item>S25U|Samsung Galaxy S25 Ultra</item>
-        <item>GZF5|Samsung Galaxy Z Fold 5</item>
-        <item>HMV2R|Honor Magic V2 RSR</item>
-        <item>LY70023|Lenovo Legion Y700</item>
-        <item>MI11TP|Xiaomi 11T Pro</item>
-        <item>MI13|Xiaomi 13</item>
-        <item>MI13P|Xiaomi 13 Pro</item>
-        <item>MI14P|Xiaomi 14 Pro</item>
-        <item>OP12|OnePlus 12</item>
         <item>OP13|OnePlus 13</item>
         <item>PXL11PXL|Pixel 11 Pro XL</item>
-        <item>RM9P|REDMAGIC 9 Pro</item>
         <item>RM10P|REDMAGIC 10 Pro</item>
         <item>RM15P5G|Realme 15 Pro 5G</item>
         <item>ROG9P|ROG Phone 9 Pro</item>
+        <item>OP15|OnePlus 15</item>
+        <item>GTS12U|Samsung Galaxy Tab S12 Ultra (Wi-Fi)</item>
+        <item>RMA2|REDMAGIC Astra 2</item>
+        <item>IQPADU|iQOO Pad Ultra</item>
+        <item>OPPAD3P|OnePlus Pad 3 Pro</item>
+        <item>OPPADMINI|OPPO Pad Mini</item>
+        <item>MIPAD9PM|Xiaomi Pad 9 Pro Max</item>
+        <item>MIPAD9P|Xiaomi Pad 9 Pro</item>
+        <item>OPPAD5P|OPPO Pad 5 Pro</item>
+        <item>IQPAD6P|iQOO Pad6 Pro</item>
         <item>None|None</item>
     </string-array>
 
