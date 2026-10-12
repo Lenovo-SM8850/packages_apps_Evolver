@@ -964,7 +964,9 @@
         <item>F5</item>
         <item>S25U</item>
         <item>GZF5</item>
+        <item>GTS12U</item>
         <item>HMV2R</item>
+        <item>IQPADU</item>
         <item>LY70023</item>
         <item>MI11TP</item>
         <item>MI13</item>
@@ -973,9 +975,11 @@
         <item>OP12</item>
         <item>OP13</item>
         <item>OP15</item>
+        <item>OPPAD3P</item>
         <item>PXL11PXL</item>
         <item>RM9P</item>
         <item>RM10P</item>
+        <item>RMA2</item>
         <item>RM15P5G</item>
         <item>ROG9P</item>
         <item>None</item>
@@ -986,7 +990,9 @@
         <item>Poco F5</item>
         <item>Samsung Galaxy S25 Ultra</item>
         <item>Samsung Galaxy Z Fold 5</item>
+        <item>Samsung Galaxy Tab S12 Ultra (Wi-Fi)</item>
         <item>Honor Magic V2 RSR</item>
+        <item>iQOO Pad Ultra</item>
         <item>Lenovo Legion Y700</item>
         <item>Xiaomi 11T Pro</item>
         <item>Xiaomi 13</item>
@@ -995,9 +1001,11 @@
         <item>OnePlus 12</item>
         <item>OnePlus 13</item>
         <item>OnePlus 15</item>
+        <item>OnePlus Pad 3 Pro</item>
         <item>Pixel 11 Pro XL</item>
         <item>REDMAGIC 9 Pro</item>
         <item>REDMAGIC 10 Pro</item>
+        <item>REDMAGIC Astra 2</item>
         <item>Realme 15 Pro 5G</item>
         <item>ROG Phone 9 Pro</item>
         <item>None</item>
