@@ -96,6 +96,22 @@ class ColorsSettingsFragment : SettingsPreferenceFragment(),
         updateSecondarySeedVisibility(useSecondarySeed.isChecked)
     }
 
+    override fun onResume() {
+        super.onResume()
+        loadContrastLevel()
+    }
+
+    private fun loadContrastLevel() {
+        contrast?.let {
+            val contrastValue = Settings.Secure.getFloat(
+                activity?.contentResolver,
+                Settings.Secure.CONTRAST_LEVEL,
+                0f
+            )
+            it.value = (contrastValue * 100).toInt()
+        }
+    }
+
     private fun loadCurrentSettings() {
         try {
             val json = getCurrentSettings()
@@ -110,10 +126,7 @@ class ColorsSettingsFragment : SettingsPreferenceFragment(),
             val fidelityValue = json.optBoolean("_fidelity_enabled", false)
             fidelity.isChecked = fidelityValue
 
-            contrast?.let {
-                val contrastValue = (json.optDouble("_contrast_level", 0.0) * 100).toInt()
-                it.value = contrastValue
-            }
+            loadContrastLevel()
 
             chroma?.let {
                 val chromaValue = json.optDouble("_chroma_boost", 0.0).toInt()
@@ -324,9 +337,16 @@ class ColorsSettingsFragment : SettingsPreferenceFragment(),
 
     private fun applyContrastLevel(value: Int) {
         try {
+            Settings.Secure.putFloat(
+                activity?.contentResolver,
+                Settings.Secure.CONTRAST_LEVEL,
+                value / 100f
+            )
             val json = getCurrentSettings()
-            json.put("_contrast_level", value / 100.0)
-            applySettings(json)
+            if (json.has("_contrast_level")) {
+                json.remove("_contrast_level")
+                applySettings(json)
+            }
         } catch (e: Exception) {
             e.printStackTrace()
         }
