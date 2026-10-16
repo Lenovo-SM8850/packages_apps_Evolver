@@ -9,16 +9,16 @@
     <string name="evolver_dashboard_summary">前所未有的進化</string>
     <!-- Categories -->
     <string name="themes_title">主題</string>
-    <string name="themes_summary">Monet、字體、圖示</string>
+    <string name="themes_summary">Monet、字型、圖示</string>
     <string name="lock_screen_title">鎖定畫面</string>
     <string name="lock_screen_summary">介面、其他設定</string>
     <string name="status_bar_title">狀態列</string>
     <string name="status_bar_summary">圖示、隱私指示器</string>
     <string name="quick_settings_title">快速設定</string>
-    <string name="quick_settings_summary">介面、鎖定螢幕</string>
+    <string name="quick_settings_summary">介面、螢幕鎖定畫面</string>
     <string name="notifications_summary">通知、介面</string>
     <string name="power_menu_title">電源按鈕選單</string>
-    <string name="power_menu_summary">操作、鎖定螢幕</string>
+    <string name="power_menu_summary">操作、螢幕鎖定畫面</string>
     <string name="miscellaneous_title">其他</string>
     <string name="miscellaneous_summary">開發者和系統偽裝選項</string>
     <string name="about_title">Evolution X</string>
@@ -38,8 +38,8 @@
     <string name="themes_lock_sound_title">鎖定音效</string>
     <string name="themes_unlock_sound_title">解鎖音效</string>
     <string name="themes_fonts_category">字型</string>
-    <string name="themes_lock_screen_clock_font_title">鎖定畫面時鐘字體</string>
-    <string name="themes_lock_screen_clock_font_summary">設定鎖定畫面時鐘字體樣式</string>
+    <string name="themes_lock_screen_clock_font_title">鎖定畫面時鐘字型</string>
+    <string name="themes_lock_screen_clock_font_summary">設定鎖定畫面時鐘字型樣式</string>
     <string name="themes_icons_category">圖示</string>
     <string name="themes_icon_shape_title">圖示形狀</string>
     <string name="themes_navigation_bar_icons_title">導覽列樣式</string>
@@ -149,9 +149,9 @@
     <string name="pulse_capture_mode_title"></string>
     <string name="pulse_capture_mode_fft"></string>
     <string name="pulse_capture_mode_amplitude"></string>
-    <string name="pulse_show_on_ambient_title">在環境顯示上顯示</string>
-    <string name="pulse_show_on_ambient_summary">於常亮顯示與環境模式中顯示視覺化效果。停用後僅於鎖定螢幕上顯示。</string>
-    <string name="pulse_show_on_ambient_disabled_player">啟用媒體播放器背景時，環境顯示無法使用視覺化效果</string>
+    <string name="pulse_show_on_ambient_title">在微光螢幕上顯示</string>
+    <string name="pulse_show_on_ambient_summary">於常亮顯示與環境模式中顯示視覺化效果。停用後僅於螢幕鎖定畫面上顯示。</string>
+    <string name="pulse_show_on_ambient_disabled_player">啟用媒體播放器背景時，微光螢幕無法使用視覺化效果</string>
     <string name="pulse_show_on_media_player_title">在媒體播放器背景顯示</string>
     <string name="pulse_show_on_media_player_summary">在鎖定畫面與快速設定的媒體播放器背景上顯示視覺化效果</string>
     <string name="pulse_height_multiplier_title">脈衝幅度</string>
@@ -247,7 +247,7 @@
     <string name="ls_media_art_filter_invert">反轉</string>
     <string name="ls_media_art_filter_grayblur">灰階與模糊</string>
     <string name="ls_media_art_fade_level_title">媒體封面淡出效果</string>
-    <string name="ls_media_art_fade_level_summary">設置媒體封面淡出效果</string>
+    <string name="ls_media_art_fade_level_summary">設定媒體封面淡出效果</string>
     <string name="ls_media_art_blur_level_title">媒體封面模糊度</string>
     <string name="ls_media_art_blur_level_summary">套用模糊濾鏡時的模糊強度</string>
     <string name="ls_media_art_pixel_size_title">媒體封面畫素大小</string>
@@ -258,7 +258,7 @@
     <string name="aod_brightness_title">AOD亮度</string>
     <!-- Lock screen/Now Playing -->
     <string name="nowplaying_title">現正播放</string>
-    <string name="nowplaying_summary">在鎖定螢幕和 AOD 上顯示正在播放的音樂資訊</string>
+    <string name="nowplaying_summary">在螢幕鎖定畫面和 AOD 上顯示正在播放的音樂資訊</string>
     <string name="nowplaying_color_mode_title">文字色彩模式</string>
     <string name="nowplaying_track_text_size_title">曲目標題大小</string>
     <string name="nowplaying_track_text_size_summary">曲目標題文字的大小</string>
@@ -272,13 +272,13 @@
     <string name="nowplaying_icon_size_title">圖示大小</string>
     <string name="nowplaying_icon_size_summary">調整圖示大小</string>
     <string name="nowplaying_show_on_aod_title">在 Always-On Display 上顯示</string>
-    <string name="nowplaying_show_on_aod_summary">在環境顯示上顯示音樂資訊</string>
-    <string name="nowplaying_info_summary">Now Playing將會在鎖屏界面和AOD上顯示當前播放的曲目和歌手。他在音樂播放時出現、結束播放后消失。位置可以上下調整。</string>
+    <string name="nowplaying_show_on_aod_summary">在微光螢幕上顯示音樂資訊</string>
+    <string name="nowplaying_info_summary">Now Playing將會在螢幕鎖定畫面界面和AOD上顯示當前播放的曲目和歌手。他在音樂播放時出現、結束播放后消失。位置可以上下調整。</string>
     <string name="nowplaying_expand_dialog">展開對話框</string>
     <string name="nowplaying_expand_dialog_summary">展開正在播放彈窗</string>
     <string name="nowplaying_lyrics_mode_title">歌詞模式</string>
     <string name="nowplaying_lyrics_mode_summary">顯示動態歌詞，取代曲目名稱與圖示</string>
-    <string name="nowplaying_pixel_native_footer">這部裝置已透過 Pixel 的環境顯示指示原生提供「正在播放」功能。內建版本啟用時，這些設定無法使用。</string>
+    <string name="nowplaying_pixel_native_footer">這部裝置已透過 Pixel 的微光螢幕指示原生提供「正在播放」功能。內建版本啟用時，這些設定無法使用。</string>
     <!-- Lock screen/Weather -->
     <string name="weather_settings_title">天氣服務設定</string>
     <string name="weather_settings_summary">設定圖示包和天氣服務</string>
@@ -305,11 +305,11 @@
     <string name="ambient_battery_percent_title">電池電量</string>
     <string name="ambient_battery_both_title">電池電量 &amp; 溫度</string>
     <string name="ambient_battery_cpu_battery_temperature_title">電量與溫度（電池 &amp; CPU）</string>
-    <string name="ambient_user_name_title">用戶名稱</string>
+    <string name="ambient_user_name_title">使用者名稱</string>
     <string name="display_icon_title">圖示</string>
     <string name="display_icon_summary">在電量 &amp; 溫度旁邊顯示圖示</string>
     <string name="ambient_wallpaper_title">設定桌布</string>
-    <string name="doze_always_on_wallpaper_summary">在環境顯示上顯示鎖定畫面桌布</string>
+    <string name="doze_always_on_wallpaper_summary">在微光螢幕上顯示鎖定畫面桌布</string>
     <!-- Lock screen/Peek display -->
     <!-- Lock screen/Now bar -->
     <!-- Lock screen/Scrim -->
@@ -340,7 +340,7 @@
     <string name="depthwall_clear_subject_summary">移除目前擷取或手動設定的主體</string>
     <string name="depthwall_clear_subject_confirm_message">這將移除目前的景深桌布主體圖片。要繼續嗎？</string>
     <string name="depthwall_clear_subject_done_toast">已清除主體圖片</string>
-    <string name="dw_footer_text">深度壁紙功能的靈感來自於ios的壁紙主題分割，可以將一個主題疊加在鎖定螢幕時鐘上方，以顯示壁紙深度效果。 \n\n設定深度桌布功能：\n1. 設定一個帶有主題的桌布，或者您希望主題位於其上方的背景。 \n2. 選擇要追蹤的主題影像，該影像將疊加在鎖定螢幕時鐘上方。 \n3. 根據您的需求修改偏移量和不透明度。</string>
+    <string name="dw_footer_text">深度桌布功能的靈感來自於ios的桌布主題分割，可以將一個主題疊加在螢幕鎖定畫面時鐘上方，以顯示桌布深度效果。 \n\n設定深度桌布功能：\n1. 設定一個帶有主題的桌布，或者您希望主題位於其上方的背景。 \n2. 選擇要追蹤的主題影像，該影像將疊加在螢幕鎖定畫面時鐘上方。 \n3. 根據您的需求修改偏移量和不透明度。</string>
     <!-- Status bar -->
     <string name="status_bar_toggle_brightness_title">亮度控制</string>
     <string name="status_bar_toggle_brightness_summary">在狀態列上左右滑動以調整亮度</string>
@@ -367,17 +367,17 @@
     <string name="status_bar_carrier_category_title">電信業者名稱</string>
     <string name="lockscreen_show_carrier_title">自訂電信業者名稱</string>
     <string name="carrier_show_lockscreen_only">鎖定熒幕資訊</string>
-    <string name="carrier_show_statusbar_only">狀態欄圖示</string>
-    <string name="carrier_show_both">鎖定螢幕 &amp; 狀態列</string>
+    <string name="carrier_show_statusbar_only">狀態列圖示</string>
+    <string name="carrier_show_both">螢幕鎖定畫面 &amp; 狀態列</string>
     <string name="custom_carrier_label_title">自訂電信業者名稱</string>
     <string name="custom_carrier_label_summary">輕觸以設定自訂電信業者標籤</string>
     <string name="custom_carrier_label_dialog_message">將電信業者標籤替換為自訂文字。留空則使用實際的電信業者標籤。</string>
     <!-- Status bar/Battery -->
     <string name="status_bar_battery_category_title">電池</string>
     <string name="status_bar_battery_style_title">電池圖示樣式</string>
-    <string name="status_bar_battery_style_icon_portrait">直立圖示 (預設)</string>
-    <string name="status_bar_battery_style_icon_rlandscape">橫向圖標 (右側)</string>
-    <string name="status_bar_battery_style_icon_landscape">橫向圖標 (左側)</string>
+    <string name="status_bar_battery_style_icon_portrait">縱向圖示 (預設)</string>
+    <string name="status_bar_battery_style_icon_rlandscape">橫向圖示 (右側)</string>
+    <string name="status_bar_battery_style_icon_landscape">橫向圖示 (左側)</string>
     <string name="status_bar_battery_style_circle">圓圈</string>
     <string name="status_bar_battery_style_dotted_circle">虛線圓圈</string>
     <string name="status_bar_battery_style_filled_circle">實心圓圈</string>
@@ -462,12 +462,12 @@
     <string name="clock_chip_gradient_end_color_summary">漸變結束時的顏色</string>
     <string name="clock_chip_gradient_angle_title">漸層角度</string>
     <string name="clock_chip_gradient_angle_summary">漸層方向（0°即從左至右，90°即從上至下）</string>
-    <string name="clock_chip_gradient_mask_text_title">時鐘字體樣式</string>
+    <string name="clock_chip_gradient_mask_text_title">時鐘字型樣式</string>
     <string name="clock_chip_gradient_mask_text_default">預設值</string>
     <string name="clock_chip_gradient_mask_text_mask">透明（）</string>
     <!-- Status bar/Logo -->
     <string name="status_bar_logo_title">Logo</string>
-    <string name="status_bar_logo_summary">在狀態欄顯示自訂圖示</string>
+    <string name="status_bar_logo_summary">在狀態列顯示自訂圖示</string>
     <string name="status_bar_logo_position_title">圖示位置</string>
     <string name="status_bar_logo_position_left">左側</string>
     <string name="status_bar_logo_position_right">右側</string>
@@ -685,8 +685,8 @@
     <string name="statusbar_extra_padding_end_title">尾端邊距</string>
     <string name="qs_single_tone_title">單色快速設定</string>
     <string name="qs_single_tone_summary">隱藏通知遮罩，讓快速設定外觀更一致</string>
-    <string name="qs_tile_alternate_color_title">快速設定圖塊替代色彩</string>
-    <string name="qs_tile_alternate_color_summary">為快速設定圖塊使用替代背景色</string>
+    <string name="qs_tile_alternate_color_title">快速設定設定方塊替代色彩</string>
+    <string name="qs_tile_alternate_color_summary">為快速設定設定方塊使用替代背景色</string>
     <string name="qs_brightness_slider_shape_title">亮度控制條樣式</string>
     <string name="media_waveform_seekbar_title">波形播放進度列</string>
     <string name="media_waveform_seekbar_summary">為媒體播放進度顯示動態波形效果</string>
@@ -699,7 +699,7 @@
     <string name="qs_panel_style_classic">傳統</string>
     <string name="quick_settings_layout_category_title">版面配置</string>
     <string name="quick_settings_tile_label_hide_title">隱藏標題</string>
-    <string name="quick_settings_tile_label_hide_summary">圖塊中只顯示圖示</string>
+    <string name="quick_settings_tile_label_hide_summary">設定方塊中只顯示圖示</string>
     <string name="quick_settings_layout_columns_rows_title">欄&amp;列</string>
     <string name="quick_settings_layout_columns_rows_summary">自定義快速設定欄和列</string>
     <string name="quick_settings_layout_columns_rows_footer_text">快速設定列的數量應等於或大於快速設定行的數量
@@ -708,15 +708,15 @@
     <string name="quick_settings_columns_landscape_title">列 (橫向)</string>
     <string name="quick_settings_rows_portrait_title">行(縱向)</string>
     <string name="quick_settings_rows_landscape_title">列(橫向)</string>
-    <string name="quick_settings_qqs_rows_portrait_title">快速設定圖塊行數 (縱向)</string>
-    <string name="quick_settings_qqs_rows_landscape_title">快速設定圖塊行數 (橫向)</string>
-    <string name="quick_settings_tile_shape_title">快速設定圖塊形狀</string>
+    <string name="quick_settings_qqs_rows_portrait_title">快速設定設定方塊行數 (縱向)</string>
+    <string name="quick_settings_qqs_rows_landscape_title">快速設定設定方塊行數 (橫向)</string>
+    <string name="quick_settings_tile_shape_title">快速設定設定方塊形狀</string>
     <string name="quick_settings_tile_shape_dynamic">動態</string>
     <string name="quick_settings_tile_shape_circle">圓圈</string>
     <string name="quick_settings_tile_shape_rounded_square_smooth">圓角方形（平滑）</string>
     <string name="quick_settings_tile_shape_rounded_square">圓角方形</string>
     <string name="quick_settings_tile_shape_square">方形</string>
-    <string name="quick_settings_tile_haptic_summary">點擊快速設定圖塊時提供觸覺回饋</string>
+    <string name="quick_settings_tile_haptic_summary">輕觸快速設定設定方塊時提供觸覺回饋</string>
     <string name="shape_circle">圓圈</string>
     <string name="shape_square">方形</string>
     <string name="shape_four_sided_cookie">四瓣餅乾</string>
@@ -761,7 +761,7 @@
     <string name="qs_brightness_slider_gradient_title">亮度滑桿漸層</string>
     <string name="qs_brightness_slider_gradient_summary">為亮度滑桿啟用漸層背景</string>
     <!-- Quick settings/Animations -->
-    <string name="qs_tile_animation_style_title">圖塊動畫</string>
+    <string name="qs_tile_animation_style_title">設定方塊動畫</string>
     <string name="qs_tile_animation_style_bounce">彈跳</string>
     <string name="qs_tile_animation_style_ripple">漣漪</string>
     <string name="qs_tile_animation_style_flip">翻轉</string>
@@ -801,11 +801,11 @@
     <string name="quick_settings_lock_screen_category">鎖定畫面</string>
     <string name="quick_settings_secure_lock_screen_title">在安全鎖定畫面下拉快速設定</string>
     <string name="quick_settings_secure_lock_screen_summary">在裝置鎖定時停用快速設定</string>
-    <string name="quick_settings_require_unlock_title">需解鎖裝置才允許使用部分快速設定圖塊按鈕</string>
-    <string name="quick_settings_require_unlock_summary">以下圖塊需要先解鎖裝置才能操作：飛航模式、省電模式、藍牙、省資料、熱點、網際網路、NFC 和螢幕旋轉鎖定</string>
+    <string name="quick_settings_require_unlock_title">需解鎖裝置才允許使用部分快速設定設定方塊按鈕</string>
+    <string name="quick_settings_require_unlock_summary">以下設定方塊需要先解鎖裝置才能操作：飛航模式、省電模式、藍牙、省資料、熱點、網際網路、NFC 和螢幕旋轉鎖定</string>
     <string name="quick_settings_footer_category">頁尾</string>
-    <string name="quick_settings_footer_edit_icon_title">編輯圖塊圖示</string>
-    <string name="quick_settings_footer_show_power_menu_title">電源選單捷徑</string>
+    <string name="quick_settings_footer_edit_icon_title">編輯設定方塊圖示</string>
+    <string name="quick_settings_footer_show_power_menu_title">電源鍵選單捷徑</string>
     <string name="quick_settings_footer_settings_icon_title">設定捷徑</string>
     <string name="qs_header_clock_style_title">QS 標題時鐘風格</string>
     <string name="qs_header_style1">晶片</string>
@@ -818,8 +818,8 @@
     <string name="qs_show_media_player_hide">隱藏</string>
     <string name="qs_show_media_player_top">顯示在頂部</string>
     <string name="qs_show_media_player_bottom">顯示在底部</string>
-    <string name="qs_tile_gradient_title">快速設定圖塊漸層</string>
-    <string name="qs_tile_gradient_summary">為快速設定圖塊啟用漸層背景</string>
+    <string name="qs_tile_gradient_title">快速設定設定方塊漸層</string>
+    <string name="qs_tile_gradient_summary">為快速設定設定方塊啟用漸層背景</string>
     <!-- QS widget -->
     <string name="qs_widget_panel_title">在快速設定面板顯示小工具</string>
     <string name="qs_widget_panel_summary">在快速設定面板顯示媒體、音量與亮度小工具</string>
@@ -847,8 +847,8 @@
     <string name="notification_bg_alternate_color_summary">為通知使用替代背景色</string>
     <string name="notification_row_transparency_title">半透明通知</string>
     <string name="notification_row_transparency_summary">設定快速設定通知為半透明背景</string>
-    <string name="notification_row_transparency_lockscreen_title">半透明鎖定螢幕通知</string>
-    <string name="notification_row_transparency_lockscreen_summary">設定鎖定螢幕通知為半透明背景</string>
+    <string name="notification_row_transparency_lockscreen_title">半透明螢幕鎖定畫面通知</string>
+    <string name="notification_row_transparency_lockscreen_summary">設定螢幕鎖定畫面通知為半透明背景</string>
     <string name="notification_bubble_apps_title">泡泡通知</string>
     <string name="notification_bubble_apps_summary">輕觸通知時以懸浮泡泡開啟應用程式</string>
     <string name="media_squiggle_animation_title">波浪線動畫</string>
@@ -879,10 +879,10 @@
     <string name="edge_light_intensity_summary">光暈效果的峰值亮度</string>
     <!-- Power menu -->
     <string name="power_menu_interface_category">介面</string>
-    <string name="power_menu_actions_title">電源選單操作</string>
+    <string name="power_menu_actions_title">電源鍵選單操作</string>
     <string name="power_menu_actions_summary">選擇顯示哪些操作</string>
     <string name="power_menu_lock_screen_secure_title">在安全鎖定畫面上顯示</string>
-    <string name="power_menu_lock_screen_secure_summary">在螢幕鎖定顯示電源選單</string>
+    <string name="power_menu_lock_screen_secure_summary">在螢幕鎖定顯示電源鍵選單</string>
     <string name="power_menu_actions_screenshot_title">螢幕截圖</string>
     <string name="power_menu_actions_onthego_title">On-The-Go 模式</string>
     <string name="power_menu_actions_airplane_title">飛航模式</string>
@@ -893,7 +893,7 @@
     <string name="power_menu_actions_devicecontrols_title">裝置控制</string>
     <string name="power_menu_advanced_title">進階重新啟動選項</string>
     <string name="advanced_reboot_title">進階重新啟動</string>
-    <string name="advanced_reboot_summary">解鎖時，在電源選單中加入重新啟動至復原模式或 Bootloader 的選項</string>
+    <string name="advanced_reboot_summary">解鎖時，在電源鍵選單中加入重新啟動至復原模式或 Bootloader 的選項</string>
     <string name="advanced_reboot_secured_title">在安全鎖定畫面顯示</string>
     <string name="advanced_reboot_secured_summary">在安全鎖定畫面上顯示進階重新啟動選項</string>
     <!-- Miscellaneous -->
@@ -943,7 +943,7 @@
     <string name="spoofing_reset_defaults_summary">將 Play Integrity、目標清單、修補層級與 GameProps 還原為預設值。你的金鑰匣會保留</string>
     <string name="spoofing_reset_defaults_dialog_title">重設偽裝設定？</string>
     <string name="spoofing_reset_defaults_dialog_message">這會清除 Play Integrity 設定、安全性修補程式覆寫與 GameProps 設定，並還原預設的 TrickyStore 目標清單。你的金鑰匣會保留。Play Integrity 與修補層級隨後將再次擷取。各項啟用開關不會變動。</string>
-    <string name="spoofing_reset_defaults_confirm">重置</string>
+    <string name="spoofing_reset_defaults_confirm">重設</string>
     <string name="spoofing_reset_defaults_done">偽裝設定已重設</string>
     <string name="tensor_spoof_title">偽裝 tensor 功能</string>
     <string name="tensor_spoof_summary">解鎖 tensor/pixel 功能</string>
@@ -976,7 +976,7 @@
     <string name="custom_spoof_profile_name">設定檔名稱</string>
     <string name="custom_spoof_profile_brand">品牌</string>
     <string name="custom_spoof_profile_manufacturer">製造商</string>
-    <string name="custom_spoof_profile_device">設備</string>
+    <string name="custom_spoof_profile_device">裝置</string>
     <string name="custom_spoof_profile_model">型號</string>
     <string name="custom_spoof_profile_fingerprint">指紋（選填）</string>
     <string name="custom_spoof_profile_product">產品（選填）</string>
@@ -1099,9 +1099,9 @@
     <string name="ts_fetch_keybox_revoked_refetch">金鑰匣已遭撤銷，正在擷取較新的金鑰匣…</string>
     <string name="ts_fetch_keybox_suspended_refetch">金鑰匣已遭停用，正在擷取較新的金鑰匣…</string>
     <!-- Wallpaper styles -->
-    <string name="wallpaper_styles_title">壁紙風格</string>
-    <string name="wallpaper_settings_summary">設定壁紙風格和設置</string>
-    <string name="wallpaper_blur_title">壁紙模糊</string>
+    <string name="wallpaper_styles_title">桌布風格</string>
+    <string name="wallpaper_settings_summary">設定桌布風格和設定</string>
+    <string name="wallpaper_blur_title">桌布模糊</string>
     <string name="wallpaper_blur_filter">壁纸模糊風格</string>
     <string name="wallpaper_effects_title">視覺效果</string>
     <string name="wallpaper_effect_type_title">效果類型</string>
@@ -1110,8 +1110,8 @@
     <string name="wallpaper_dim_level_title">壁纸暗淡程度</string>
     <string name="glass_blur">玻璃模糊</string>
     <string name="frosted_blur">磨砂模糊</string>
-    <string name="wallpaper_dim_level_summary">設置壁纸暗淡程度</string>
-    <string name="wallpaper_styles_footer">為了使壁紙風格有效，使用者必須分開設定鎖定螢幕和主螢幕的壁紙。 \n可以使用相同的壁紙，但不同時應用於鎖定螢幕和主螢幕。 \n但可選擇「同時使用」壁紙模糊和暗淡樣式。</string>
+    <string name="wallpaper_dim_level_summary">設定壁纸暗淡程度</string>
+    <string name="wallpaper_styles_footer">為了使桌布風格有效，使用者必須分開設定螢幕鎖定畫面和主螢幕的桌布。 \n可以使用相同的桌布，但不同時應用於螢幕鎖定畫面和主螢幕。 \n但可選擇「同時使用」桌布模糊和暗淡樣式。</string>
     <string name="wallpaper_performance_warning">⚠ 效能提示：這些效果會耗用大量資源，可能影響低階裝置的效能。在較舊的手機上可能造成延遲、耗電或卡頓。</string>
     <string name="wallpaper_saturation_title">飽和度等級</string>
     <string name="wallpaper_saturation_summary">提高或降低色彩強度</string>
@@ -1203,9 +1203,9 @@
     <string name="about_current_maintainers_no_results">沒有符合搜尋條件的維護者</string>
     <string name="maintainer_link_forum">討論區</string>
     <!-- Changelog -->
-    <string name="changelog_title">更新日誌</string>
+    <string name="changelog_title">更新記錄</string>
     <string name="changelog_summary">查看 ROM 的變更內容</string>
-    <string name="changelog_error_no_official">這個裝置或版本沒有官方更新日誌。請前往 %1$s 查看更多資訊。</string>
+    <string name="changelog_error_no_official">這個裝置或版本沒有官方更新記錄。請前往 %1$s 查看更多資訊。</string>
     <!-- Color picker -->
     <string name="press_color_to_apply">選擇色彩以套用</string>
     <string name="accent_color">強調色（預設）</string>
@@ -1228,7 +1228,7 @@
     <string name="action_apply">套用</string>
     <string name="action_delete">刪除</string>
     <string name="action_yes">是</string>
-    <string name="action_reset">重置</string>
+    <string name="action_reset">重設</string>
     <string name="action_search_apps">搜尋應用程式</string>
     <string name="action_select_all">全選</string>
     <string name="action_reboot_now">立即重新啟動</string>
@@ -1247,7 +1247,7 @@
     <string name="hardware_keys_action_app_switch">切換開啟的應用程式</string>
     <string name="hardware_keys_action_search">搜尋助手</string>
     <string name="hardware_keys_action_voice_search">語音搜尋</string>
-    <string name="hardware_keys_action_in_app_search">在應用程式內搜索</string>
+    <string name="hardware_keys_action_in_app_search">在應用程式內搜尋</string>
     <string name="hardware_keys_action_launch_camera">啟動相機</string>
     <string name="hardware_keys_action_sleep">關閉螢幕</string>
     <string name="hardware_keys_action_last_app">最後使用的應用程式</string>
@@ -1292,7 +1292,7 @@
     <string name="charging_color_mode_title">色彩模式</string>
     <string name="charging_display_category_title">顯示選項</string>
     <string name="charging_show_on_lockscreen_summary">鎖定畫面可見時顯示動畫</string>
-    <string name="charging_show_on_aod_summary">在環境顯示模式中顯示動畫</string>
+    <string name="charging_show_on_aod_summary">在微光螢幕模式中顯示動畫</string>
     <!-- Emoji style -->
     <string name="emoji_style_title">表情符號樣式</string>
     <string name="emoji_style_stock">預設</string>
@@ -1311,8 +1311,8 @@
     <string name="qs_show_ringer_mode_title">響鈴模式</string>
     <string name="qs_show_ringer_mode_summary">在音量滑桿旁顯示響鈴模式圖示</string>
     <!-- Custom power menu style -->
-    <string name="global_actions_use_compose_dialog_title">重新設計的電源選單</string>
-    <string name="global_actions_use_compose_dialog_summary">使用可自訂、可拖曳圖塊版面配置的新電源選單。停用後將使用傳統電源選單。</string>
+    <string name="global_actions_use_compose_dialog_title">重新設計的電源鍵選單</string>
+    <string name="global_actions_use_compose_dialog_summary">使用可自訂、可拖曳設定方塊版面配置的新電源鍵選單。停用後將使用傳統電源鍵選單。</string>
     <string name="global_actions_advanced_reboot_title">啟用進階重新啟動</string>
     <string name="global_actions_advanced_reboot_summary">解鎖可執行進階重新啟動的新對話框</string>
     <!-- Screenshots -->
