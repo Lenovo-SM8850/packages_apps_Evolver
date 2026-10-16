@@ -17,7 +17,7 @@
     <string name="quick_settings_title">Быстрые настройки</string>
     <string name="quick_settings_summary">Интерфейс, ползунок яркости, экран блокировки</string>
     <string name="notifications_summary">Головы вверх, краеугольный свет, звуки</string>
-    <string name="power_menu_title">Меню питания</string>
+    <string name="power_menu_title">Меню кнопки питания</string>
     <string name="power_menu_summary">Действия, экран блокировки</string>
     <string name="miscellaneous_title">Прочее</string>
     <string name="miscellaneous_summary">Опции разработчика, подмена устройства</string>
@@ -79,7 +79,7 @@
     <string name="pulse_color">Цвет визуализатора</string>
     <string name="pulse_color_lavalamp">Эффект лавовой лампы</string>
     <string name="pulse_color_album">Обложка песни</string>
-    <string name="pulse_color_accent">Цветовой акцент</string>
+    <string name="pulse_color_accent">Акцентный цвет</string>
     <string name="pulse_bar_count_title">Количество полос</string>
     <string name="pulse_bar_count_summary">Установите количество полос, отображаемых в визуализаторе</string>
     <string name="pulse_bar_count_units">колонки</string>
@@ -399,7 +399,7 @@
     <string name="qs_compact_media_player_mode_title">Компактный медиа плеер быстрых настроек</string>
     <string name="qs_compact_media_player_mode_summary">Включить компактный режим для медиа плеера быстрых настроек</string>
     <!-- Depth Wallpaper -->
-    <string name="dw_footer_text">        Функция \"Объемные обои\", основанная на сегментации объектов обоев в iOS, позволяет накладывать объект поверх часов на экране блокировки, чтобы показать эффект глубины обоев.\n\nДля настройки функции \"Объемные обои\":\n1. Установите обои с изображением объекта или фоном, над которым вы хотите, чтобы объект был выше.\n2. Выберите изображение объекта для отслеживания, это изображение будет наложено поверх часов на экране блокировки.\n3. Измените смещения и непрозрачность в соответствии с вашими потребностями.
+    <string name="dw_footer_text">        Функция «Объемные обои», основанная на сегментации объектов обоев в iOS, позволяет накладывать объект поверх часов на экране блокировки, чтобы показать эффект глубины обоев.\n\nДля настройки функции «Объемные обои»:\n1. Установите обои с изображением объекта или фоном, над которым вы хотите, чтобы объект был выше.\n2. Выберите изображение объекта для отслеживания, это изображение будет наложено поверх часов на экране блокировки.\n3. Измените смещения и непрозрачность в соответствии с вашими потребностями.
     </string>
     <!-- Lock screen media art -->
     <string name="ls_media_art_title">Обложка мультимедиа</string>
