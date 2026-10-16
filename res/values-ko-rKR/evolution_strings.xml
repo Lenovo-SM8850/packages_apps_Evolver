@@ -6,10 +6,10 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Evolver -->
     <string name="evolver_dashboard_title">Evolver</string>
-    <string name="evolver_dashboard_summary">나만의 방식으로 기기를 발전시키세요</string>
+    <string name="evolver_dashboard_summary">나만의 방식으로 기기를 발전시키세요.</string>
     <!-- Categories -->
     <string name="themes_title">테마</string>
-    <string name="themes_summary">모네 엔진, 폰트, 아이콘, 애니메이션</string>
+    <string name="themes_summary">Monet 엔진, 폰트, 아이콘, 애니메이션</string>
     <string name="lock_screen_title">잠금 화면</string>
     <string name="lock_screen_summary">인터페이스, 현재 재생 중, 지문</string>
     <string name="status_bar_title">상태 표시줄</string>
@@ -25,7 +25,7 @@
     <string name="about_summary">저희 ROM에 대하여</string>
     <string name="gestures_category_title">제스처</string>
     <!-- Reorganized categories -->
-    <string name="themes_monet_colors_category">모네 &amp; 색채</string>
+    <string name="themes_monet_colors_category">Monet &amp; 색채</string>
     <string name="themes_visual_effects_category">시각 효과</string>
     <string name="lock_screen_clock_category">시계</string>
     <string name="lock_screen_media_category">미디어</string>
@@ -33,7 +33,7 @@
     <string name="status_bar_features_category">기능</string>
     <!-- Themes -->
     <string name="themes_monet_title">Monet 설정</string>
-    <string name="themes_monet_summary">안드로이드에 내장된 테마 엔진을 사용자 지정하세요</string>
+    <string name="themes_monet_summary">안드로이드에 내장된 테마 엔진을 사용자 지정하세요.</string>
     <string name="themes_audio_category">오디오</string>
     <string name="themes_lock_sound_title">잠금 소리</string>
     <string name="themes_unlock_sound_title">잠금 해제 소리</string>
@@ -100,18 +100,18 @@
     <string name="pulse_renderer_particle">입자</string>
     <string name="pulse_renderer_waveform">파형</string>
     <string name="pulse_show_on_ambient_title">주변 디스플레이에 표시</string>
-    <string name="pulse_show_on_ambient_summary">상시 표시 화면 및 주변 모드에 ​​시각화 도구를 표시합니다. 잠금 화면에서만 표시하려면 이 기능을 비활성화하십시오.</string>
+    <string name="pulse_show_on_ambient_summary">상시 표시 화면 및 주변 모드에 ​​비주얼라이저를 표시합니다. 잠금 화면에서만 표시하려면 이 기능을 비활성화하십시오.</string>
     <string name="pulse_height_multiplier_title">펄스 높이</string>
-    <string name="pulse_height_multiplier_summary">시각화 높이를 조정하세요</string>
+    <string name="pulse_height_multiplier_summary">시각화 높이를 조정하세요.</string>
     <!-- Lock screen/Clock -->
     <!-- Lock screen/Custom clock -->
     <string name="lockscreen_custom_clock_style_title">사용자 지정 시계 스타일</string>
     <string name="lockscreen_custom_clock_style_highlight_text">왼쪽 또는 오른쪽으로 스와이프하여 시계 스타일 미리 보기</string>
     <string name="lockscreen_custom_clock_style_info">사용자 지정 시계 스타일은 AOSP 시계 스타일을 대체합니다. 스마트스페이스는 비활성화됩니다. 대신 사용자 지정 날씨 기능을 활성화할 수 있습니다.</string>
     <string name="lockscreen_custom_clock_opacity_title">시계 불투명도</string>
-    <string name="lockscreen_custom_clock_opacity_summary">사용자 지정 시계의 투명도를 조정하세요</string>
+    <string name="lockscreen_custom_clock_opacity_summary">사용자 지정 시계의 투명도를 조정하세요.</string>
     <string name="lockscreen_custom_clock_frame_margin_top_title">시계 높이</string>
-    <string name="lockscreen_custom_clock_frame_margin_top_summary">사용자 지정 시계의 세로 위치를 조정하세요</string>
+    <string name="lockscreen_custom_clock_frame_margin_top_summary">사용자 지정 시계의 세로 위치를 조정하세요.</string>
     <string name="lockscreen_custom_clock_color_mode_title">시계 색상 모드</string>
     <string name="lockscreen_custom_clock_aod_anim_title">사용자 지정 시계 AOD 애니메이션</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">사용자 지정 시계 스타일에 대한 AOD 애니메이션을 설정합니다.</string>
@@ -130,7 +130,7 @@
     <string name="ls_media_art_filter_invert">반전</string>
     <string name="ls_media_art_filter_grayblur">회색조 및 흐림 효과</string>
     <string name="ls_media_art_fade_level_title">표지 아트 페이드 레벨</string>
-    <string name="ls_media_art_fade_level_summary">미디어 표지 이미지의 페이드 레벨을 설정하세요</string>
+    <string name="ls_media_art_fade_level_summary">미디어 표지 이미지의 페이드 레벨을 설정하세요.</string>
     <string name="ls_media_art_blur_level_title">표지 아트 흐림 정도</string>
     <string name="ls_media_art_blur_level_summary">흐림 필터를 적용했을 때의 흐림 강도</string>
     <string name="ls_media_art_pixel_size_title">미디어 아트 픽셀 크기</string>
@@ -150,17 +150,17 @@
     <string name="nowplaying_show_on_lockscreen_title">잠금화면에 표시</string>
     <string name="nowplaying_show_on_lockscreen_summary">기기가 잠겨 있을 때 음악 정보를 표시합니다.</string>
     <string name="nowplaying_icon_style_title">아이콘 스타일</string>
-    <string name="nowplaying_icon_style_summary">표시할 아이콘을 선택하세요</string>
+    <string name="nowplaying_icon_style_summary">표시할 아이콘을 선택하세요.</string>
     <string name="nowplaying_icon_size_title">아이콘 크기</string>
-    <string name="nowplaying_icon_size_summary">아이콘 크기를 조정하세요</string>
+    <string name="nowplaying_icon_size_summary">아이콘 크기를 조정하세요.</string>
     <string name="nowplaying_show_on_aod_title">상시 표시 화면에 표시</string>
     <string name="nowplaying_show_on_aod_summary">주변 디스플레이에 음악 정보를 표시합니다.</string>
     <string name="nowplaying_info_summary">\'현재 재생 중\'은 잠금 화면과 상시 표시 화면에 현재 재생 중인 곡과 아티스트를 표시합니다. 음악이 재생 중일 때 자동으로 나타나고, 음악이 멈추면 사라집니다. 화면 상단에서 하단까지 위치를 조정할 수 있습니다.</string>
     <string name="nowplaying_expand_dialog">대화 상자 펼치기</string>
-    <string name="nowplaying_expand_dialog_summary">\'현재 재생 중\' 대화 상자를 펼치세요</string>
+    <string name="nowplaying_expand_dialog_summary">\'현재 재생 중\' 대화 상자를 펼치세요.</string>
     <!-- Lock screen/Weather -->
     <string name="weather_settings_title">날씨 설정</string>
-    <string name="weather_settings_summary">아이콘 팩 및 날씨 서비스를 설정하세요</string>
+    <string name="weather_settings_summary">아이콘 팩 및 날씨 서비스를 설정하세요.</string>
     <string name="lockscreen_weather_category">날씨</string>
     <string name="lockscreen_weather_title">날씨</string>
     <string name="lockscreen_weather_summary">잠금 화면에 현재 날씨를 표시합니다.</string>
@@ -176,8 +176,8 @@
     <!-- Lock screen/AOD -->
     <string name="lockscreen_custom_image_enabled_title">AOD 이미지</string>
     <string name="lockscreen_custom_image_title">AOD 이미지를 선택하세요</string>
-    <string name="lockscreen_custom_image_summary">상시 표시 화면에 사용자 지정 이미지를 설정하세요</string>
-    <string name="lockscreen_custom_image_pick_summary">갤러리에서 이미지를 선택하세요</string>
+    <string name="lockscreen_custom_image_summary">상시 표시 화면에 사용자 지정 이미지를 설정하세요.</string>
+    <string name="lockscreen_custom_image_pick_summary">갤러리에서 이미지를 선택하세요.</string>
     <string name="ambient_display_category_title">앰비언트 디스플레이</string>
     <string name="ambient_bottom_title">AOD 하단 콘텐츠</string>
     <string name="ambient_battery_disable_title">사용 안 함</string>
@@ -187,7 +187,7 @@
     <string name="ambient_user_name_title">사용자 이름</string>
     <string name="display_icon_title">아이콘</string>
     <string name="display_icon_summary">레벨 및 온도 옆에 아이콘을 표시합니다.</string>
-    <string name="ambient_wallpaper_title">Ambient 배경화면</string>
+    <string name="ambient_wallpaper_title">앰비언트 배경화면</string>
     <string name="doze_always_on_wallpaper_summary">주변 디스플레이에 잠금 화면 배경화면을 표시합니다.</string>
     <!-- Lock screen/Peek display -->
     <!-- Lock screen/Now bar -->
@@ -213,10 +213,10 @@
     <string name="status_bar_quick_qs_pulldown_right">오른쪽</string>
     <string name="status_bar_quick_qs_pulldown_always">항상 상태 표시줄을 내릴 때 설정 패널 표시</string>
     <string name="status_bar_icons_category">아이콘</string>
-    <string name="status_bar_tuner_title">상태 바 튜너</string>
-    <string name="status_bar_tuner_summary">표시할 시스템 아이콘을 선택하세요</string>
+    <string name="status_bar_tuner_title">상태 표시줄 튜너</string>
+    <string name="status_bar_tuner_summary">표시할 시스템 아이콘을 선택하세요.</string>
     <string name="status_bar_colored_icons_title">컬러 아이콘</string>
-    <string name="status_bar_colored_icons_summary">앱 알림에 런처 아이콘을 사용하세요</string>
+    <string name="status_bar_colored_icons_summary">앱 알림에 런처 아이콘을 사용하세요.</string>
     <string name="status_bar_notif_count_title"></string>
     <string name="status_bar_notif_count_summary">각 앱 아이콘에 대기 중인 알림 수를 표시합니다.</string>
     <!-- Status bar/Carrier -->
@@ -260,8 +260,8 @@
     <string name="battery_bar_blend_color_reverse_title">색상 방향 반전</string>
     <string name="battery_bar_blend_color_reverse_summary_off">완충 → 방전: 빨강 ← 초록 ← 파랑 ← 빨강</string>
     <string name="battery_bar_blend_color_reverse_summary_on">완충 → 방전: 빨강 → 초록 → 파랑 → 빨강</string>
-    <string name="battery_bar_use_gradient_color">그라디언트 색상 사용</string>
-    <string name="battery_bar_gradient_color_summary">배터리 잔량에 맞춰 조정된 그라디언트를 사용하세요.</string>
+    <string name="battery_bar_use_gradient_color">그라데이션 색상 사용</string>
+    <string name="battery_bar_gradient_color_summary">배터리 잔량에 맞춰 조정된 그라데이션를 사용하세요.</string>
     <string name="battery_bar_high_color">높은 수준의 색상</string>
     <string name="battery_bar_low_color">낮은 수준의 색상</string>
     <string name="battery_bar_animate_color">충전 애니메이션 색상</string>
@@ -292,7 +292,7 @@
     <string name="status_bar_date_style_uppercase">대문자</string>
     <string name="status_bar_date_format_custom">사용자  JAVA 형식</string>
     <string name="status_bar_date_string_edittext_title">날짜 형식(예: MM/dd/yy)이어야 합니다.</string>
-    <string name="status_bar_date_string_edittext_summary">형식 문자열을 입력하세요</string>
+    <string name="status_bar_date_string_edittext_summary">형식 문자열을 입력하세요.</string>
     <string name="status_bar_clock_date_position">날짜 위치</string>
     <string name="status_bar_clock_date_right">시계 오른쪽</string>
     <string name="status_bar_clock_date_left">시계 왼쪽</string>
@@ -300,7 +300,7 @@
     <string name="solid_accent">솔리드 액센트</string>
     <string name="outline">테두리</string>
     <string name="solid_accent_gradient">단색 강조 그라데이션</string>
-    <string name="solid_gradient">단색 그라디언트(측면)</string>
+    <string name="solid_gradient">단색 그라데이션(측면)</string>
     <string name="solid_gradient_corner">단색 강조 그라데이션(선명함)</string>
     <string name="solid_gradient_void">그라데이션 공백</string>
     <string name="solid_gradient_neumorph">Neumorph 그라데이션</string>
@@ -309,11 +309,11 @@
     <string name="solid_gradient_light">그라데이션 라이트</string>
     <string name="solid_gradient_shape">선명한 그라데이션 모서리</string>
     <string name="solid_gradient_void_light">그라데이션 보이드 라이트</string>
-    <string name="clock_chip_custom_gradient">사용자 지정 그라디언트</string>
+    <string name="clock_chip_custom_gradient">사용자 지정 그라데이션</string>
     <string name="clock_chip_gradient_start_color_title">그라이데이션 시작 색상</string>
-    <string name="clock_chip_gradient_start_color_summary">그라디언트 시작 부분의 색상</string>
+    <string name="clock_chip_gradient_start_color_summary">그라데이션 시작 부분의 색상</string>
     <string name="clock_chip_gradient_end_color_title">그라데이션 끝 색상</string>
-    <string name="clock_chip_gradient_end_color_summary">그라디언트 끝 부분의 색상</string>
+    <string name="clock_chip_gradient_end_color_summary">그라데이션 끝 부분의 색상</string>
     <string name="clock_chip_gradient_angle_title">기울기 각도</string>
     <string name="clock_chip_gradient_angle_summary">기울기의 방향 (0° = 왼쪽에서 오른쪽, 90° = 위에서 아래)</string>
     <string name="clock_chip_gradient_mask_text_title">시계 텍스트 스타일</string>
@@ -380,7 +380,7 @@
     <string name="network_traffic_hidearrow_summary">네트워크 트래픽 표시기 화살표 숨기기</string>
     <!-- Status bar/Dynamic Bar -->
     <string name="dynamic_bar">다이내믹 바</string>
-    <string name="dynamic_bar_summary">녹화, 미디어 재생, 타이머 등 활성 이벤트를 표시하는 스마트 상태 바 칩</string>
+    <string name="dynamic_bar_summary">녹화, 미디어 재생, 타이머 등 활성 이벤트를 표시하는 스마트 상태 표시줄 칩</string>
     <string name="dynamic_bar_enable_summary">실시간 이벤트 발생 시 상태 표시줄에 동적 칩을 표시합니다.</string>
     <string name="dynamic_bar_keyguard_enable">잠금 화면의 다이내믹 바</string>
     <string name="dynamic_bar_keyguard_enable_summary">잠금 화면에서 키가드 표시를 다이내믹 바 칩으로 교체하세요.</string>
@@ -429,9 +429,9 @@
     <string name="dynamic_bar_event_biometric_summary">지문 또는 얼굴 잠금 해제 시 칩 표시</string>
     <string name="dynamic_bar_guide_title">다이내믹 바 사용 방법</string>
     <string name="dynamic_bar_guide_chip">녹화, 미디어 재생, 타이머와 같은 활성 이벤트는 상태 표시줄에 나타납니다.</string>
-    <string name="dynamic_bar_guide_swipe">여러 이벤트가 활성화된 경우, 칩을 왼쪽 또는 오른쪽으로 스와이프하여 이벤트를 순환합니다</string>
+    <string name="dynamic_bar_guide_swipe">여러 이벤트가 활성화된 경우, 칩을 왼쪽 또는 오른쪽으로 스와이프하여 이벤트를 순환합니다.</string>
     <string name="dynamic_bar_guide_expand">칩을 탭하여 확장하면 제어 기능과 추가 정보가 포함된 상세 카드로 나타납니다.</string>
-    <string name="dynamic_bar_guide_dismiss">펼쳐진 카드를 옆으로 밀어 닫으세요. 이벤트는 백그라운드에서 계속 진행됩니다</string>
+    <string name="dynamic_bar_guide_dismiss">펼쳐진 카드를 옆으로 밀어 닫으세요. 이벤트는 백그라운드에서 계속 진행됩니다.</string>
     <string name="dynamic_bar_guide_keyguard">다이내믹 바 칩은 잠금 화면 하단에도 표시되며 재생 제어 및 빠른 실행 기능을 제공합니다.</string>
     <string name="dynamic_bar_guide_chip_title">칩 외관</string>
     <string name="dynamic_bar_guide_swipe_title">칩 사이를 스와이프하기</string>
@@ -532,7 +532,7 @@
     <string name="qs_single_tone_title">단일 톤 QS</string>
     <string name="qs_single_tone_summary">빠른 설정 화면을 통일감 있게 보이도록 알림 창을 숨깁니다.</string>
     <string name="qs_tile_alternate_color_title">QS 타일의 대체 색상</string>
-    <string name="qs_tile_alternate_color_summary">QS 타일에 다른 배경색을 사용하세요</string>
+    <string name="qs_tile_alternate_color_summary">QS 타일에 다른 배경색을 사용하세요.</string>
     <string name="qs_brightness_slider_shape_title">밝기 조절 슬라이더 모양</string>
     <string name="floating_rotation_button_title">플로팅 회전 버튼 사용</string>
     <string name="floating_rotation_button_summary">기기 방향이 변경될 때 회전하는 플로팅 버튼을 표시합니다.</string>
@@ -551,15 +551,15 @@
     <string name="quick_settings_columns_landscape_title">행 (가로 모드)</string>
     <string name="quick_settings_rows_portrait_title">행 개수 (세로 모드)</string>
     <string name="quick_settings_rows_landscape_title">행 (가로 모드)</string>
-    <string name="quick_settings_qqs_rows_portrait_title">알림 패널 빠른 설정 행(세로 모드)</string>
-    <string name="quick_settings_qqs_rows_landscape_title">알림 패널 빠른 설정 행(가로 모드)</string>
+    <string name="quick_settings_qqs_rows_portrait_title">알림 창 빠른 설정 행(세로 모드)</string>
+    <string name="quick_settings_qqs_rows_landscape_title">알림 창 빠른 설정 행(가로 모드)</string>
     <string name="quick_settings_tile_shape_title">타일 ​​모양</string>
     <string name="quick_settings_tile_shape_dynamic">다이나믹</string>
     <string name="quick_settings_tile_shape_circle">원형</string>
     <string name="quick_settings_tile_shape_rounded_square_smooth">둥근 사각형 (매끄러운)</string>
     <string name="quick_settings_tile_shape_rounded_square">모서리가 둥근 사각형</string>
     <string name="quick_settings_tile_shape_square">사각형</string>
-    <string name="quick_settings_tile_haptic_summary">QS 타일을 탭할 때 진동합니다</string>
+    <string name="quick_settings_tile_haptic_summary">QS 타일을 탭할 때 진동합니다.</string>
     <string name="shape_circle">원형</string>
     <string name="shape_square">사각형</string>
     <string name="shape_four_sided_cookie">4면 쿠키</string>
@@ -601,7 +601,7 @@
     <string name="quick_settings_auto_brightness_icon_summary">슬라이더 옆에 적응형 밝기 토글을 표시합니다.</string>
     <string name="quick_settings_brightness_slider_haptic_title">햅틱 피드백</string>
     <string name="quick_settings_brightness_slider_haptic_summary">슬라이더로 밝기를 조절할 때 진동합니다.</string>
-    <string name="qs_brightness_slider_gradient_title">밝기 슬라이더 그라디언트</string>
+    <string name="qs_brightness_slider_gradient_title">밝기 슬라이더 그라데이션</string>
     <string name="qs_brightness_slider_gradient_summary">빠른 설정 밝기 조절 슬라이더에 그라데이션 배경 활성화</string>
     <!-- Quick settings/Animations -->
     <string name="qs_tile_animation_style_title">타일 애니메이션</string>
@@ -622,20 +622,20 @@
     <string name="quick_settings_header_image_summary">빠른 설정을 위해 배경 이미지를 선택하세요.</string>
     <string name="quick_settings_header_daylight_pack_title">이미지 모음</string>
     <string name="quick_settings_header_shadow_title">헤더 이미지 그림자</string>
-    <string name="quick_settings_header_shadow_summary">밝은 이미지의 가시성을 향상시키세요</string>
+    <string name="quick_settings_header_shadow_summary">밝은 이미지의 가시성을 향상시키세요.</string>
     <string name="quick_settings_header_static_provider_title">고정 이미지</string>
     <string name="quick_settings_header_daylight_provider_title">이미지 모음</string>
     <string name="quick_settings_header_file_provider_title">사용자 지정 이미지 또는 애니메이션 GIF</string>
     <string name="quick_settings_header_provider_title">헤더 제공자</string>
     <string name="quick_settings_header_browse_title">설치된 헤더 찾아보기</string>
-    <string name="quick_settings_header_browse_summary">사용 가능한 헤더 모음을 찾아보세요</string>
+    <string name="quick_settings_header_browse_summary">사용 가능한 헤더 모음을 찾아보세요.</string>
     <string name="quick_settings_header_pick_title">헤더 이미지 선택</string>
     <string name="quick_settings_header_pick_summary">정적 헤더로 사용할 이미지를 선택하세요.</string>
     <string name="quick_settings_header_file_select_title">이미지 선택</string>
     <string name="quick_settings_header_file_select_summary">사용자 지정 이미지 또는 애니메이션 GIF를 선택하세요.</string>
-    <string name="quick_settings_header_needs_gallery">갤러리 앱이 필요합니다</string>
+    <string name="quick_settings_header_needs_gallery">갤러리 앱이 필요합니다.</string>
     <string name="quick_settings_header_offset_title">헤더 이미지 오프셋</string>
-    <string name="quick_settings_header_offset_summary">헤더 이미지 크기를 조정하세요</string>
+    <string name="quick_settings_header_offset_summary">헤더 이미지 크기를 조정하세요.</string>
     <!-- Quick settings/Misc -->
     <string name="quick_settings_data_usage_title">데이터 사용량</string>
     <string name="quick_settings_data_usage_summary">빠른 설정 바닥글에 데이터 사용량 표시</string>
@@ -643,7 +643,7 @@
     <string name="quick_settings_secure_lock_screen_title">잠금 화면에서 빠른설정</string>
     <string name="quick_settings_secure_lock_screen_summary">잠금 화면에서 아래로 스와이프하여 빠른 설정을 열 수 있도록 허용</string>
     <string name="quick_settings_require_unlock_title">보안 타일은 잠금 해제가 필요합니다.</string>
-    <string name="quick_settings_require_unlock_summary">다음 타일들을 사용하려면 기기의 잠금을 해제해야 합니다: 비행기 모드, 배터리 절약 모드, 블루투스, 셀룰러 데이터, 데이터 절약 모드, 핫스팟, 인터넷, NFC, 화면 회전 잠금, Wi-Fi</string>
+    <string name="quick_settings_require_unlock_summary">다음 타일들을 사용하려면 기기의 잠금을 해제해야 합니다: 비행기 모드, 절전 모드, 블루투스, 셀룰러 데이터, 데이터 절약 모드, 핫스팟, 인터넷, NFC, 화면 회전 잠금, Wi-Fi</string>
     <string name="quick_settings_footer_category">하단</string>
     <string name="quick_settings_footer_edit_icon_title">타일 아이콘 편집</string>
     <string name="quick_settings_footer_show_power_menu_title">전원 메뉴 바로 가기</string>
@@ -659,7 +659,7 @@
     <string name="qs_show_media_player_hide">숨기기</string>
     <string name="qs_show_media_player_top">맨 위에 표시</string>
     <string name="qs_show_media_player_bottom">맨 아래에 표시</string>
-    <string name="qs_tile_gradient_title">QS 타일 그라디언트</string>
+    <string name="qs_tile_gradient_title">QS 타일 그라데이션</string>
     <string name="qs_tile_gradient_summary">빠른 설정 타일에 그라데이션 배경 활성화</string>
     <!-- QS widget -->
     <string name="qs_widget_panel_title">QS 패널에 위젯 표시</string>
@@ -685,9 +685,9 @@
     <string name="notification_use_themed_app_icons_title">테마가 적용된 앱 아이콘을 사용하세요</string>
     <string name="notification_use_themed_app_icons_summary">알림 앱 아이콘에 시스템 색상 테마를 적용합니다(실험적 기능).</string>
     <string name="notification_bg_alternate_color_title">대체 알림 배경</string>
-    <string name="notification_bg_alternate_color_summary">알림에 다른 배경색을 사용하세요</string>
+    <string name="notification_bg_alternate_color_summary">알림에 다른 배경색을 사용하세요.</string>
     <string name="notification_row_transparency_title">반투명 알림</string>
-    <string name="notification_row_transparency_summary">빠른 설정에서 알림에 반투명 배경을 사용하세요</string>
+    <string name="notification_row_transparency_summary">빠른 설정에서 알림에 반투명 배경을 사용하세요.</string>
     <string name="notification_row_transparency_lockscreen_title">반투명 잠금 화면 알림</string>
     <string name="notification_row_transparency_lockscreen_summary">잠금 화면 알림에 반투명 배경을 사용하세요.</string>
     <string name="notification_bubble_apps_title">버블 알림</string>
@@ -717,7 +717,7 @@
     <!-- Power menu -->
     <string name="power_menu_interface_category">인터페이스</string>
     <string name="power_menu_actions_title">전원 메뉴 옵션</string>
-    <string name="power_menu_actions_summary">표시할 작업을 선택하세요</string>
+    <string name="power_menu_actions_summary">표시할 작업을 선택하세요.</string>
     <string name="power_menu_lock_screen_secure_title">보안 잠금 화면에 표시</string>
     <string name="power_menu_lock_screen_secure_summary">기기가 잠겨 있는 동안 전원 메뉴를 표시합니다.</string>
     <string name="power_menu_actions_screenshot_title">스크린샷</string>
@@ -730,9 +730,9 @@
     <string name="power_menu_actions_devicecontrols_title">기기 제어</string>
     <string name="power_menu_advanced_title">고급 다시 시작 옵션</string>
     <string name="advanced_reboot_title">고급 다시 시작</string>
-    <string name="advanced_reboot_summary">잠금 해제 시 전원 메뉴에 복구 모드 또는 부트로더로 재시작하는 옵션을 포함하세요.</string>
+    <string name="advanced_reboot_summary">잠금 해제 시 전원 메뉴에 복구 모드 또는 부트로더로 다시 시작하는 옵션을 포함하세요.</string>
     <string name="advanced_reboot_secured_title">보안 잠금 화면에 표시</string>
-    <string name="advanced_reboot_secured_summary">보안 잠금 화면에 고급 재시작 옵션 표시</string>
+    <string name="advanced_reboot_secured_summary">보안 잠금 화면에 고급 다시 시작 옵션 표시</string>
     <!-- Miscellaneous -->
     <string name="miscellaneous_spoofing_category">스푸핑</string>
     <string name="miscellaneous_developer_options_category">개발자 옵션</string>
@@ -776,23 +776,23 @@
     <string name="tensor_targets_count">%1$d 앱 타겟팅됨</string>
     <string name="tensor_targets_empty_description">선택된 앱은 Tensor 하드웨어 기능을 보고하여 AI 및 Pixel 전용 기능을 활성화합니다.</string>
     <string name="user_selectable_app_spoofing_title">앱 및 게임 스푸핑</string>
-    <string name="user_selectable_app_spoofing_summary">특정 앱 및 게임에 대한 기기 속성을 위조합니다.</string>
+    <string name="user_selectable_app_spoofing_summary">특정 앱 및 게임에 대한 기기 속성을 스푸핑합니다.</string>
     <string name="user_select_spoofing_profile_title">스푸핑 프로필을 선택하세요</string>
     <string name="app_spoofing_header_title">스푸핑 활성화</string>
     <string name="app_spoofing_configured_count">%1$d 앱 및 게임 스푸핑</string>
     <string name="app_spoofing_disabled">사용 안 함</string>
-    <string name="app_spoofing_add_apps">앱과 게임을 추가하세요</string>
+    <string name="app_spoofing_add_apps">앱과 게임을 추가하세요.</string>
     <string name="app_spoofing_clear_all">모두 지우기</string>
     <string name="app_spoofing_configured_apps">구성된 앱  &amp; 게임</string>
     <string name="app_spoofing_no_apps_configured">설정된 앱이나 게임이 없습니다.</string>
     <string name="app_spoofing_spoof_model">스푸프 모델</string>
-    <string name="app_spoofing_select_spoof_model">스푸핑 모델을 선택하세요</string>
+    <string name="app_spoofing_select_spoof_model">스푸핑 모델을 선택하세요.</string>
     <string name="app_spoofing_change_app">앱 변경…</string>
-    <string name="app_spoofing_empty_description">일부 앱은 하드웨어 검사를 우회하기 위해 위조된 기기 ID를 보고합니다.</string>
+    <string name="app_spoofing_empty_description">일부 앱은 하드웨어 검사를 우회하기 위해 스푸핑된 기기 ID를 보고합니다.</string>
     <string name="app_spoofing_clear_all_confirm">이렇게 하면 설정된 모든 앱 스푸핑 항목이 제거됩니다.</string>
     <string name="app_spoofing_no_apps_available">이용 가능한 앱이나 게임이 없습니다.</string>
-    <string name="app_spoofing_no_apps_found">\"%s\"에 대한 결과가 없습니다</string>
-    <string name="app_spoofing_longpress_hint">길게 눌러 프로필을 빠르게 다시 할당하세요</string>
+    <string name="app_spoofing_no_apps_found">\"%s\"에 대한 결과가 없습니다.</string>
+    <string name="app_spoofing_longpress_hint">길게 눌러 프로필을 빠르게 다시 할당하세요.</string>
     <string name="app_spoofing_remove_title">앱을 제거하시겠습니까?</string>
     <string name="app_spoofing_remove_confirm">스푸핑 목록에서 %1$s를 제거하시겠습니까?</string>
     <string name="add_new_spoof_profile">새 프로필 추가</string>
@@ -822,10 +822,10 @@
     <string name="pif_fetch_pixel_beta">Fetch Pixel Canary 지문</string>
     <string name="pif_fetch_pixel_beta_summary">Google에서 최신 Pixel Canary 지문을 다운로드하세요.</string>
     <string name="pif_fetching">Google에서 가져오는 중\u2026</string>
-    <string name="pif_fetched_model">%s의 지문을 가져왔습니다</string>
+    <string name="pif_fetched_model">%s의 지문을 가져왔습니다.</string>
     <string name="pif_import_config">설정 받아들이기</string>
     <string name="pif_import_config_summary">파일에서 PIF 설정을 가져옵니다</string>
-    <string name="pif_imported_as">%s 가져왔습니다</string>
+    <string name="pif_imported_as">%s 가져왔습니다.</string>
     <string name="pif_delete_config">활성된 설정 삭제</string>
     <string name="pif_delete_config_summary">현재 활성화된 구성 파일을 제거합니다.</string>
     <string name="pif_delete_title">%s를 삭제할까요?</string>
@@ -837,10 +837,10 @@
     <string name="pif_generating">설정 생성 중\u2026</string>
     <string name="pif_footer_title">기본 무결성 통과됨</string>
     <string name="pif_footer_body">A Canary fingerprint is fetched and refreshed automatically every 21 days. Canary configs expire roughly 6 weeks from their release date — the expiry is shown in the active config summary.\n\nFor manual setup:\n1. Tap \"Fetch Pixel Canary fingerprint\" and select a device.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before importing a new one. Loading an expired PIF config will cause TrickyStore strong integrity to fail even with a valid keybox.\n\nAdvanced spoofing:\n• Play Store fingerprint spoof — leave disabled unless advised otherwise. Spoofing FINGERPRINT to Play Store is rarely needed and may cause issues.\n• Spoof SDK to DroidGuard — forces the legacy pre-Android 13 attestation path. Only enable this if basic integrity is failing and your config targets an older SDK.</string>
-    <string name="pif_invalid_fingerprint">잘못된 지문 형식입니다</string>
+    <string name="pif_invalid_fingerprint">잘못된 지문 형식입니다.</string>
     <string name="pif_no_devices_found">오디오 장치 없음</string>
     <string name="pif_advanced_settings">고급 스푸핑</string>
-    <string name="pif_spoof_vending_finger_title">플레이 스토어 지문 위조</string>
+    <string name="pif_spoof_vending_finger_title">플레이 스토어 지문 스푸핑</string>
     <string name="pif_spoof_vending_finger_summary">플레이 스토어 프로세스에 어떤 지문 정보를 제공할지 제어합니다.</string>
     <string name="pif_spoof_vending_sdk_title">DroidGuard용 Spoof SDK</string>
     <string name="pif_spoof_vending_sdk_summary">DroidGuard의 SDK_INT를 재정의하여 레거시 &lt;A13 인증 경로를 강제로 사용하도록 합니다.</string>
@@ -852,7 +852,7 @@
     <string name="ts_import_keybox">Keybox 가져오기</string>
     <string name="ts_no_keybox">Keybox가 설치되지 않음</string>
     <string name="ts_keybox_installed">Keybox 설치됨</string>
-    <string name="ts_keybox_imported">Keybox를 성공적으로 가져왔습니다</string>
+    <string name="ts_keybox_imported">Keybox를 성공적으로 가져왔습니다.</string>
     <string name="ts_delete_keybox">Keybox 삭제</string>
     <string name="ts_delete_keybox_summary">키박스 파일을 삭제하세요</string>
     <string name="ts_delete_keybox_title">Keybox를 삭제하시겠습니까?</string>
@@ -861,11 +861,11 @@
     <string name="ts_target_configuration">대상 구성</string>
     <string name="ts_manage_target_apps">대상 앱 관리</string>
     <string name="ts_no_targets">대상 앱이 설정되지 않았음</string>
-    <string name="ts_target_apps_count">%d개의 앱이 설정되었습니다</string>
+    <string name="ts_target_apps_count">%d개의 앱이 설정되었습니다.</string>
     <string name="ts_import_target_list">대상 목록 가져오기</string>
     <string name="ts_import_target_list_summary">파일에서 target.txt 가져오기</string>
     <string name="ts_invalid_patch_date">잘못된 날짜 형식입니다. YYYY-MM-DD 형식을 사용하세요.</string>
-    <string name="ts_target_list_imported">대상 목록을 가져왔습니다</string>
+    <string name="ts_target_list_imported">대상 목록을 가져왔습니다.</string>
     <string name="ts_failed">%s 실패</string>
     <string name="ts_footer_title">강력한 무결성 통과</string>
     <string name="ts_footer_body">키박스는 자동으로 가져와지고 유효한 상태로 유지됩니다. 취소 상태는 24시간마다 확인되며, 현재 키박스가 취소되거나 정지된 경우 공식 소스에서 새 키박스를 가져옵니다.\n\n수동 설정 방법:\n1. \"공식 키박스 가져오기\"를 탭하여 자동으로 다운로드하거나 신뢰할 수 있는 소스에서 직접 가져옵니다.\n2. \"대상 앱 관리\"를 열고 무결성 검사가 필요한 앱을 선택합니다.\n3. 기기에 TEE가 작동하는 경우 대상 모드를 \"Leaf\"로 설정하고, 그렇지 않으면 \"자동\"으로 둡니다.\n4. Play 무결성 상태를 다시 확인합니다.\n\n참고: 유효한 공식 키박스가 없는 경우 자동 가져오기는 24시간 동안 일시 중지된 후 다시 시도됩니다. 새 키박스를 가져오기 전에 기존 키박스를 항상 삭제하십시오.</string>
@@ -903,7 +903,7 @@
     <string name="ts_revocation_expiring_soon">Keybox 만료 임박 — 탭하여 리뷰 작성</string>
     <string name="ts_revocation_chain_invalid">인증서 체인이 잘못되었습니다. 탭하여 교체하세요.</string>
     <string name="ts_revocation_untrusted_root">Keybox 체인의 루트를 인식할 수 없습니다. 하지만 무결성 검사는 통과할 수 있습니다.</string>
-    <string name="ts_revocation_status">취소 상태를 확인하세요</string>
+    <string name="ts_revocation_status">취소 상태를 확인하세요.</string>
     <string name="ts_revocation_checking">취소 상태를 확인 중…</string>
     <string name="ts_revocation_no_keybox">Keybox가 설치되지 않음</string>
     <string name="ts_revocation_valid">유효함 - 취소되지 않음</string>
@@ -916,8 +916,8 @@
     <string name="ts_fetch_keybox_revoked_refetch">키박스가 취소되었습니다. 새 키박스를 가져오는 중입니다…</string>
     <string name="ts_fetch_keybox_suspended_refetch">키박스가 일시 중단되었습니다. 새 키박스를 가져오는 중입니다…</string>
     <!-- Wallpaper styles -->
-    <string name="wallpaper_styles_title">Wallpaper styles</string>
-    <string name="wallpaper_settings_summary">배경화면 스타일 및 효과를 설정하세요</string>
+    <string name="wallpaper_styles_title">배경화면 스타일</string>
+    <string name="wallpaper_settings_summary">배경화면 스타일 및 효과를 설정하세요.</string>
     <string name="wallpaper_blur_title">흐림 효과</string>
     <string name="wallpaper_blur_filter">블러 종류:</string>
     <string name="wallpaper_effects_title">시각 효과</string>
@@ -939,9 +939,9 @@
     <string name="wallpaper_posterize_levels_title">포스터화 레벨</string>
     <string name="wallpaper_posterize_levels_summary">색심도 감소</string>
     <!-- Wallpaper Glymps -->
-    <string name="lock_glymps_title">월페이퍼 글림프스</string>
+    <string name="lock_glymps_title">배경화면 자동 변경</string>
     <string name="lock_glymps_enable_summary">화면을 켤 때마다 배경화면을 변경합니다.</string>
-    <string name="lock_glymps_wallpaper_target_title">벽지를 적용하세요</string>
+    <string name="lock_glymps_wallpaper_target_title">배경화면 적용 대상</string>
     <string name="lock_glymps_source_category">배경화면 출처</string>
     <string name="lock_glymps_source_title">배경화면 출처</string>
     <string name="lock_glymps_custom_urls_title">사용자 지정 URL 관리</string>
@@ -949,26 +949,26 @@
     <string name="lock_glymps_folder_title">로컬 폴더</string>
     <string name="lock_glymps_folder_summary">폴더 위치 및 배경화면 개수 보기 (최대 10개)</string>
     <string name="lock_glymps_download_category">다운로드 설정</string>
-    <string name="lock_glymps_wifi_only_title">Wi-Fi에 한함</string>
+    <string name="lock_glymps_wifi_only_title">Wi-Fi에서만</string>
     <string name="lock_glymps_wifi_only_summary">Wi-Fi에 연결되어 있을 때만 배경화면을 다운로드하세요.</string>
     <string name="lock_glymps_cache_size_title">캐시 크기</string>
     <string name="lock_glymps_cache_size_summary">미리 다운로드할 배경화면 개수</string>
     <string name="lock_glymps_advanced_category">고급 설정</string>
-    <string name="lock_glymps_clear_cache_title">로그 아웃</string>
-    <string name="lock_glymps_clear_cache_summary">캐시된 배경화면을 모두 제거하세요</string>
+    <string name="lock_glymps_clear_cache_title">캐시 지우기</string>
+    <string name="lock_glymps_clear_cache_summary">캐시된 배경화면을 모두 제거하세요.</string>
     <string name="lock_glymps_behavior_category">동작</string>
     <string name="lock_glymps_change_on_title">배경화면 변경</string>
-    <string name="lock_glymps_change_on_summary">배경화면은 언제 바꿔야 할까요?</string>
+    <string name="lock_glymps_change_on_summary">배경화면을 변경할 시점</string>
     <string name="lock_glymps_timer_interval_title">타이머 간격</string>
-    <string name="lock_glymps_timer_interval_summary">배경화면을 자동으로 얼마나 자주 변경할까요?</string>
+    <string name="lock_glymps_timer_interval_summary">배경화면을 자동으로 변경하는 주기</string>
     <string name="lock_glymps_footer_title">정보</string>
     <string name="lock_glymps_footer_text">📁 로컬 폴더: /sdcard/Glymps\n\n⚠ 저사양 기기에서는 약간의 지연이 발생할 수 있습니다.\n\n🎨 팁: 안정적인 색상을 위해 Monet 설정에서 사용자 지정 강조 색상을 사용하세요.</string>
-    <string name="lock_glymps_preview_title">배경 화면 미리보기</string>
+    <string name="lock_glymps_preview_title">배경화면 미리보기</string>
     <string name="lock_glymps_preview_summary">현재 잠금 화면 및 홈 화면 배경화면</string>
     <string name="lock_glymps_lock_screen">잠금 화면</string>
     <string name="lock_glymps_home_screen">홈 화면</string>
-    <string name="lock_glymps_apply_now">새 배경화면을 적용하세요</string>
-    <string name="lock_glymps_applying">적용 중...</string>
+    <string name="lock_glymps_apply_now">새 배경화면 적용</string>
+    <string name="lock_glymps_applying">적용 중…</string>
     <string name="lock_glymps_lock_preview_desc">잠금 화면 배경화면 미리보기</string>
     <string name="lock_glymps_home_preview_desc">홈 화면 배경화면 미리보기</string>
     <!-- Video wallpaper -->
@@ -978,7 +978,7 @@
     <!-- Haptics settings -->
     <!-- Volume panel styles -->
     <!-- Gradient styles -->
-    <string name="gradient_settings_title">그라디언트 사용자 지정</string>
+    <string name="gradient_settings_title">그라데이션 사용자 지정</string>
     <string name="gradient_settings_summary">시스템 요소에 그라데이션 색상을 적용합니다.</string>
     <string name="gradient_elements_category">시스템 요소</string>
     <string name="gradient_colors_category">그라데이션 색상</string>
@@ -992,7 +992,7 @@
     <!-- Progress bar styles -->
     <!-- Fonts -->
     <string name="font_styles_title">글꼴 스타일</string>
-    <string name="font_styles_summary">시스템 글꼴 스타일을 변경하세요</string>
+    <string name="font_styles_summary">시스템 글꼴 스타일을 변경하세요.</string>
     <string name="font_preview_dialog_title">폰트 미리보기</string>
     <string name="font_preview_quote">두려움은 혁신의 적이다.</string>
     <string name="add_font">폰트 추가하기</string>
@@ -1000,12 +1000,12 @@
     <string name="toast_failed_apply_font">글꼴을 적용하는 데 실패했습니다.</string>
     <string name="toast_invalid_font_file">Switch to @Cherry_gram</string>
     <string name="custom_system_theme_title">테마</string>
-    <string name="custom_system_theme_summary">테마와 아이콘 팩을 사용하여 시스템 외관을 맞춤 설정하세요</string>
+    <string name="custom_system_theme_summary">테마와 아이콘 팩을 사용하여 시스템 외관을 맞춤 설정하세요.</string>
     <!-- About -->
     <string name="about_info">Evolution X는 Google Pixel의 사용자 경험을 재현하면서 추가적인 맞춤 설정 기능을 제공하는 커스텀 Android ROM입니다. LineageOS 프로젝트를 기반으로 합니다.</string>
     <string name="about_website_title">웹사이트</string>
     <string name="about_website_summary">최신 정보를 보려면 저희 사이트를 방문하세요.</string>
-    <string name="about_x_summary">X에서 저희의 최신 소식을 확인하세요</string>
+    <string name="about_x_summary">X에서 저희의 최신 소식을 확인하세요.</string>
     <string name="about_discord_summary">디스코드 채널 가기</string>
     <string name="about_github_summary">GitHub에서 저희 코드를 살펴보세요.</string>
     <string name="about_founders_title">창립자</string>
@@ -1021,7 +1021,7 @@
     <string name="maintainer_link_forum">포럼</string>
     <!-- Changelog -->
     <string name="changelog_title">변경 내역</string>
-    <string name="changelog_summary">ROM 소스의 변경 사항을 확인하세요</string>
+    <string name="changelog_summary">ROM 소스의 변경 사항을 확인하세요.</string>
     <!-- Color picker -->
     <string name="accent_color">강조 색상</string>
     <string name="notification_color">알림 색상</string>
@@ -1031,10 +1031,10 @@
     <string name="custom_color_summary">일부 시계 스타일은 사용자 지정 색상으로 제공됩니다.</string>
     <!-- Custom seekbar -->
     <!-- SystemUI restart dialog -->
-    <string name="systemui_restart_title">시스템UI 재시작</string>
+    <string name="systemui_restart_title">시스템UI 다시 시작</string>
     <string name="systemui_restart_message">변경 사항을 적용하려면 SystemUI를 다시 시작해야 합니다. 지금 다시 시작하시겠습니까?</string>
     <string name="systemui_restart_not_now">나중에</string>
-    <string name="systemui_restart_process">시스템UI 재시작</string>
+    <string name="systemui_restart_process">시스템UI 다시 시작</string>
     <!-- Units -->
     <string name="unit_hz">Hz</string>
     <string name="unit_seconds">초</string>
@@ -1046,14 +1046,14 @@
     <string name="action_reset">초기화</string>
     <string name="action_search_apps">앱 검색</string>
     <string name="action_select_all">전체 선택</string>
-    <string name="action_reboot_now">지금 다시 시작합니다</string>
+    <string name="action_reboot_now">지금 다시 시작합니다.</string>
     <string name="action_add_installed">설치된 항목 추가</string>
     <string name="show_system_apps">시스템 앱 표시</string>
     <string name="hide_system_apps">시스템 앱 숨기기</string>
     <string name="default_value">기본값</string>
     <string name="never">사용 안 함</string>
-    <string name="boot_animation_applied">부팅 애니메이션이 적용되었습니다</string>
-    <string name="reboot_required_title">재시작 필요</string>
+    <string name="boot_animation_applied">부팅 애니메이션이 적용되었습니다.</string>
+    <string name="reboot_required_title">다시 시작해야 함</string>
     <string name="reboot_required_message">글꼴 변경 사항을 적용하려면 재부팅이 필요합니다. 지금 재부팅하시겠습니까?</string>
     <string name="action_later">나중에</string>
     <!-- Hardware key actions (shared by buttons, gestures) -->
@@ -1071,7 +1071,7 @@
     <string name="hardware_keys_action_play_pause_music">음악 재생/일시 정지</string>
     <string name="hardware_keys_action_torch">손전등 켜기/끄기</string>
     <string name="hardware_keys_action_screenshot">스크린샷 찍기</string>
-    <string name="hardware_keys_action_partial_screenshot">부분 스크린샷을 찍으세요</string>
+    <string name="hardware_keys_action_partial_screenshot">부분 스크린샷을 찍으세요.</string>
     <string name="hardware_keys_action_volume_panel">볼륨 패널 토글</string>
     <string name="hardware_keys_action_clear_all_notifications">모든 알림 지우기</string>
     <string name="hardware_keys_action_notifications_panel">알림 화면 토글</string>
@@ -1082,7 +1082,7 @@
     <string name="shake_gestures_enabled_title">흔들기</string>
     <string name="shake_gestures_action_title">흔들기 동작</string>
     <string name="shake_gestures_intensity_title">흔들기 감도</string>
-    <string name="shake_gestures_intensity_summary">흔들림 감지 감도를 조정하세요</string>
+    <string name="shake_gestures_intensity_summary">흔들림 감지 감도를 조정하세요.</string>
     <string name="flashlight_on_call_title">전화 수신 시 손전등을 깜빡입니다.</string>
     <string name="flashlight_on_call_disabled">사용 안 함</string>
     <string name="flashlight_on_call_ringer">벨이 울릴 때</string>
@@ -1101,7 +1101,7 @@
     <string name="charging_glow_intensity_title">발광 강도</string>
     <string name="charging_glow_intensity_summary">빛과 입자의 밝기를 조절합니다.</string>
     <string name="charging_arc_count_title">웨이브 개수</string>
-    <string name="charging_arc_count_summary">파도가 나타날 횟수를 설정하세요</string>
+    <string name="charging_arc_count_summary">파도가 나타날 횟수를 설정하세요.</string>
     <string name="charging_appearance_category_title">모양</string>
     <string name="charging_color_mode_title">색상 모드</string>
     <string name="charging_display_category_title">화면 옵션</string>
@@ -1124,4 +1124,9 @@
     <string name="qs_show_volume_slider_only">볼륨 슬라이더만</string>
     <string name="qs_show_ringer_mode_title">벨소리 모드</string>
     <string name="qs_show_ringer_mode_summary">볼륨 슬라이더와 함께 벨소리 모드 아이콘을 표시합니다.</string>
+    <string name="app_icon_pack_title">앱 아이콘 팩</string>
+    <string name="app_icon_pack_apply_failed">앱 아이콘 팩을 적용하지 못했습니다.</string>
+    <string name="usb_mode_picker_title">USB 사용 용도 선택</string>
+    <string name="usb_mode_picker_summary">컴퓨터에 연결하면 USB 사용 용도 선택 창을 표시합니다.</string>
+    <string name="app_icon_pack_system_default">시스템 기본값</string>
 </resources>

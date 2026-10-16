@@ -17,7 +17,7 @@
     <string name="quick_settings_title">クイック設定</string>
     <string name="quick_settings_summary">インターフェース、明るさスライダー、レイアウト</string>
     <string name="notifications_summary">ポップアップ通知、透過、音</string>
-    <string name="power_menu_title">電源メニュー</string>
+    <string name="power_menu_title">電源ボタン メニュー</string>
     <string name="power_menu_summary">ロック画面のアクション</string>
     <string name="miscellaneous_title">その他</string>
     <string name="miscellaneous_summary">偽装ハブ、開発者向けオプション</string>
@@ -42,8 +42,8 @@
     <string name="themes_lock_screen_clock_font_summary">ロック画面の時計のフォントスタイルを設定する</string>
     <string name="themes_icons_category">アイコン</string>
     <string name="themes_icon_shape_title">アイコンの形状</string>
-    <string name="themes_navigation_bar_icons_title">ナビゲーションバーアイコン</string>
-    <string name="themes_navigation_bar_icons_summary">ナビゲーションバーアイコンのスタイルを設定する</string>
+    <string name="themes_navigation_bar_icons_title">ナビゲーション バーアイコン</string>
+    <string name="themes_navigation_bar_icons_summary">ナビゲーション バーアイコンのスタイルを設定する</string>
     <string name="themes_udfps_icon_title">画面内指紋認証アイコン</string>
     <string name="themes_udfps_icon_summary">画面内指紋認証のアイコンスタイルを設定する</string>
     <string name="themes_screen_off_animation_title">画面消灯時のアニメーション</string>
@@ -115,17 +115,17 @@
     <string name="lock_screen_fingerprint_category">指紋</string>
     <string name="lock_screen_fingerprint_ripple_title">波紋のアニメーション</string>
     <string name="lock_screen_fingerprint_ripple_summary">指紋認証のロック解除時に波紋効果を表示する</string>
-    <string name="lock_screen_fingerprint_success_vibration_title">認証成功時の振動</string>
-    <string name="lock_screen_fingerprint_success_vibration_summary">指紋認証成功時に振動させる</string>
-    <string name="lock_screen_fingerprint_error_vibration_title">認証エラー時の振動</string>
-    <string name="lock_screen_fingerprint_error_vibration_summary">指紋認証が失敗した際に振動させる</string>
+    <string name="lock_screen_fingerprint_success_vibration_title">認証成功時のバイブレーション</string>
+    <string name="lock_screen_fingerprint_success_vibration_summary">指紋認証成功時にバイブレーションさせる</string>
+    <string name="lock_screen_fingerprint_error_vibration_title">認証エラー時のバイブレーション</string>
+    <string name="lock_screen_fingerprint_error_vibration_summary">指紋認証が失敗した際にバイブレーションさせる</string>
     <!-- Lock screen/Pulse music visualizer -->
-    <string name="pulse_settings_title">Pulse ビジュアライザー</string>
+    <string name="pulse_settings_title">パルスビジュアライザー</string>
     <string name="pulse_settings_summary">音楽再生時にロック画面にバービジュアライザーを表示する</string>
     <string name="pulse_bass_haptics_title">低音ハプティクス</string>
-    <string name="pulse_bass_haptics_none">低音のピーク時に振動させない</string>
-    <string name="pulse_bass_haptics_running">Pulse 表示中のみ振動させる</string>
-    <string name="pulse_bass_haptics_always">メディア再生中は常に振動させる</string>
+    <string name="pulse_bass_haptics_none">低音のピーク時にバイブレーションさせない</string>
+    <string name="pulse_bass_haptics_running">Pulse 表示中のみバイブレーションさせる</string>
+    <string name="pulse_bass_haptics_always">メディア再生中は常にバイブレーションさせる</string>
     <string name="pulse_bass_haptics_disabled_amplitude">振幅キャプチャモードでは使用できません</string>
     <string name="pulse_rounded_bars_title">角丸バー</string>
     <string name="pulse_rounded_bars_summary">ビジュアライザーのバーの角を丸くする</string>
@@ -252,7 +252,7 @@
     <string name="ls_media_art_pixel_size_summary">ロック画面に表示されるメディアアートのピクセルサイズを調整する</string>
     <!-- AOD Media Settings -->
     <string name="show_on_aod_title">AOD に表示</string>
-    <string name="show_on_aod_summary">常時表示ディスプレイにメディアのアートワークを表示する</string>
+    <string name="show_on_aod_summary">常に表示状態のディスプレイにメディアのアートワークを表示する</string>
     <string name="aod_brightness_title">AOD の明るさ</string>
     <!-- Lock screen/Now Playing -->
     <string name="nowplaying_title">Now Playing</string>
@@ -280,7 +280,7 @@
     <!-- Lock screen/AOD -->
     <string name="lockscreen_custom_image_enabled_title">AOD の画像</string>
     <string name="lockscreen_custom_image_title">AOD の画像を選択</string>
-    <string name="lockscreen_custom_image_summary">常時表示ディスプレイのカスタム画像を設定する</string>
+    <string name="lockscreen_custom_image_summary">常に表示状態のディスプレイのカスタム画像を設定する</string>
     <string name="lockscreen_custom_image_pick_summary">ギャラリーから画像を選択する</string>
     <string name="ambient_display_category_title">アンビエント表示</string>
     <string name="ambient_bottom_title">AOD 下部のコンテンツ</string>
@@ -585,7 +585,7 @@
     <string name="dynamic_bar_footer_title">ダイナミックバーについて</string>
     <string name="dynamic_bar_footer_body">ダイナミックバーは、ステータスバーをインタラクティブなハブに変えます。システムイベントに基づいてチップが表示・アニメーションされ、作業を中断することなく一目で情報を確認できます。\n\n各イベントタイプには独自のアクセントカラーがあり、展開されたカードからクイックアクションが可能です。</string>
     <!-- Status bar/Cutout progress ring -->
-    <string name="cutout_progress_title">カットアウトのプログレスリング</string>
+    <string name="cutout_progress_title">カットアウトの進行状況リング</string>
     <string name="cutout_progress_summary">カメラのカットアウトの周囲に進行状況リングを表示する</string>
     <string name="cutout_progress_cat_behaviour">動作</string>
     <string name="cutout_progress_cat_bg_ring">背景リング</string>
@@ -706,7 +706,7 @@
     <string name="quick_settings_tile_shape_rounded_square_smooth">角丸四角形 (スムーズ)</string>
     <string name="quick_settings_tile_shape_rounded_square">角丸四角形</string>
     <string name="quick_settings_tile_shape_square">正方形</string>
-    <string name="quick_settings_tile_haptic_summary">タイルに触れた時に振動させる</string>
+    <string name="quick_settings_tile_haptic_summary">タイルに触れた時にバイブレーションさせる</string>
     <string name="shape_circle">円</string>
     <string name="shape_square">正方形</string>
     <string name="shape_four_sided_cookie">四角いクッキー</string>
@@ -747,7 +747,7 @@
     <string name="quick_settings_auto_brightness_icon_title">自動明るさ調整アイコン</string>
     <string name="quick_settings_auto_brightness_icon_summary">スライダーの横に明るさの自動調整ボタンを表示する</string>
     <string name="quick_settings_brightness_slider_haptic_title">触覚フィードバック</string>
-    <string name="quick_settings_brightness_slider_haptic_summary">スライダーで明るさを調整したときに振動させる</string>
+    <string name="quick_settings_brightness_slider_haptic_summary">スライダーで明るさを調整したときにバイブレーションさせる</string>
     <string name="qs_brightness_slider_gradient_title">明るさスライダーのグラデーション</string>
     <string name="qs_brightness_slider_gradient_summary">明るさスライダーの背景にグラデーションを有効にする</string>
     <!-- Quick settings/Animations -->
@@ -795,7 +795,7 @@
     <string name="quick_settings_require_unlock_summary">「機内モード、バッテリーセーバー、Bluetooth、データセーバー、ホットスポット、インターネット、NFC、画面回転ロック」のタイルを操作するには、デバイスのロックを解除する必要があります</string>
     <string name="quick_settings_footer_category">フッター</string>
     <string name="quick_settings_footer_edit_icon_title">タイルの編集アイコン</string>
-    <string name="quick_settings_footer_show_power_menu_title">電源メニューのショートカット</string>
+    <string name="quick_settings_footer_show_power_menu_title">電源ボタン メニューのショートカット</string>
     <string name="quick_settings_footer_settings_icon_title">設定のショートカット</string>
     <string name="qs_header_clock_style_title">クイック設定ヘッダーの時計スタイル</string>
     <string name="qs_header_style1">チップ</string>
@@ -824,7 +824,7 @@
     <string name="notifications_kill_app_button_summary">通知の長押しメニューにアプリ終了ボタンを表示する</string>
     <string name="notifications_sounds_vibration_category">音とバイブレーション</string>
     <string name="notifications_alert_display_on_title">画面点灯時に通知</string>
-    <string name="notifications_alert_display_on_summary">画面が ON の時に音と振動で通知を知らせます</string>
+    <string name="notifications_alert_display_on_summary">画面が ON の時に音とバイブレーションで通知を知らせます</string>
     <string name="compact_heads_up_notifications_enabled_title">コンパクトなポップアップ通知</string>
     <string name="compact_heads_up_notifications_enabled_summary">コンパクトなサイズで通知を表示する</string>
     <string name="notifications_less_boring_heads_up_title">通知制限</string>
@@ -871,10 +871,10 @@
     <string name="edge_light_intensity_summary">グローエフェクトのピークの明るさ</string>
     <!-- Power menu -->
     <string name="power_menu_interface_category">インターフェース</string>
-    <string name="power_menu_actions_title">電源メニューのオプション</string>
+    <string name="power_menu_actions_title">電源ボタン メニューのオプション</string>
     <string name="power_menu_actions_summary">表示するアクションを選択してください</string>
     <string name="power_menu_lock_screen_secure_title">セキュアなロック画面で隠す</string>
-    <string name="power_menu_lock_screen_secure_summary">端末がロックされている間に電源メニューを表示する</string>
+    <string name="power_menu_lock_screen_secure_summary">端末がロックされている間に電源ボタン メニューを表示する</string>
     <string name="power_menu_actions_screenshot_title">スクリーンショット</string>
     <string name="power_menu_actions_onthego_title">On-The-Go モード</string>
     <string name="power_menu_actions_airplane_title">機内モード</string>
@@ -885,7 +885,7 @@
     <string name="power_menu_actions_devicecontrols_title">端末の制御</string>
     <string name="power_menu_advanced_title">高度な再起動オプション</string>
     <string name="advanced_reboot_title">高度な再起動</string>
-    <string name="advanced_reboot_summary">ロック解除時、電源メニューにリカバリやブートローダーへの再起動オプションを表示する</string>
+    <string name="advanced_reboot_summary">ロック解除時、電源ボタン メニューにリカバリやブートローダーへの再起動オプションを表示する</string>
     <string name="advanced_reboot_secured_title">保護されたロック画面に表示</string>
     <string name="advanced_reboot_secured_summary">セキュリティ保護されたロック画面に高度な再起動オプションを表示する</string>
     <!-- Miscellaneous -->
@@ -1119,7 +1119,7 @@
     <string name="wallpaper_posterize_levels_title">ポスタライズレベル</string>
     <string name="wallpaper_posterize_levels_summary">色深度の削減</string>
     <!-- Wallpaper Glymps -->
-    <string name="lock_glymps_title">壁紙カルーセル</string>
+    <string name="lock_glymps_title">壁紙の自動切り替え</string>
     <string name="lock_glymps_enable_summary">画面が点灯するたびに壁紙を変更する</string>
     <string name="lock_glymps_wallpaper_target_title">適用する対象</string>
     <string name="lock_glymps_source_category">壁紙のソース</string>
@@ -1306,7 +1306,7 @@
     <string name="flashlight_on_call_no_ringer">着信音がサイレントの時</string>
     <string name="flashlight_on_call_silent">完全サイレントの時 (着信音やバイブなし)</string>
     <string name="flashlight_on_call_always">常時</string>
-    <string name="flashlight_on_call_ignore_dnd_title">サイレントモードを無視</string>
+    <string name="flashlight_on_call_ignore_dnd_title">サイレント モードを無視</string>
     <string name="flashlight_on_call_ignore_dnd_summary">サイレント モードが有効な場合でも点滅させる</string>
     <string name="flashlight_on_call_rate_title">点滅速度</string>
     <!-- Charging animation -->
@@ -1345,8 +1345,8 @@
     <string name="qs_show_ringer_mode_title">着信モード</string>
     <string name="qs_show_ringer_mode_summary">音量スライダーに着信モードアイコンを表示</string>
     <!-- Custom power menu style -->
-    <string name="global_actions_use_compose_dialog_title">電源メニューの変更</string>
-    <string name="global_actions_use_compose_dialog_summary">カスタマイズ可能なドラッグ可能なタイルレイアウトで新しい電源メニューを使用します。無効にすると、クラシックな電源メニューを使用します。</string>
+    <string name="global_actions_use_compose_dialog_title">電源ボタン メニューの変更</string>
+    <string name="global_actions_use_compose_dialog_summary">カスタマイズ可能なドラッグ可能なタイルレイアウトで新しい電源ボタン メニューを使用します。無効にすると、クラシックな電源ボタン メニューを使用します。</string>
     <string name="global_actions_advanced_reboot_title">高度な再起動を有効にする</string>
     <string name="global_actions_advanced_reboot_summary">高度な再起動を可能にする新しいダイアログを表示します</string>
     <!-- Screenshots -->
@@ -1357,4 +1357,9 @@
     <!-- Wallpaper zoom -->
     <string name="wallpaper_zoom_title">壁紙のズーム</string>
     <string name="wallpaper_zoom_summary">オフにすると、余分なズームなしで壁紙が表示されます</string>
+    <string name="app_icon_pack_system_default">システム既定</string>
+    <string name="app_icon_pack_apply_failed">アプリのアイコンパックを適用できませんでした</string>
+    <string name="app_icon_pack_title">アプリのアイコンパック</string>
+    <string name="usb_mode_picker_title">USB 接続用途の選択</string>
+    <string name="usb_mode_picker_summary">パソコンに接続したときに USB 接続用途の選択画面を表示する</string>
 </resources>

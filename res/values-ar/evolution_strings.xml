@@ -1051,7 +1051,7 @@
     <string name="wallpaper_vignette_intensity_summary">درجة قتامة الحواف</string>
     <string name="wallpaper_posterize_levels_title">مستويات تقليل الألوان</string>
     <string name="wallpaper_posterize_levels_summary">تقليل عمق الألوان</string>
-    <string name="lock_glymps_title">Wallpaper Glymps</string>
+    <string name="lock_glymps_title">تغيير الخلفية تلقائيًا</string>
     <string name="lock_glymps_enable_summary">تغيير الخلفية في كل مرة يتم فيها تشغيل الشاشة</string>
     <string name="lock_glymps_wallpaper_target_title">تطبيق الخلفية على</string>
     <string name="lock_glymps_source_category">مصدر الخلفية</string>
@@ -1227,4 +1227,6 @@
     <string name="screenshot_clipboard_only_summary">نسخ لقطة الشاشة إلى الحافظة بدل حفظها في مساحة التخزين</string>
     <string name="hide_status_bar_in_screenshot_title">إخفاء شريط الحالة في لقطات الشاشة</string>
     <string name="hide_status_bar_in_screenshot_summary">اقتصاص منطقة شريط الحالة من لقطات الشاشة الكاملة</string>
+    <string name="usb_mode_picker_title">اختيار استخدام USB</string>
+    <string name="usb_mode_picker_summary">عرض نافذة اختيار استخدام USB عند الاتصال بجهاز كمبيوتر</string>
 </resources>

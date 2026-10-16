@@ -17,7 +17,7 @@
     <string name="quick_settings_title">Быстрые настройки</string>
     <string name="quick_settings_summary">Интерфейс, ползунок яркости, экран блокировки</string>
     <string name="notifications_summary">Головы вверх, краеугольный свет, звуки</string>
-    <string name="power_menu_title">Меню питания</string>
+    <string name="power_menu_title">Меню кнопки питания</string>
     <string name="power_menu_summary">Действия, экран блокировки</string>
     <string name="miscellaneous_title">Прочее</string>
     <string name="miscellaneous_summary">Опции разработчика, подмена устройства</string>
@@ -79,7 +79,7 @@
     <string name="pulse_color">Цвет визуализатора</string>
     <string name="pulse_color_lavalamp">Эффект лавовой лампы</string>
     <string name="pulse_color_album">Обложка песни</string>
-    <string name="pulse_color_accent">Цветовой акцент</string>
+    <string name="pulse_color_accent">Акцентный цвет</string>
     <string name="pulse_bar_count_title">Количество полос</string>
     <string name="pulse_bar_count_summary">Установите количество полос, отображаемых в визуализаторе</string>
     <string name="pulse_bar_count_units">колонки</string>
@@ -385,6 +385,42 @@
     <!-- Wallpaper Styles -->
     <string name="wallpaper_styles_title">Стили обоев</string>
     <string name="wallpaper_settings_summary">Настройка стилей и обоев</string>
+    <string name="lock_glymps_title">Автоматическая смена обоев</string>
+    <string name="lock_glymps_enable_summary">Менять обои при каждом включении экрана</string>
+    <string name="lock_glymps_wallpaper_target_title">Применять обои на</string>
+    <string name="lock_glymps_source_category">Источник обоев</string>
+    <string name="lock_glymps_source_title">Источник обоев</string>
+    <string name="lock_glymps_custom_urls_title">Управление своими URL-адресами</string>
+    <string name="lock_glymps_custom_urls_summary">Добавление и удаление URL-адресов обоев</string>
+    <string name="lock_glymps_folder_title">Локальная папка</string>
+    <string name="lock_glymps_folder_summary">Просмотр расположения папки и количества обоев (не более 10)</string>
+    <string name="lock_glymps_download_category">Настройки загрузки</string>
+    <string name="lock_glymps_wifi_only_title">Только по Wi-Fi</string>
+    <string name="lock_glymps_wifi_only_summary">Загружать обои только при подключении к Wi-Fi</string>
+    <string name="lock_glymps_cache_size_title">Размер кэша</string>
+    <string name="lock_glymps_cache_size_summary">Количество обоев для предварительной загрузки</string>
+    <string name="lock_glymps_advanced_category">Дополнительно</string>
+    <string name="lock_glymps_clear_cache_title">Очистить кэш</string>
+    <string name="lock_glymps_clear_cache_summary">Удалить все обои из кэша</string>
+    <string name="lock_glymps_behavior_category">Поведение</string>
+    <string name="lock_glymps_change_on_title">Когда менять обои</string>
+    <string name="lock_glymps_change_on_summary">Момент смены обоев</string>
+    <string name="lock_glymps_timer_interval_title">Интервал таймера</string>
+    <string name="lock_glymps_timer_interval_summary">Как часто обои меняются автоматически</string>
+    <string name="lock_glymps_footer_title">Информация</string>
+    <string name="lock_glymps_footer_text">📁 Локальная папка: /sdcard/Glymps
+
+⚠ На устройствах с низкой производительностью возможны небольшие задержки.
+
+🎨 Совет: для стабильных цветов выберите собственный акцентный цвет в настройках Monet.</string>
+    <string name="lock_glymps_preview_title">Предпросмотр обоев</string>
+    <string name="lock_glymps_preview_summary">Текущие обои экрана блокировки и главного экрана</string>
+    <string name="lock_glymps_lock_screen">Экран блокировки</string>
+    <string name="lock_glymps_home_screen">Главный экран</string>
+    <string name="lock_glymps_apply_now">Применить новые обои</string>
+    <string name="lock_glymps_applying">Применение…</string>
+    <string name="lock_glymps_lock_preview_desc">Предпросмотр обоев экрана блокировки</string>
+    <string name="lock_glymps_home_preview_desc">Предпросмотр обоев главного экрана</string>
     <string name="wallpaper_blur_title">Размытие обоев</string>
     <string name="wallpaper_blur_filter">Стиль размытия обоев</string>
     <string name="wallpaper_dim_title">Затемнение обоев</string>
@@ -398,7 +434,7 @@
     <string name="qs_compact_media_player_mode_title">Компактный медиа плеер быстрых настроек</string>
     <string name="qs_compact_media_player_mode_summary">Включить компактный режим для медиа плеера быстрых настроек</string>
     <!-- Depth Wallpaper -->
-    <string name="dw_footer_text">        Функция \"Объемные обои\", основанная на сегментации объектов обоев в iOS, позволяет накладывать объект поверх часов на экране блокировки, чтобы показать эффект глубины обоев.\n\nДля настройки функции \"Объемные обои\":\n1. Установите обои с изображением объекта или фоном, над которым вы хотите, чтобы объект был выше.\n2. Выберите изображение объекта для отслеживания, это изображение будет наложено поверх часов на экране блокировки.\n3. Измените смещения и непрозрачность в соответствии с вашими потребностями.
+    <string name="dw_footer_text">        Функция «Объемные обои», основанная на сегментации объектов обоев в iOS, позволяет накладывать объект поверх часов на экране блокировки, чтобы показать эффект глубины обоев.\n\nДля настройки функции «Объемные обои»:\n1. Установите обои с изображением объекта или фоном, над которым вы хотите, чтобы объект был выше.\n2. Выберите изображение объекта для отслеживания, это изображение будет наложено поверх часов на экране блокировки.\n3. Измените смещения и непрозрачность в соответствии с вашими потребностями.
     </string>
     <!-- Lock screen media art -->
     <string name="ls_media_art_title">Обложка мультимедиа</string>
@@ -559,4 +595,9 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Блокировка сенсоров по-пакетно</string>
     <string name="sensor_block_summary">Заблокировать доступ к датчикам для некоторых приложений для экономии заряда батареи</string>
+    <string name="usb_mode_picker_title">Выбор режима USB</string>
+    <string name="usb_mode_picker_summary">Показывать окно выбора режима USB при подключении к компьютеру</string>
+    <string name="app_icon_pack_title">Набор значков приложений</string>
+    <string name="app_icon_pack_system_default">Системный набор по умолчанию</string>
+    <string name="app_icon_pack_apply_failed">Не удалось применить набор значков приложений</string>
 </resources>
