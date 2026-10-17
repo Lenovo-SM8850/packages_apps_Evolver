@@ -1517,4 +1517,7 @@
     <string name="shade_color_style_aosp">Stock Android colors</string>
     <string name="shade_color_style_glass">Clear, frosted panel that lets your wallpaper show through</string>
     <string name="shade_color_style_tinted">Panel tinted with your accent color, with or without blur</string>
+    <!-- USB mode picker -->
+    <string name="usb_mode_picker_title">USB mode picker</string>
+    <string name="usb_mode_picker_summary">Show a USB mode sheet when connected to a computer</string>
 </resources>
