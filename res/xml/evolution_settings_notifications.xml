@@ -59,6 +59,12 @@
         android:key="notifications_interface_category"
         android:title="@string/notifications_interface_category">
 
+        <org.evolution.settings.preferences.SecureSettingSwitchPreference
+            android:key="usb_mode_picker_enabled"
+            android:title="@string/usb_mode_picker_title"
+            android:summary="@string/usb_mode_picker_summary"
+            android:defaultValue="true" />
+
         <!-- Notification row transparency -->
         <org.evolution.settings.preferences.SecureSettingSwitchPreference
             android:key="notification_row_transparency"

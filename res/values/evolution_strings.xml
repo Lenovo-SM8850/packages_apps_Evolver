@@ -1460,4 +1460,7 @@
     <!-- Hide screen capture status -->
     <string name="hide_screen_capture_status_title">Hide screen capture status</string>
     <string name="hide_screen_capture_status_summary">Hide screen capture/record status from apps. Useful but may risk privacy. Restart apps to apply.</string>
+    <!-- USB mode picker -->
+    <string name="usb_mode_picker_title">USB mode picker</string>
+    <string name="usb_mode_picker_summary">Show a USB mode sheet when connected to a computer</string>
 </resources>
