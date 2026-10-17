@@ -1690,6 +1690,9 @@
     <string name="ts_rkp_native_unavailable">The native provisioning helper is unavailable or incompatible with this firmware</string>
     <string name="ts_rkp_native_transport">The native provisioning service stopped unexpectedly. Automatic provisioning is paused.</string>
     <string name="ts_rkp_invalid_response">The device returned an invalid provisioning response. The existing keybox was kept.</string>
+    <!-- USB mode picker -->
+    <string name="usb_mode_picker_title">USB mode picker</string>
+    <string name="usb_mode_picker_summary">Show a USB mode sheet when connected to a computer</string>
 
     <!-- Lockscreen lock icon -->
     <string name="lockscreen_hide_lock_icon_title">Hide lock icon</string>
