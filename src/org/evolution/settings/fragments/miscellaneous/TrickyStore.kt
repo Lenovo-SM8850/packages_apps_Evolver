@@ -184,7 +184,8 @@ class TrickyStore : SettingsPreferenceFragment() {
 
     private val isTrickyStoreEnabled: Boolean
         get() = Settings.System.getInt(
-            requireContext().contentResolver, TRICKYSTORE_ENABLED_KEY, 1) != 0
+            requireContext().contentResolver, TRICKYSTORE_ENABLED_KEY,
+            if (resources.getBoolean(com.android.internal.R.bool.config_defaultTrickyStoreEnabled)) 1 else 0) != 0
 
     // ---- Activity-result launchers ------------------------------------------
 

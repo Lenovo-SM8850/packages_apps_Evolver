@@ -154,7 +154,10 @@ class Spoofing : SettingsPreferenceFragment() {
             val snapInstalled = remember { isInstalled(context, SNAPCHAT_PACKAGE) }
 
             var tsEnabled by remember(refreshKey) {
-                mutableStateOf(Settings.System.getInt(resolver, TRICKYSTORE_ENABLED_KEY, 1) != 0)
+                mutableStateOf(Settings.System.getInt(
+                    resolver, TRICKYSTORE_ENABLED_KEY,
+                    if (context.resources.getBoolean(
+                            com.android.internal.R.bool.config_defaultTrickyStoreEnabled)) 1 else 0) != 0)
             }
             var pifEnabled by remember(refreshKey) {
                 mutableStateOf(Settings.System.getInt(resolver, PIF_ENABLED_KEY, 1) != 0)
