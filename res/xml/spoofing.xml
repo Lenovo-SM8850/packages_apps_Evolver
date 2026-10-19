@@ -21,7 +21,7 @@
             android:title="@string/tricky_store_title"
             android:summary="@string/tricky_store_summary"
             android:fragment="org.evolution.settings.fragments.miscellaneous.TrickyStore"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
         <!-- Play Integrity Fix -->
         <org.evolution.settings.preferences.SystemSettingPrimarySwitchPreference
