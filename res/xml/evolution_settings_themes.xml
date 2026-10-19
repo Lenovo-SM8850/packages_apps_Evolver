@@ -66,6 +66,11 @@
             android:summary="@string/settings_icon_summary"
             android:fragment="org.evolution.settings.fragments.themes.SettingsIcon" />-->
 
+        <org.evolution.settings.preferences.AppIconPackPreference
+            android:key="app_icon_pack"
+            android:title="@string/app_icon_pack_title"
+            android:persistent="false" />
+
         <!-- Icon shape -->
         <Preference
             android:key="android.theme.customization.adaptive_icon_shape"

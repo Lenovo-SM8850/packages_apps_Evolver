@@ -1463,4 +1463,7 @@
     <!-- USB mode picker -->
     <string name="usb_mode_picker_title">USB mode picker</string>
     <string name="usb_mode_picker_summary">Show a USB mode sheet when connected to a computer</string>
+    <string name="app_icon_pack_title">App icon pack</string>
+    <string name="app_icon_pack_system_default">System default</string>
+    <string name="app_icon_pack_apply_failed">Unable to apply app icon pack</string>
 </resources>
