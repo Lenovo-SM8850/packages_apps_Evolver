@@ -1694,4 +1694,8 @@
     <!-- Lockscreen lock icon -->
     <string name="lockscreen_hide_lock_icon_title">Hide lock icon</string>
     <string name="lockscreen_hide_lock_icon_summary">Hide the lock and unlock icons on the lockscreen while keeping the fingerprint icon visible</string>
+    <!-- App icon pack -->
+    <string name="app_icon_pack_title">App icon pack</string>
+    <string name="app_icon_pack_system_default">System default</string>
+    <string name="app_icon_pack_apply_failed">Unable to apply app icon pack</string>
 </resources>
