@@ -20,6 +20,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
 import com.android.internal.logging.nano.MetricsProto
 import com.android.internal.util.evolution.PixelDeviceRepository
 import com.android.settings.R
@@ -325,16 +327,23 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
     }
 
     private fun fetchDevicesForChannel() {
+        val appContext = requireContext().applicationContext
+        val viewLifecycle = viewLifecycleOwner.lifecycle
         ui.fetching = true
 
-        scope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val profiles = withContext(Dispatchers.IO) {
-                    PixelDeviceRepository.getProfiles(requireContext(), true)
+                    PixelDeviceRepository.getProfiles(appContext, true)
+                }
+
+                if (!isAdded || !viewLifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
+                    return@launch
                 }
 
                 if (profiles.isEmpty()) {
-                    toast(getString(R.string.pif_failed, getString(R.string.pif_no_devices_found)))
+                    Toast.makeText(appContext, appContext.getString(R.string.pif_failed,
+                        appContext.getString(R.string.pif_no_devices_found)), Toast.LENGTH_SHORT).show()
                     return@launch
                 }
 
@@ -352,11 +361,11 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 val suggested = suggestedDevices(sortedProfiles, currentInitialSdk())
                 val modelNames = sortedProfiles.map {
                     val name = if (it.codename == PixelDeviceRepository.PIF_DEFAULT_CODENAME) {
-                        "${it.model} — ${getString(R.string.pif_recommended_suffix)}"
+                        "${it.model} — ${appContext.getString(R.string.pif_recommended_suffix)}"
                     } else {
                         it.model
                     }
-                    if (it.device in suggested) getString(R.string.pif_device_suggested, name)
+                    if (it.device in suggested) appContext.getString(R.string.pif_device_suggested, name)
                     else name
                 }
                 // Preselect the device the active config already spoofs, if it is still
@@ -373,7 +382,10 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
-                if (isAdded) toast(getString(R.string.pif_failed, e.message ?: ""))
+                if (isAdded && viewLifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
+                    Toast.makeText(appContext, appContext.getString(R.string.pif_failed,
+                        e.message ?: ""), Toast.LENGTH_SHORT).show()
+                }
             } finally {
                 ui.fetching = false
             }
