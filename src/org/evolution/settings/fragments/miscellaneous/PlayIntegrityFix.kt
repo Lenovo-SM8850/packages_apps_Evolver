@@ -19,11 +19,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
 import com.android.internal.logging.nano.MetricsProto
 import com.android.internal.util.evolution.PixelDeviceRepository
 import com.android.settings.R
 import com.android.settings.SettingsPreferenceFragment
 import java.nio.charset.StandardCharsets
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -322,16 +325,23 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
     }
 
     private fun fetchDevicesForChannel() {
+        val appContext = requireContext().applicationContext
+        val viewLifecycle = viewLifecycleOwner.lifecycle
         ui.fetching = true
 
-        scope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val profiles = withContext(Dispatchers.IO) {
-                    PixelDeviceRepository.getProfiles(requireContext(), true)
+                    PixelDeviceRepository.getProfiles(appContext, true)
+                }
+
+                if (!isAdded || !viewLifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
+                    return@launch
                 }
 
                 if (profiles.isEmpty()) {
-                    toast(getString(R.string.pif_failed, getString(R.string.pif_no_devices_found)))
+                    Toast.makeText(appContext, appContext.getString(R.string.pif_failed,
+                        appContext.getString(R.string.pif_no_devices_found)), Toast.LENGTH_SHORT).show()
                     return@launch
                 }
 
@@ -348,7 +358,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 )
                 val modelNames = sortedProfiles.map {
                     if (it.codename == PixelDeviceRepository.PIF_DEFAULT_CODENAME) {
-                        "${it.model} — ${getString(R.string.pif_recommended_suffix)}"
+                        "${it.model} — ${appContext.getString(R.string.pif_recommended_suffix)}"
                     } else {
                         it.model
                     }
@@ -364,8 +374,13 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
 
                 pickerProfiles = sortedProfiles
                 ui.dialog = PifDialog.DevicePicker(modelNames, preselectedIndex)
+            } catch (e: CancellationException) {
+                throw e
             } catch (e: Exception) {
-                toast(getString(R.string.pif_failed, e.message ?: ""))
+                if (isAdded && viewLifecycle.currentState.isAtLeast(Lifecycle.State.INITIALIZED)) {
+                    Toast.makeText(appContext, appContext.getString(R.string.pif_failed,
+                        e.message ?: ""), Toast.LENGTH_SHORT).show()
+                }
             } finally {
                 ui.fetching = false
             }
