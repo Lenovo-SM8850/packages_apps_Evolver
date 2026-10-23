@@ -960,46 +960,26 @@
     </string-array>
 
     <!-- App Spoofing -->
-    <string-array name="perapp_spoof_profile_values" translatable="false">
-        <item>BS4C</item>
-        <item>F5</item>
-        <item>S25U</item>
-        <item>GZF5</item>
-        <item>HMV2R</item>
-        <item>LY70023</item>
-        <item>MI11TP</item>
-        <item>MI13</item>
-        <item>MI13P</item>
-        <item>MI14P</item>
-        <item>OP12</item>
-        <item>OP13</item>
-        <item>PXL11PXL</item>
-        <item>RM9P</item>
-        <item>RM10P</item>
-        <item>RM15P5G</item>
-        <item>ROG9P</item>
-        <item>None</item>
-    </string-array>
-
-    <string-array name="perapp_spoof_profile_labels">
-        <item>Black Shark 4 (China)</item>
-        <item>Poco F5</item>
-        <item>Samsung Galaxy S25 Ultra</item>
-        <item>Samsung Galaxy Z Fold 5</item>
-        <item>Honor Magic V2 RSR</item>
-        <item>Lenovo Legion Y700</item>
-        <item>Xiaomi 11T Pro</item>
-        <item>Xiaomi 13</item>
-        <item>Xiaomi 13 Pro</item>
-        <item>Xiaomi 14 Pro</item>
-        <item>OnePlus 12</item>
-        <item>OnePlus 13</item>
-        <item>Pixel 11 Pro XL</item>
-        <item>REDMAGIC 9 Pro</item>
-        <item>REDMAGIC 10 Pro</item>
-        <item>Realme 15 Pro 5G</item>
-        <item>ROG Phone 9 Pro</item>
-        <item>None</item>
+    <!-- Keep each stable profile ID with its label; append local profiles. -->
+    <string-array name="perapp_spoof_profiles" translatable="false">
+        <item>BS4C|Black Shark 4 (China)</item>
+        <item>F5|Poco F5</item>
+        <item>S25U|Samsung Galaxy S25 Ultra</item>
+        <item>GZF5|Samsung Galaxy Z Fold 5</item>
+        <item>HMV2R|Honor Magic V2 RSR</item>
+        <item>LY70023|Lenovo Legion Y700</item>
+        <item>MI11TP|Xiaomi 11T Pro</item>
+        <item>MI13|Xiaomi 13</item>
+        <item>MI13P|Xiaomi 13 Pro</item>
+        <item>MI14P|Xiaomi 14 Pro</item>
+        <item>OP12|OnePlus 12</item>
+        <item>OP13|OnePlus 13</item>
+        <item>PXL11PXL|Pixel 11 Pro XL</item>
+        <item>RM9P|REDMAGIC 9 Pro</item>
+        <item>RM10P|REDMAGIC 10 Pro</item>
+        <item>RM15P5G|Realme 15 Pro 5G</item>
+        <item>ROG9P|ROG Phone 9 Pro</item>
+        <item>None|None</item>
     </string-array>
 
     <!-- Custom clock style -->
