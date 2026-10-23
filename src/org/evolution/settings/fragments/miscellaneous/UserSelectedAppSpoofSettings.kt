@@ -152,13 +152,14 @@ private data class CustomSpoofProfile(
 private fun AppSpoofingContent(context: Context) {
     val pm = context.packageManager
     val activityManager = context.getSystemService(ActivityManager::class.java)
-    val profileValues = context.resources.getStringArray(R.array.perapp_spoof_profile_values)
-    val profileLabels = context.resources.getStringArray(R.array.perapp_spoof_profile_labels)
-    val profileLabelMap = remember(profileValues.contentToString(), profileLabels.contentToString()) {
-        profileValues.indices.associate { idx ->
-            profileValues[idx] to profileLabels.getOrElse(idx) { profileValues[idx] }
+    val profiles = context.resources.getStringArray(R.array.perapp_spoof_profiles)
+    val profileLabelMap = remember(profiles.contentToString()) {
+        profiles.associate { entry ->
+            entry.substringBefore("|") to entry.substringAfter("|")
         }
     }
+    val profileValues = profileLabelMap.keys.toTypedArray()
+    val profileLabels = profileLabelMap.values.toTypedArray()
 
     val scope = rememberCoroutineScope()
 
