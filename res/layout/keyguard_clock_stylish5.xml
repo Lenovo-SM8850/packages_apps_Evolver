@@ -121,7 +121,7 @@
                 android:includeFontPadding="false"
                 android:textStyle="bold"
                 android:tag="text1|nolineheight|username"
-                android:text="Username"
+                android:text="@string/clock_preview_username"
                 android:textAlignment="viewEnd"
                 android:textSize="9sp"
                 android:textColor="#FFFFFF" />
@@ -135,7 +135,7 @@
                 android:includeFontPadding="false"
                 android:textStyle="bold"
                 android:tag="text1|device_name"
-                android:text="Device Name"
+                android:text="@string/clock_preview_device_name"
                 android:textAlignment="viewEnd"
                 android:textSize="9sp"
                 android:textColor="#FFFFFF" />

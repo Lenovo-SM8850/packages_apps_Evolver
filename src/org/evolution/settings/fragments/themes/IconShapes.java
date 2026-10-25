@@ -146,7 +146,7 @@ public class IconShapes extends SettingsPreferenceFragment {
             }
 
             String label = getLabel(context, pkg);
-            holder.name.setText("android".equals(pkg) ? "Default" : label);
+            holder.name.setText("android".equals(pkg) ? holder.name.getContext().getString(R.string.default_value) : label);
 
             boolean isDefault = "android".equals(mAppliedPkg) && "android".equals(pkg);
             int color = ColorUtils.setAlphaComponent(

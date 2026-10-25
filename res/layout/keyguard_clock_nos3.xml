@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nothing analog clock (No preview)"
+        android:text="@string/clock_preview_no_preview"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 </LinearLayout>

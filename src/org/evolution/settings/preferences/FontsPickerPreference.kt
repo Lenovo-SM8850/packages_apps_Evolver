@@ -104,7 +104,7 @@ class FontsPickerPreference @JvmOverloads constructor(
             pkgs.forEach { pkg ->
                 add(
                     PickerOption(
-                        label = if (pkg == "android") "Default" else getLabelSafe(ctx, pkg),
+                        label = if (pkg == "android") context.getString(R.string.default_value) else getLabelSafe(ctx, pkg),
                         labelFontFamily = { getTypefaceSafe(ctx, pkg)?.let { FontFamily(it) } },
                     )
                 )
@@ -226,7 +226,7 @@ class FontsPickerPreference @JvmOverloads constructor(
             hasCustomFont -> customFontName
             else -> {
                 val applied = getAppliedPkg()
-                if (applied == "android") "Default" else getLabelSafe(context, applied)
+                if (applied == "android") context.getString(R.string.default_value) else getLabelSafe(context, applied)
             }
         }
     }

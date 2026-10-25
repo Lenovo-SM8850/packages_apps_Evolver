@@ -1416,4 +1416,100 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+
+    <string-array name="lockscreen_clock_style_names">
+        <item>Default Clock</item>
+        <item>OnePlus Clock</item>
+        <item>OnePlus Clock 2</item>
+        <item>Center Clock</item>
+        <item>Simple Clock</item>
+        <item>MIUI Clock</item>
+        <item>IDE Clock</item>
+        <item>Moto Clock</item>
+        <item>Stylish Clock</item>
+        <item>Stylish Clock 2</item>
+        <item>Stylish Clock 3</item>
+        <item>Stylish Clock 4</item>
+        <item>Stylish Clock 5</item>
+        <item>Stylish Clock 6</item>
+        <item>Stylish Clock 7</item>
+        <item>Stylish Clock 8</item>
+        <item>Stylish Clock 9</item>
+        <item>Stylish Clock 10</item>
+        <item>Text Clock</item>
+        <item>LifeStyle Clock</item>
+        <item>Android 9 Vibe</item>
+        <item>NothingOS 1 Clock</item>
+        <item>NothingOS 2 Clock</item>
+        <item>Stacked Clock</item>
+        <item>X Factor</item>
+        <item>Simple Analog</item>
+        <item>Block</item>
+        <item>Bubble</item>
+        <item>Label Clock</item>
+        <item>iOS Clock</item>
+        <item>Taden Clock</item>
+        <item>Mont Clock</item>
+        <item>Encode Clock</item>
+        <item>NOS Clock 3</item>
+        <item>Anci Outline</item>
+        <item>Anci Ovalium</item>
+        <item>Anci Rectangle</item>
+        <item>Anci Wallet</item>
+        <item>Anci Clavicula</item>
+        <item>Anci KLN</item>
+        <item>Anci Miring</item>
+        <item>Anci Scapula</item>
+        <item>Anci Sternum</item>
+        <item>Spark Circle</item>
+        <item>Spark List</item>
+        <item>HyperOS Clock</item>
+        <item>iOS 2</item>
+        <item>iOS 3</item>
+        <item>iOS 4</item>
+        <item>iOS 5</item>
+        <item>iOS 6</item>
+        <item>iOS 7</item>
+        <item>iOS 8</item>
+        <item>iOS 9</item>
+        <item>iOS 10</item>
+        <item>iOS 11</item>
+        <item>iOS 12</item>
+        <item>iOS 13</item>
+        <item>iOS 14</item>
+        <item>iOS 15</item>
+        <item>iOS 16</item>
+        <item>iOS 17</item>
+        <item>iOS 18</item>
+        <item>iOS 19</item>
+        <item>Big 1</item>
+        <item>Big 2</item>
+        <item>Big 3</item>
+        <item>Big 4</item>
+        <item>Sweet</item>
+        <item>Pixel</item>
+        <item>Samurai</item>
+        <item>Gateway</item>
+        <item>Tall clock</item>
+        <item>GoBold monet</item>
+        <item>GoBold</item>
+        <item>Delirium</item>
+        <item>Delirium Dual</item>
+        <item>Skewrom</item>
+        <item>Skewrom 2</item>
+        <item>Taller</item>
+        <item>Taller 2</item>
+        <item>Taller 3</item>
+        <item>Modak</item>
+        <item>Galada</item>
+        <item>COS 1</item>
+        <item>COS 2</item>
+        <item>Neu</item>
+        <item>Neu2</item>
+        <item>Neu3</item>
+        <item>Badeen</item>
+        <item>Space age</item>
+        <item>Poly line</item>
+        <item>Big clock</item>
+    </string-array>
 </resources>

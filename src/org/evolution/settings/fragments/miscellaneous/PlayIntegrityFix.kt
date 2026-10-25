@@ -296,8 +296,8 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
     private fun validateAndSaveEdit(key: String, raw: String): String? {
         val intKeys = setOf("DEVICE_INITIAL_SDK_INT", "SDK_INT")
         val v = raw.trim()
-        if (v.isEmpty()) return "Value cannot be empty"
-        if (key in intKeys && v.toIntOrNull() == null) return "Must be a valid integer"
+        if (v.isEmpty()) return getString(R.string.pif_value_empty)
+        if (key in intKeys && v.toIntOrNull() == null) return getString(R.string.pif_value_integer)
         if (key == "FINGERPRINT" && !PixelDeviceRepository.isValidFingerprint(v)) {
             return getString(R.string.pif_invalid_fingerprint)
         }

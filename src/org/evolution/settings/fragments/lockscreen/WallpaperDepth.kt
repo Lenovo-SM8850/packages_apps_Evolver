@@ -175,7 +175,7 @@ class WallpaperDepth : SettingsPreferenceFragment(), Preference.OnPreferenceChan
             ctx.startService(intent)
         } catch (e: Exception) {
             Toast.makeText(
-                ctx, "Failed to start extractor: " + e.message, Toast.LENGTH_LONG
+                ctx, ctx.getString(R.string.wallpaper_depth_extractor_start_failed, e.message), Toast.LENGTH_LONG
             ).show()
         }
     }

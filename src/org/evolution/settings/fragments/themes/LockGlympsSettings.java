@@ -258,7 +258,7 @@ public class LockGlympsSettings extends SettingsPreferenceFragment
         File storageDir = new File(Environment.getExternalStorageDirectory(), STORAGE_FOLDER);
 
         if (!storageDir.exists()) {
-            mFolderInfoPreference.setSummary("Folder not found. Tap to create.");
+            mFolderInfoPreference.setSummary(R.string.lock_glymps_folder_missing);
         } else {
             File[] files = storageDir.listFiles((dir, name) -> {
                 String lower = name.toLowerCase();
@@ -267,7 +267,8 @@ public class LockGlympsSettings extends SettingsPreferenceFragment
             });
 
             int count = (files != null) ? files.length : 0;
-            mFolderInfoPreference.setSummary(count + " wallpapers found in " + storageDir.getPath());
+            mFolderInfoPreference.setSummary(getResources().getQuantityString(
+                    R.plurals.lock_glymps_wallpapers_found, count, count, storageDir.getPath()));
         }
     }
 

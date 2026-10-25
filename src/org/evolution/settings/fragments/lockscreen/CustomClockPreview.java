@@ -311,7 +311,7 @@ public class CustomClockPreview extends SettingsPreferenceFragment implements Pr
     }
 
     private void updateClockName(int position) {
-        String[] clockNames = ClockUtils.INSTANCE.getClockNames();
+        String[] clockNames = ClockUtils.INSTANCE.getClockNames(requireContext());
         if (clockNameTextView != null && position >= 0 && position < clockNames.length) {
             clockNameTextView.setText(clockNames[position]);
         }

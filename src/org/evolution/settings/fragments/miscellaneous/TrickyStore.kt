@@ -986,7 +986,7 @@ class TrickyStore : SettingsPreferenceFragment() {
                         val now = System.currentTimeMillis()
                         if (leafExpiry != null && leafExpiry < now) {
                             if (!silent) toast(getString(
-                                R.string.ts_fetch_keybox_failed, "Cert already expired"))
+                                R.string.ts_fetch_keybox_failed, getString(R.string.ts_keybox_cert_expired)))
                             markNoValidKeyboxFound()
                             return@fold
                         }
@@ -1244,10 +1244,10 @@ class TrickyStore : SettingsPreferenceFragment() {
     private fun keyboxProblem(rawXml: String): String? {
         // isValidKeyboxXml() looks at the raw text, KeyBoxManager parses the sanitized one.
         if (!rawXml.contains("<Key algorithm=\"ecdsa\">") && !rawXml.contains("<Key algorithm=\"rsa\">")) {
-            return "No ECDSA or RSA key block"
+            return getString(R.string.ts_keybox_no_key_block)
         }
         if (!rawXml.contains("<serial>") && !rawXml.contains("DeviceID")) {
-            return "No serial or DeviceID"
+            return getString(R.string.ts_keybox_no_serial)
         }
         val xml = sanitizeKeyboxXml(rawXml)
         var declared: Int? = null
@@ -1314,7 +1314,7 @@ class TrickyStore : SettingsPreferenceFragment() {
                 event = p.next()
             }
         } catch (_: Exception) {
-            return "Not a valid keybox XML"
+            return getString(R.string.ts_keybox_invalid_xml)
         }
         // A document without <Keybox> wrappers holds a single implicit box.
         if (!sawKeyboxTag && parsedKeys > 0) parsedBoxes = 1
@@ -1322,7 +1322,7 @@ class TrickyStore : SettingsPreferenceFragment() {
         // Generators disagree on whether NumberOfKeyboxes counts <Keybox> or <Key> elements,
         // and KeyBoxManager accepts either. Only a document matching neither is incomplete.
         if (count != null && count != parsedBoxes && count != parsedKeys) {
-            return "Declares $count keybox(es) but $parsedBoxes box(es) / $parsedKeys key(s) parsed"
+            return getString(R.string.ts_keybox_count_mismatch, count, parsedBoxes, parsedKeys)
         }
         return null
     }

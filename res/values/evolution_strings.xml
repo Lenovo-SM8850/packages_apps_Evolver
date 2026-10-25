@@ -189,8 +189,8 @@
     <string name="lockscreen_custom_clock_frame_margin_top_title">Top margin</string>
     <string name="lockscreen_custom_clock_frame_margin_top_summary">Adjust the height of custom clock style</string>
     <string name="lockscreen_custom_clock_color_mode_title">Color mode</string>
-    <string name="lockscreen_custom_clock_aod_anim_title">AOD animation</string>
-    <string name="lockscreen_custom_clock_aod_anim_summary">Enable AOD animation for custom clock style</string>
+    <string name="lockscreen_custom_clock_aod_anim_title">Always-on display animation</string>
+    <string name="lockscreen_custom_clock_aod_anim_summary">Enable always-on display animation for custom clock style</string>
     <string name="lockscreen_custom_clock_wobble_on_charge_title">Wobble charging effect</string>
     <string name="lockscreen_custom_clock_wobble_on_charge_summary">Show wobble effect on clock when connected to charger</string>
     <string name="lockscreen_custom_clock_frame_margin_start_title">Horizontal offset</string>
@@ -277,13 +277,13 @@
     <string name="ls_media_art_pixel_size_summary">Adjust the pixel size for media artwork displayed on the lock screen</string>
 
     <!-- AOD Media Settings -->
-    <string name="show_on_aod_title">Show on AOD</string>
+    <string name="show_on_aod_title">Show on always-on display</string>
     <string name="show_on_aod_summary">Display media artwork on always-on display</string>
-    <string name="aod_brightness_title">AOD brightness</string>
+    <string name="aod_brightness_title">Always-on display brightness</string>
 
     <!-- Lock screen/Now Playing -->
     <string name="nowplaying_title">Now Playing</string>
-    <string name="nowplaying_summary">Listen for music near the phone and show the song on the lock screen and AOD. Off by default.</string>
+    <string name="nowplaying_summary">Listen for music near the phone and show the song on the lock screen and always-on display. Off by default.</string>
     <string name="nowplaying_on_demand_title">On-demand shortcut</string>
     <string name="nowplaying_on_demand_summary">Show a search icon on the lock screen. A long press starts a search.</string>
     <string name="nowplaying_lyrics_mode_title">Lyrics mode</string>
@@ -313,12 +313,12 @@
     <string name="lockscreen_weather_humidity_info_summary">Display current humidity percentage</string>
 
     <!-- Lock screen/AOD -->
-    <string name="lockscreen_custom_image_enabled_title">AOD image</string>
-    <string name="lockscreen_custom_image_title">Select AOD image</string>
+    <string name="lockscreen_custom_image_enabled_title">Always-on display image</string>
+    <string name="lockscreen_custom_image_title">Select always-on display image</string>
     <string name="lockscreen_custom_image_summary">Set a custom image for Always-on display</string>
     <string name="lockscreen_custom_image_pick_summary">Select an image from gallery</string>
     <string name="ambient_display_category_title">Ambient display</string>
-    <string name="ambient_bottom_title">AOD bottom content</string>
+    <string name="ambient_bottom_title">Always-on display bottom content</string>
     <string name="ambient_battery_disable_title">Disabled</string>
     <string name="ambient_battery_percent_title">Battery level</string>
     <string name="ambient_battery_both_title">Battery level and temperature</string>
@@ -1422,7 +1422,7 @@
 
     <!-- Charging animation -->
     <string name="charging_animation_title">Charging animation</string>
-    <string name="charging_animation_summary">Show visual effects when charging on the lock screen or AOD</string>
+    <string name="charging_animation_summary">Show visual effects when charging on the lock screen or always-on display</string>
     <string name="charging_animation_style_title">Effect type</string>
     <string name="charging_ripple_opacity_title">Ripple opacity</string>
     <string name="charging_ripple_opacity_summary">Adjust ripple wave visibility</string>
@@ -1525,4 +1525,22 @@
     <string name="app_icon_pack_title">App icon pack</string>
     <string name="app_icon_pack_system_default">System default</string>
     <string name="app_icon_pack_apply_failed">Unable to apply app icon pack</string>
+
+    <string name="lock_glymps_folder_missing">Folder not found. Tap to create.</string>
+    <string name="wallpaper_depth_extractor_start_failed">Failed to start extractor: %1$s</string>
+    <string name="pif_value_empty">Value cannot be empty</string>
+    <string name="pif_value_integer">Must be a valid integer</string>
+    <plurals name="lock_glymps_wallpapers_found">
+        <item quantity="one">%1$d wallpaper found in %2$s</item>
+        <item quantity="other">%1$d wallpapers found in %2$s</item>
+    </plurals>
+    <string name="ts_keybox_no_key_block">No ECDSA or RSA key block</string>
+    <string name="ts_keybox_no_serial">No serial or DeviceID</string>
+    <string name="ts_keybox_invalid_xml">Not a valid keybox XML</string>
+    <string name="ts_keybox_count_mismatch">Declares %1$d keybox(es) but %2$d box(es) / %3$d key(s) parsed</string>
+    <string name="ts_keybox_cert_expired">Cert already expired</string>
+    <string name="clock_browse_all">Browse all clocks</string>
+    <string name="clock_preview_username">Username</string>
+    <string name="clock_preview_device_name">Device name</string>
+    <string name="clock_preview_no_preview">Nothing analog clock (no preview)</string>
 </resources>

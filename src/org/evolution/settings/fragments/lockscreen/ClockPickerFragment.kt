@@ -160,7 +160,7 @@ fun ClockPickerScreen(
     onApply: (Int) -> Unit
 ) {
     var selectedClock by rememberSaveable { mutableStateOf(initialClock) }
-    val clockNames = remember { ClockUtils.getClockNames() }
+    val clockNames = androidx.compose.ui.res.stringArrayResource(R.array.lockscreen_clock_style_names)
     val clockLayouts = remember { ClockUtils.CLOCK_LAYOUTS }
     val context = LocalContext.current
     val hostView = LocalView.current

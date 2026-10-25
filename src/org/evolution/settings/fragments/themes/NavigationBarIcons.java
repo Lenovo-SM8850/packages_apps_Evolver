@@ -159,7 +159,7 @@ public class NavigationBarIcons extends SettingsPreferenceFragment {
                 .findFirst()
                 .orElse(mLauncherPackage);
 
-            holder.name.setText(mLauncherPackage.equals(navPkg) ? "Default" : getLabel(holder.name.getContext(), navPkg));
+            holder.name.setText(mLauncherPackage.equals(navPkg) ? holder.name.getContext().getString(R.string.default_value) : getLabel(holder.name.getContext(), navPkg));
 
             if (currentPackageName.equals(navPkg)) {
                 mAppliedPkg = navPkg;
