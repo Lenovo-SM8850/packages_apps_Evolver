@@ -1701,4 +1701,8 @@
     <string name="app_icon_pack_title">App icon pack</string>
     <string name="app_icon_pack_system_default">System default</string>
     <string name="app_icon_pack_apply_failed">Unable to apply app icon pack</string>
+
+    <string name="clock_preview_username">Username</string>
+    <string name="clock_preview_device_name">Device name</string>
+    <string name="clock_preview_no_preview">Nothing analog clock (no preview)</string>
 </resources>

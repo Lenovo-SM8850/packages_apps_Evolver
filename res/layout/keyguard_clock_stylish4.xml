@@ -41,7 +41,7 @@
                 android:layout_marginBottom="1dp"
                 android:includeFontPadding="false"
                 android:tag="accent1|nolineheight|username"
-                android:text="Username"
+                android:text="@string/clock_preview_username"
                 android:fontFamily="@*android:string/config_clockFontFamily"
                 android:textColor="@android:color/system_accent1_300"
                 android:textSize="11sp" />
