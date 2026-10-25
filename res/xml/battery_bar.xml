@@ -87,23 +87,4 @@
         android:defaultValue="0xffffc90f"
         android:dependency="statusbar_battery_bar_enable_charging_color" />
 
-    <org.evolution.settings.preferences.SystemSettingSwitchPreference
-        android:key="statusbar_battery_bar_use_gradient_color"
-        android:title="@string/battery_bar_use_gradient_color"
-        android:summary="@string/battery_bar_gradient_color_summary"
-        android:defaultValue="false"
-        android:dependency="statusbar_battery_bar" />
-
-    <org.evolution.settings.preferences.colorpicker.SystemSettingColorPickerPreference
-        android:key="statusbar_battery_bar_low_color"
-        android:title="@string/battery_bar_low_color"
-        android:defaultValue="0xffff4400"
-        android:dependency="statusbar_battery_bar_use_gradient_color" />
-
-    <org.evolution.settings.preferences.colorpicker.SystemSettingColorPickerPreference
-        android:key="statusbar_battery_bar_high_color"
-        android:title="@string/battery_bar_high_color"
-        android:defaultValue="0xff99CC00"
-        android:dependency="statusbar_battery_bar_use_gradient_color" />
-
 </PreferenceScreen>
