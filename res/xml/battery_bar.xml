@@ -64,7 +64,7 @@
         android:dependency="statusbar_battery_bar" />
 
     <org.evolution.settings.preferences.colorpicker.SystemSettingColorPickerPreference
-        android:key="statusbar_battery_bar_battery_low_color_warning"
+        android:key="statusbar_battery_bar_battery_low_color"
         android:title="@string/battery_bar_battery_low_color"
         android:defaultValue="0xfff90028"
         android:dependency="statusbar_battery_bar" />
