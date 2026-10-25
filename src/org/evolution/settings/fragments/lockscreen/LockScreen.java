@@ -44,7 +44,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String KEY_FP_ERROR = "fp_error_vibrate";
     private static final String KEY_FP_SUCCESS = "fp_success_vibrate";
     private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
-    private static final String KEY_SMARTSPACE = "lockscreen_smartspace_enabled";
+    private static final String KEY_SMARTSPACE = "lockscreen_smartspace";
     private static final String KEY_WEATHER = "lockscreen_weather_enabled";
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
 
@@ -100,6 +100,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         }
 
         mSmartspace = findPreference(KEY_SMARTSPACE);
+        mSmartspace.setChecked(isSmartspaceEnabled());
         mSmartspace.setOnPreferenceChangeListener(this);
 
         mWeather = findPreference(KEY_WEATHER);
@@ -111,7 +112,10 @@ public class LockScreen extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mSmartspace) {
-            updateWeatherSettings();
+            Settings.Secure.putIntForUser(getContentResolver(),
+                    Settings.Secure.LOCK_SCREEN_WEATHER_ENABLED,
+                    (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
+            updateWeatherSettings((Boolean) newValue);
             SystemUtils.showSystemUiRestartDialog(getContext());
             return true;
         } else if (preference == mWeather) {
@@ -121,10 +125,19 @@ public class LockScreen extends SettingsPreferenceFragment implements
         return false;
     }
 
+    private boolean isSmartspaceEnabled() {
+        return Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.LOCK_SCREEN_WEATHER_ENABLED, 1, UserHandle.USER_CURRENT) != 0;
+    }
+
     private void updateWeatherSettings() {
+        updateWeatherSettings(isSmartspaceEnabled());
+    }
+
+    private void updateWeatherSettings(boolean smartspaceEnabled) {
         boolean weatherEnabled = OmniJawsClient.get().isOmniJawsEnabled(getContext());
-        mWeather.setEnabled(!mSmartspace.isChecked() && weatherEnabled);
-        mWeather.setSummary(!mSmartspace.isChecked() && weatherEnabled
+        mWeather.setEnabled(!smartspaceEnabled && weatherEnabled);
+        mWeather.setSummary(!smartspaceEnabled && weatherEnabled
                 ? R.string.lockscreen_weather_summary
                 : R.string.lockscreen_weather_enabled_info);
     }
@@ -132,6 +145,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
+        mSmartspace.setChecked(isSmartspaceEnabled());
         updateWeatherSettings();
         PreferenceUtils.reloadCustomPrimarySwitches(getPreferenceScreen());
     }

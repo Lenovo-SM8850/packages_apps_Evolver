@@ -145,8 +145,9 @@
         android:title="@string/lockscreen_weather_category">
 
         <!-- Smartspace -->
-        <org.evolution.settings.preferences.SecureSettingSwitchPreference
-            android:key="lockscreen_smartspace_enabled"
+        <SwitchPreferenceCompat
+            android:key="lockscreen_smartspace"
+            android:persistent="false"
             android:title="@string/lockscreen_smartspace_title"
             android:summary="@string/lockscreen_smartspace_summary"
             android:defaultValue="true" />
