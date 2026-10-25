@@ -43,7 +43,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String KEY_FP_ERROR = "fp_error_vibrate";
     private static final String KEY_FP_SUCCESS = "fp_success_vibrate";
     private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
-    private static final String KEY_SMARTSPACE = "lockscreen_smartspace_enabled";
+    private static final String KEY_SMARTSPACE = "lockscreen_smartspace";
     private static final String KEY_WEATHER = "lockscreen_weather_enabled";
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
 
@@ -99,6 +99,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         }
 
         mSmartspace = findPreference(KEY_SMARTSPACE);
+        mSmartspace.setChecked(isSmartspaceEnabled());
         mSmartspace.setOnPreferenceChangeListener(this);
 
         mWeather = findPreference(KEY_WEATHER);
@@ -109,11 +110,19 @@ public class LockScreen extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mSmartspace) {
+            Settings.Secure.putIntForUser(getContentResolver(),
+                    Settings.Secure.LOCK_SCREEN_WEATHER_ENABLED,
+                    (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
             mSmartspace.setChecked((Boolean) newValue);
             updateWeatherSettings();
             return true;
         }
         return false;
+    }
+
+    private boolean isSmartspaceEnabled() {
+        return Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.LOCK_SCREEN_WEATHER_ENABLED, 1, UserHandle.USER_CURRENT) != 0;
     }
 
     private void updateWeatherSettings() {
@@ -137,6 +146,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
+        mSmartspace.setChecked(isSmartspaceEnabled());
         updateWeatherSettings();
         PreferenceUtils.reloadCustomPrimarySwitches(getPreferenceScreen());
     }
