@@ -1702,6 +1702,7 @@
     <string name="app_icon_pack_system_default">System default</string>
     <string name="app_icon_pack_apply_failed">Unable to apply app icon pack</string>
 
+    <string name="lock_glymps_folder_missing">Folder not found. Tap to create.</string>
     <string name="wallpaper_depth_extractor_start_failed">Failed to start extractor: %1$s</string>
     <string name="pif_value_empty">Value cannot be empty</string>
     <string name="pif_value_integer">Must be a valid integer</string>

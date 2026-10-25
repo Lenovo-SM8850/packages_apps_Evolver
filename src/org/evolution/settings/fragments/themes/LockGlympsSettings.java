@@ -258,7 +258,7 @@ public class LockGlympsSettings extends SettingsPreferenceFragment
         File storageDir = new File(Environment.getExternalStorageDirectory(), STORAGE_FOLDER);
 
         if (!storageDir.exists()) {
-            mFolderInfoPreference.setSummary("Folder not found. Tap to create.");
+            mFolderInfoPreference.setSummary(R.string.lock_glymps_folder_missing);
         } else {
             File[] files = storageDir.listFiles((dir, name) -> {
                 String lower = name.toLowerCase();
