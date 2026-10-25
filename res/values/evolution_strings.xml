@@ -1705,6 +1705,7 @@
     <string name="wallpaper_depth_extractor_start_failed">Failed to start extractor: %1$s</string>
     <string name="pif_value_empty">Value cannot be empty</string>
     <string name="pif_value_integer">Must be a valid integer</string>
+    <string name="ts_keybox_cert_expired">Cert already expired</string>
     <string name="clock_preview_username">Username</string>
     <string name="clock_preview_device_name">Device name</string>
     <string name="clock_preview_no_preview">Nothing analog clock (no preview)</string>

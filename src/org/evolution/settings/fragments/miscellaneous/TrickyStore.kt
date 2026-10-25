@@ -1050,7 +1050,7 @@ class TrickyStore : SettingsPreferenceFragment() {
                         val now = System.currentTimeMillis()
                         if (leafExpiry != null && leafExpiry < now) {
                             if (!silent) toast(getString(
-                                R.string.ts_fetch_keybox_failed, "Cert already expired"))
+                                R.string.ts_fetch_keybox_failed, getString(R.string.ts_keybox_cert_expired)))
                             markNoValidKeyboxFound()
                             return@fold
                         }
