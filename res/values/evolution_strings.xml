@@ -1706,6 +1706,10 @@
     <string name="wallpaper_depth_extractor_start_failed">Failed to start extractor: %1$s</string>
     <string name="pif_value_empty">Value cannot be empty</string>
     <string name="pif_value_integer">Must be a valid integer</string>
+    <plurals name="lock_glymps_wallpapers_found">
+        <item quantity="one">%1$d wallpaper found in %2$s</item>
+        <item quantity="other">%1$d wallpapers found in %2$s</item>
+    </plurals>
     <string name="ts_keybox_cert_expired">Cert already expired</string>
     <string name="clock_preview_username">Username</string>
     <string name="clock_preview_device_name">Device name</string>

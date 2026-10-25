@@ -267,7 +267,8 @@ public class LockGlympsSettings extends SettingsPreferenceFragment
             });
 
             int count = (files != null) ? files.length : 0;
-            mFolderInfoPreference.setSummary(count + " wallpapers found in " + storageDir.getPath());
+            mFolderInfoPreference.setSummary(getResources().getQuantityString(
+                    R.plurals.lock_glymps_wallpapers_found, count, count, storageDir.getPath()));
         }
     }
 
