@@ -671,12 +671,13 @@ private fun repackStored(src: File, dst: File) {
 
 /** Decode enough pixels for the thumbnail canvas without enlarging a sampled frame. */
 private fun decodeSampled(
-    zip: ZipFile, entry: ZipEntry, scale: Float,
+    zip: ZipFile, entry: ZipEntry, scale: Float, colors: BootAnimationUtils.DynamicColors,
 ): Bitmap? {
     var sample = 1
     while (scale * sample * 2 <= 1f) sample *= 2
     val options = BitmapFactory.Options().apply {
         inSampleSize = sample
+        inPremultiplied = !colors.enabled
     }
     return zip.getInputStream(entry).use { BitmapFactory.decodeStream(it, null, options) }
 }
@@ -693,7 +694,8 @@ private fun loadThumbnailForStyle(context: android.content.Context, name: String
 
     val dir = File(context.cacheDir, THUMBNAIL_CACHE_DIR)
     val prefix = "${name}_"
-    val cached = File(dir, "${prefix}v2_${size}_${zipFile.length()}_${zipFile.lastModified()}.png")
+    val palette = (1..4).joinToString("_") { SystemProperties.get("persist.bootanim.color$it", "") }
+    val cached = File(dir, "${prefix}v2_${size}_${palette}_${zipFile.length()}_${zipFile.lastModified()}.png")
     if (cached.isFile()) {
         BitmapFactory.decodeFile(cached.path)?.let {
             return BitmapDrawable(context.resources, it)
@@ -716,6 +718,7 @@ private fun loadThumbnailForStyle(context: android.content.Context, name: String
 private fun decodeThumbnail(zipFile: File, name: String, size: Int): Bitmap? {
     return runCatching {
         ZipFile(zipFile).use { zf ->
+            val colors = BootAnimationUtils.DynamicColors(zf)
             // PNG/JPG frame-based: find a meaningful frame
             val frameNames = zf.entries().asSequence()
                 .map { it.name }
@@ -730,7 +733,7 @@ private fun decodeThumbnail(zipFile: File, name: String, size: Int): Bitmap? {
                 (listOf(frameNames.size / 2) + frameNames.indices).take(THUMBNAIL_MAX_TRIES)
             }
             for (i in order) {
-                val bitmap = placeTrimmed(zf, frameNames, i, size) ?: continue
+                val bitmap = placeTrimmed(zf, frameNames, i, size, colors) ?: continue
                 if (isMeaningfulFrame(bitmap)) return bitmap
             }
             null
@@ -747,6 +750,7 @@ private fun decodeThumbnail(zipFile: File, name: String, size: Int): Bitmap? {
  */
 private fun placeTrimmed(
     zf: ZipFile, frameNames: List<String>, index: Int, maxSize: Int,
+    colors: BootAnimationUtils.DynamicColors,
 ): Bitmap? {
     val name = frameNames[index]
     val entry = zf.getEntry(name) ?: return null
@@ -761,7 +765,8 @@ private fun placeTrimmed(
         else minOf(bounds.outWidth, bounds.outHeight)
     if (shortestSide <= 0) return null
     val scale = minOf(1f, maxSize / shortestSide.toFloat())
-    val bitmap = decodeSampled(zf, entry, scale) ?: return null
+    val decoded = decodeSampled(zf, entry, scale, colors) ?: return null
+    val bitmap = colors.apply(decoded, part, inPart)
     if (!hasTrim) return bitmap
     val r = trim[inPart]
     return Bitmap.createBitmap(

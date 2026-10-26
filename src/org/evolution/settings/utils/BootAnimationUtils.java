@@ -194,6 +194,7 @@ public class BootAnimationUtils {
         try (ZipFile zipFile = new ZipFile(file)) {
             int frameDuration = getFrameDuration(zipFile);
             int[] animSize = getAnimationSize(zipFile);
+            DynamicColors colors = new DynamicColors(zipFile);
             float previewScale = animSize[0] > 0 && animSize[1] > 0
                     ? Math.min(1f, Math.min(targetWidth / (float) animSize[0],
                             targetHeight / (float) animSize[1])) : 1f;
@@ -224,7 +225,7 @@ public class BootAnimationUtils {
                 Part part = parts.get(i);
                 List<Drawable> frames = new ArrayList<>();
                 loadFramesFromPart(context, zipFile, frames, partFrames.get(i), stride,
-                        loadTrimData(zipFile, part.name), animSize, previewScale);
+                        loadTrimData(zipFile, part.name), animSize, previewScale, colors, part.name);
                 if (frames.isEmpty()) continue;
                 if (part.background != null) {
                     for (int f = 0; f < frames.size(); f++) {
@@ -360,6 +361,91 @@ public class BootAnimationUtils {
         return parts;
     }
 
+    /** Recolours channel masks using the boot renderer's dynamic_colors contract. */
+    public static class DynamicColors {
+        public boolean enabled;
+        private String transitionPart;
+        private int startFrame;
+        private int endFrame;
+        private final int[] start = new int[4];
+        private final int[] end = new int[4];
+        private final List<String> parts = new ArrayList<>();
+
+        public DynamicColors(ZipFile zip) {
+            try {
+                ZipEntry desc = zip.getEntry("desc.txt");
+                if (desc == null) return;
+                try (BufferedReader reader = new BufferedReader(
+                        new InputStreamReader(zip.getInputStream(desc)))) {
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        String[] t = line.trim().split("\\s+");
+                        if (t.length >= 8 && "dynamic_colors".equals(t[0])) {
+                            transitionPart = t[1];
+                            for (int i = 0; i < 4; i++) {
+                                start[i] = Color.parseColor(t[i + 2]);
+                                String property = SystemProperties.get(
+                                        "persist.bootanim.color" + (i + 1), "");
+                                end[i] = property.isEmpty() ? start[i]
+                                        : (int) Long.parseLong(property);
+                            }
+                            startFrame = Integer.parseInt(t[6]);
+                            endFrame = Integer.parseInt(t[7]);
+                            enabled = true;
+                        } else if (t.length >= 4 && t[0].matches("[pcf]")) {
+                            parts.add(t[3]);
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                enabled = false;
+                Log.w(TAG, "Error parsing dynamic colours", e);
+            }
+        }
+
+        public Bitmap apply(Bitmap mask, String part, int frame) {
+            if (!enabled) return mask;
+            int transition = parts.indexOf(transitionPart);
+            float progress = part.equals(transitionPart)
+                    ? Math.max(0f, Math.min(1f, (frame - startFrame)
+                            / (float) Math.max(1, endFrame - startFrame)))
+                    : (transition >= 0 && parts.indexOf(part) > transition ? 1f : 0f);
+            float[][] palette = new float[4][3];
+            for (int i = 0; i < 4; i++) {
+                for (int c = 0; c < 3; c++) {
+                    int shift = 16 - 8 * c;
+                    palette[i][c] = ((start[i] >> shift) & 255) * (1f - progress)
+                            + ((end[i] >> shift) & 255) * progress;
+                }
+            }
+            int width = mask.getWidth();
+            int height = mask.getHeight();
+            int[] pixels = new int[width * height];
+            mask.getPixels(pixels, 0, width, 0, 0, width, height);
+            for (int i = 0; i < pixels.length; i++) {
+                int pixel = pixels[i];
+                int r = Color.red(pixel), g = Color.green(pixel);
+                int b = Color.blue(pixel), a = Color.alpha(pixel);
+                if (r >= 13 && g >= 13 && b >= 13 && a >= 13) {
+                    int white = Math.round((r + g + b + a) / 4f);
+                    pixels[i] = Color.rgb(white, white, white);
+                } else {
+                    int rgb = 0xff000000;
+                    for (int c = 0; c < 3; c++) {
+                        int value = Math.min(255, Math.round((r * palette[0][c]
+                                + g * palette[1][c] + b * palette[2][c]
+                                + a * palette[3][c]) / 255f));
+                        rgb |= value << (16 - 8 * c);
+                    }
+                    pixels[i] = rgb;
+                }
+            }
+            Bitmap result = Bitmap.createBitmap(pixels, width, height, Bitmap.Config.ARGB_8888);
+            mask.recycle();
+            return result;
+        }
+    }
+
     // -----------------------------------------------------------------------
     // Trim data
     // -----------------------------------------------------------------------
@@ -413,7 +499,8 @@ public class BootAnimationUtils {
 
     private static void loadFramesFromPart(Context context, ZipFile zipFile,
             List<Drawable> out, List<String> frameNames,
-            int stride, List<Rect> trimData, int[] animSize, float scale) {
+            int stride, List<Rect> trimData, int[] animSize, float scale,
+            DynamicColors colors, String partName) {
         try {
             final boolean hasSize = animSize[0] > 0 && animSize[1] > 0;
             // Decode at a fraction of the size instead of full frames; scale covers the rest.
@@ -421,6 +508,7 @@ public class BootAnimationUtils {
             while (scale * sample * 2 <= 1f) sample *= 2;
             final BitmapFactory.Options options = new BitmapFactory.Options();
             options.inSampleSize = sample;
+            options.inPremultiplied = !colors.enabled;
             final float remaining = Math.min(1f, scale * sample);
 
             // trim.txt has one line per frame of the part, so skipped frames still count
@@ -434,6 +522,7 @@ public class BootAnimationUtils {
                         Log.w(TAG, "Failed to decode frame: " + entryName);
                         continue;
                     }
+                    bitmap = colors.apply(bitmap, partName, frameIndex);
                     if (hasSize && frameIndex < trimData.size()) {
                         // trim.txt is a placement offset for an already-trimmed PNG
                         // (see BootAnimation.cpp), not a crop rect: composite it.
