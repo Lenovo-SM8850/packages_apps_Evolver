@@ -20,6 +20,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.AnimationDrawable;
@@ -49,7 +50,6 @@ public class BootAnimationUtils {
 
     private static final String TAG = "BootAnimationUtils";
     private static final int DEFAULT_FRAME_DURATION = 1000 / 30;
-    private static final int PREVIEW_MAX_WIDTH = 240;
     // A preview keeps every decoded frame in memory. Frames are only skipped when the
     // decoded animation exceeds this budget.
     private static final long PREVIEW_MAX_BYTES = 64L * 1024 * 1024;
@@ -181,12 +181,22 @@ public class BootAnimationUtils {
     // -----------------------------------------------------------------------
 
     public static AnimationDrawable getBootAnimationFramesFromPath(Context context, String path) {
+        return getBootAnimationFramesFromPath(context, path,
+                context.getResources().getDisplayMetrics().widthPixels,
+                context.getResources().getDisplayMetrics().heightPixels);
+    }
+
+    public static AnimationDrawable getBootAnimationFramesFromPath(Context context, String path,
+            int targetWidth, int targetHeight) {
         AnimationDrawable animationDrawable = new AnimationDrawable();
         File file = new File(path);
         if (!file.exists()) return animationDrawable;
         try (ZipFile zipFile = new ZipFile(file)) {
             int frameDuration = getFrameDuration(zipFile);
             int[] animSize = getAnimationSize(zipFile);
+            float previewScale = animSize[0] > 0 && animSize[1] > 0
+                    ? Math.min(1f, Math.min(targetWidth / (float) animSize[0],
+                            targetHeight / (float) animSize[1])) : 1f;
             List<Part> parts = getParts(zipFile);
             if (parts.isEmpty()) {
                 parts.add(new Part("part0"));
@@ -202,9 +212,8 @@ public class BootAnimationUtils {
             // and stretch its duration to keep the speed
             int stride;
             if (animSize[0] > 0 && animSize[1] > 0) {
-                float previewScale = Math.min(1f, PREVIEW_MAX_WIDTH / (float) animSize[0]);
-                long frameBytes = 4L * Math.round(animSize[0] * previewScale)
-                        * Math.round(animSize[1] * previewScale);
+                long frameBytes = 4L * Math.max(1, Math.round(animSize[0] * previewScale))
+                        * Math.max(1, Math.round(animSize[1] * previewScale));
                 long maxFrames = Math.max(1L, PREVIEW_MAX_BYTES / frameBytes);
                 stride = (int) Math.max(1L, (total + maxFrames - 1) / maxFrames);
             } else {
@@ -215,7 +224,7 @@ public class BootAnimationUtils {
                 Part part = parts.get(i);
                 List<Drawable> frames = new ArrayList<>();
                 loadFramesFromPart(context, zipFile, frames, partFrames.get(i), stride,
-                        loadTrimData(zipFile, part.name), animSize);
+                        loadTrimData(zipFile, part.name), animSize, previewScale);
                 if (frames.isEmpty()) continue;
                 if (part.background != null) {
                     for (int f = 0; f < frames.size(); f++) {
@@ -404,14 +413,12 @@ public class BootAnimationUtils {
 
     private static void loadFramesFromPart(Context context, ZipFile zipFile,
             List<Drawable> out, List<String> frameNames,
-            int stride, List<Rect> trimData, int[] animSize) {
+            int stride, List<Rect> trimData, int[] animSize, float scale) {
         try {
             final boolean hasSize = animSize[0] > 0 && animSize[1] > 0;
-            final float scale = hasSize
-                    ? Math.min(1f, PREVIEW_MAX_WIDTH / (float) animSize[0]) : 1f;
             // Decode at a fraction of the size instead of full frames; scale covers the rest.
             int sample = 1;
-            while (hasSize && animSize[0] / (sample * 2) >= PREVIEW_MAX_WIDTH) sample *= 2;
+            while (scale * sample * 2 <= 1f) sample *= 2;
             final BitmapFactory.Options options = new BitmapFactory.Options();
             options.inSampleSize = sample;
             final float remaining = Math.min(1f, scale * sample);
@@ -432,12 +439,13 @@ public class BootAnimationUtils {
                         // (see BootAnimation.cpp), not a crop rect: composite it.
                         Rect r = trimData.get(frameIndex);
                         Bitmap composed = Bitmap.createBitmap(
-                                Math.round(animSize[0] * scale),
-                                Math.round(animSize[1] * scale),
+                                Math.max(1, Math.round(animSize[0] * scale)),
+                                Math.max(1, Math.round(animSize[1] * scale)),
                                 Bitmap.Config.ARGB_8888);
                         new Canvas(composed).drawBitmap(bitmap, null,
                                 new RectF(r.left * scale, r.top * scale,
-                                        r.right * scale, r.bottom * scale), null);
+                                        r.right * scale, r.bottom * scale),
+                                new Paint(Paint.FILTER_BITMAP_FLAG));
                         bitmap.recycle();
                         bitmap = composed;
                     } else if (remaining < 1f) {
