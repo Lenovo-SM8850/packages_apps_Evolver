@@ -9,6 +9,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
+import android.graphics.Paint
 import android.graphics.RectF
 import android.graphics.drawable.AnimatedImageDrawable
 import android.graphics.drawable.AnimationDrawable
@@ -67,11 +68,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.fragment.app.Fragment
@@ -81,6 +85,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
@@ -91,6 +96,7 @@ import org.evolution.settings.fragments.miscellaneous.expressiveVerticalScroll
 import org.evolution.settings.utils.BootAnimationUtils
 import java.io.File
 import java.io.FileOutputStream
+import java.util.function.BooleanSupplier
 import java.util.zip.CRC32
 import java.util.zip.ZipOutputStream
 import java.util.zip.ZipEntry
@@ -101,9 +107,9 @@ private const val TAG = "BootAnimationSettings"
 private const val ACTION_BOOTANIM_STYLE_CHANGED =
     "org.evolution.intent.action.BOOTANIM_STYLE_CHANGED"
 private const val MAX_CUSTOM_BOOTANIMATION_BYTES = 128L * 1024L * 1024L
-private const val THUMBNAIL_MAX_SIZE = 256
 private const val THUMBNAIL_MAX_TRIES = 24
 private const val THUMBNAIL_CACHE_DIR = "bootanim_thumbs"
+private val THUMBNAIL_SIZE = 44.dp
 private val DESC_SPLIT = Regex("\\s+")
 private val FRAME_ENTRY = Regex("[^/]+/.+\\.(png|jpg)", RegexOption.IGNORE_CASE)
 
@@ -140,6 +146,8 @@ class BootAnimation : Fragment() {
 @Composable
 private fun BootAnimationScreen(context: android.content.Context) {
     val scope = rememberCoroutineScope()
+    val thumbnailSize = with(LocalDensity.current) { THUMBNAIL_SIZE.roundToPx() }
+    var previewSize by remember { mutableStateOf(IntSize.Zero) }
     val styles = remember { BootAnimationUtils.getStyleNames(context) }
 
     var selectedName by remember { mutableStateOf(BootAnimationUtils.getEffectiveName()) }
@@ -152,12 +160,12 @@ private fun BootAnimationScreen(context: android.content.Context) {
     val thumbnails = remember { mutableStateMapOf<String, Drawable?>() }
 
     // Load thumbnails with bounded concurrency
-    LaunchedEffect(styles) {
+    LaunchedEffect(styles, thumbnailSize) {
         val semaphore = Semaphore(3)
         styles.forEach { name ->
             launch(Dispatchers.IO) {
                 semaphore.withPermit {
-                    val thumb = loadThumbnailForStyle(context, name)
+                    val thumb = loadThumbnailForStyle(context, name, thumbnailSize)
                     withContext(Dispatchers.Main) { thumbnails[name] = thumb }
                 }
             }
@@ -166,12 +174,23 @@ private fun BootAnimationScreen(context: android.content.Context) {
 
     val previewJob = remember { arrayOfNulls<Job>(1) }
     fun loadPreview(name: String) {
+        if (previewSize.width <= 0 || previewSize.height <= 0) return
         previewJob[0]?.cancel()
         previewJob[0] = scope.launch {
             isLoadingPreview = true
             previewDrawable = null
-            previewDrawable = withContext(Dispatchers.IO) { loadDrawableForStyle(context, name) }
-            isLoadingPreview = false
+            var loaded: Drawable? = null
+            try {
+                withContext(Dispatchers.IO) {
+                    loaded = loadDrawableForStyle(context, name, previewSize,
+                        BooleanSupplier { !isActive })
+                }
+                previewDrawable = loaded
+                loaded = null
+                isLoadingPreview = false
+            } finally {
+                loaded?.let { BootAnimationUtils.recycleFrames(it) }
+            }
         }
     }
 
@@ -256,7 +275,7 @@ private fun BootAnimationScreen(context: android.content.Context) {
                 backup.delete()
                 dest.setReadable(true, false)
 
-                val thumb = loadThumbnailForStyle(context, BootAnimationUtils.NAME_CUSTOM)
+                val thumb = loadThumbnailForStyle(context, BootAnimationUtils.NAME_CUSTOM, thumbnailSize)
                 withContext(Dispatchers.Main) {
                     thumbnails[BootAnimationUtils.NAME_CUSTOM] = thumb
                     customInstalled = true
@@ -283,8 +302,8 @@ private fun BootAnimationScreen(context: android.content.Context) {
         contract = ActivityResultContracts.OpenDocument(),
     ) { uri -> uri?.let { handleCustomPick(it) } }
 
-    // Initial load
-    LaunchedEffect(Unit) { loadPreview(selectedName) }
+    // Reload at the measured viewport size, including after a density or window change.
+    LaunchedEffect(previewSize) { loadPreview(selectedName) }
 
     Scaffold(containerColor = Color.Transparent) { innerPadding ->
         Column(
@@ -297,6 +316,7 @@ private fun BootAnimationScreen(context: android.content.Context) {
             PreviewCard(
                 previewDrawable = previewDrawable,
                 isLoading = isLoadingPreview,
+                onPreviewSize = { previewSize = it },
                 selectedName = BootAnimationUtils.getLabel(context, selectedName),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -345,6 +365,7 @@ private fun BootAnimationScreen(context: android.content.Context) {
 private fun PreviewCard(
     previewDrawable: Drawable?,
     isLoading: Boolean,
+    onPreviewSize: (IntSize) -> Unit,
     selectedName: String,
     modifier: Modifier = Modifier,
 ) {
@@ -405,6 +426,7 @@ private fun PreviewCard(
                 modifier = Modifier
                     .fillMaxWidth(0.55f)        // narrow like a phone screen
                     .aspectRatio(9f / 16f)
+                    .onSizeChanged(onPreviewSize)
                     .clip(ExpressiveCorners.preview)
                     .background(previewBackground ?: Color.Black),
                 contentAlignment = Alignment.Center,
@@ -503,7 +525,7 @@ private fun ThumbnailSlot(
 
     Box(
         modifier = Modifier
-            .size(44.dp)
+            .size(THUMBNAIL_SIZE)
             .clip(ExpressiveCorners.picker)
             .background(bgColor),
         contentAlignment = Alignment.Center,
@@ -592,17 +614,23 @@ private fun AnimationPreviewView(
 // IO helpers
 // ---------------------------------------------------------------------------
 
-private fun loadDrawableForStyle(context: android.content.Context, name: String): Drawable? {
+private fun loadDrawableForStyle(
+    context: android.content.Context, name: String, size: IntSize, isCancelled: BooleanSupplier,
+): Drawable? {
     val zipPath = BootAnimationUtils.getPathForName(name) ?: return null
     if (!File(zipPath).exists()) {
         Log.w(TAG, "Boot animation zip not found for style $name: $zipPath")
         return null
     }
-    return loadFramesFromPath(context, zipPath)
+    return loadFramesFromPath(context, zipPath, size, isCancelled)
 }
 
-private fun loadFramesFromPath(context: android.content.Context, zipPath: String): AnimationDrawable? {
-    val original = BootAnimationUtils.getBootAnimationFramesFromPath(context, zipPath)
+private fun loadFramesFromPath(
+    context: android.content.Context, zipPath: String, size: IntSize, isCancelled: BooleanSupplier,
+): AnimationDrawable? {
+    val original = BootAnimationUtils.getBootAnimationFramesFromPath(
+        context, zipPath, size.width, size.height, isCancelled,
+    )
     if (original == null || original.numberOfFrames == 0) return null
     return AnimationDrawable().apply {
         for (i in 0 until original.numberOfFrames) {
@@ -651,29 +679,33 @@ private fun repackStored(src: File, dst: File) {
     }
 }
 
-/** Decodes [entry] with a sample size that keeps its longest side near [maxSize] pixels. */
-private fun decodeSampled(zip: ZipFile, entry: ZipEntry, maxSize: Int): Bitmap? {
-    val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
-    zip.getInputStream(entry).use { BitmapFactory.decodeStream(it, null, bounds) }
+/** Decode enough pixels for the thumbnail canvas without enlarging a sampled frame. */
+private fun decodeSampled(
+    zip: ZipFile, entry: ZipEntry, scale: Float, colors: BootAnimationUtils.DynamicColors,
+): Bitmap? {
     var sample = 1
-    while (maxOf(bounds.outWidth, bounds.outHeight) / (sample * 2) >= maxSize) sample *= 2
-    val options = BitmapFactory.Options().apply { inSampleSize = sample }
+    while (scale * sample * 2 <= 1f) sample *= 2
+    val options = BitmapFactory.Options().apply {
+        inSampleSize = sample
+        inPremultiplied = !colors.enabled
+    }
     return zip.getInputStream(entry).use { BitmapFactory.decodeStream(it, null, options) }
 }
 
 /**
  * Thumbnail of a style. Decoding one means opening the zip and decoding up to
  * [THUMBNAIL_MAX_TRIES] frames, so the result is kept in the cache dir, keyed by the zip's size
- * and modification time, and read back from there while the zip is unchanged.
+ * and modification time, pixel size, renderer version and dynamic palette.
  */
-private fun loadThumbnailForStyle(context: android.content.Context, name: String): Drawable? {
+private fun loadThumbnailForStyle(context: android.content.Context, name: String, size: Int): Drawable? {
     val zipPath = BootAnimationUtils.getPathForName(name) ?: return null
     val zipFile = File(zipPath)
     if (!zipFile.exists()) return null
 
     val dir = File(context.cacheDir, THUMBNAIL_CACHE_DIR)
     val prefix = "${name}_"
-    val cached = File(dir, "$prefix${zipFile.length()}_${zipFile.lastModified()}.png")
+    val palette = (1..4).joinToString("_") { SystemProperties.get("persist.bootanim.color$it", "") }
+    val cached = File(dir, "${prefix}v2_${size}_${palette}_${zipFile.length()}_${zipFile.lastModified()}.png")
     if (cached.isFile()) {
         BitmapFactory.decodeFile(cached.path)?.let {
             return BitmapDrawable(context.resources, it)
@@ -681,7 +713,7 @@ private fun loadThumbnailForStyle(context: android.content.Context, name: String
         cached.delete()
     }
 
-    val bitmap = decodeThumbnail(zipFile, name) ?: return null
+    val bitmap = decodeThumbnail(zipFile, name, size) ?: return null
     runCatching {
         dir.mkdirs()
         // Drop the thumbnails of an older version of this zip.
@@ -693,9 +725,10 @@ private fun loadThumbnailForStyle(context: android.content.Context, name: String
     return BitmapDrawable(context.resources, bitmap)
 }
 
-private fun decodeThumbnail(zipFile: File, name: String): Bitmap? {
+private fun decodeThumbnail(zipFile: File, name: String, size: Int): Bitmap? {
     return runCatching {
         ZipFile(zipFile).use { zf ->
+            val colors = BootAnimationUtils.DynamicColors(zf)
             // PNG/JPG frame-based: find a meaningful frame
             val frameNames = zf.entries().asSequence()
                 .map { it.name }
@@ -710,9 +743,9 @@ private fun decodeThumbnail(zipFile: File, name: String): Bitmap? {
                 (listOf(frameNames.size / 2) + frameNames.indices).take(THUMBNAIL_MAX_TRIES)
             }
             for (i in order) {
-                val entry = zf.getEntry(frameNames[i]) ?: continue
-                val bitmap = placeTrimmed(zf, frameNames, i) ?: continue
+                val bitmap = placeTrimmed(zf, frameNames, i, size, colors) ?: continue
                 if (isMeaningfulFrame(bitmap)) return bitmap
+                bitmap.recycle()
             }
             null
         }
@@ -726,16 +759,26 @@ private fun decodeThumbnail(zipFile: File, name: String): Bitmap? {
  * Thumbnail of frame [index]. A trimmed frame is a placement offset for a cropped png, so it
  * is drawn onto a canvas of the animation size; other frames are returned as decoded.
  */
-private fun placeTrimmed(zf: ZipFile, frameNames: List<String>, index: Int): Bitmap? {
+private fun placeTrimmed(
+    zf: ZipFile, frameNames: List<String>, index: Int, maxSize: Int,
+    colors: BootAnimationUtils.DynamicColors,
+): Bitmap? {
     val name = frameNames[index]
     val entry = zf.getEntry(name) ?: return null
-    val bitmap = decodeSampled(zf, entry, THUMBNAIL_MAX_SIZE) ?: return null
     val part = name.substringBefore('/')
     val trim = BootAnimationUtils.loadTrimData(zf, part)
     val size = BootAnimationUtils.getAnimationSize(zf)
     val inPart = frameNames.filter { it.startsWith("$part/") }.indexOf(name)
-    if (trim.isEmpty() || inPart !in trim.indices || size[0] <= 0 || size[1] <= 0) return bitmap
-    val scale = minOf(1f, THUMBNAIL_MAX_SIZE / maxOf(size[0], size[1]).toFloat())
+    val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+    zf.getInputStream(entry).use { BitmapFactory.decodeStream(it, null, bounds) }
+    val hasTrim = inPart in trim.indices && size[0] > 0 && size[1] > 0
+    val shortestSide = if (hasTrim) minOf(size[0], size[1])
+        else minOf(bounds.outWidth, bounds.outHeight)
+    if (shortestSide <= 0) return null
+    val scale = minOf(1f, maxSize / shortestSide.toFloat())
+    val decoded = decodeSampled(zf, entry, scale, colors) ?: return null
+    val bitmap = colors.apply(decoded, part, inPart)
+    if (!hasTrim) return bitmap
     val r = trim[inPart]
     return Bitmap.createBitmap(
         maxOf(1, Math.round(size[0] * scale)), maxOf(1, Math.round(size[1] * scale)),
@@ -743,7 +786,8 @@ private fun placeTrimmed(zf: ZipFile, frameNames: List<String>, index: Int): Bit
     ).also {
         Canvas(it).drawBitmap(
             bitmap, null,
-            RectF(r.left * scale, r.top * scale, r.right * scale, r.bottom * scale), null,
+            RectF(r.left * scale, r.top * scale, r.right * scale, r.bottom * scale),
+            Paint(Paint.FILTER_BITMAP_FLAG),
         )
         bitmap.recycle()
     }
