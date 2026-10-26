@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+<plurals name="ts_added_installed_count">
+        <item quantity="other">已將 %d 個應用程式新增至目標</item>
+    </plurals>
+    <plurals name="emoji_apps_done">
+        <item quantity="other">已取代應用程式資料中的 %1$d 個表情符號字型。使用可下載表情符號的應用程式現在會改用系統表情符號。</item>
+    </plurals>
+</resources>

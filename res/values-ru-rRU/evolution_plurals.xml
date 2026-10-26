@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+<plurals name="ts_added_installed_count">
+        <item quantity="one">Добавлено %d приложение в цели</item>
+        <item quantity="few">Добавлено %d приложения в цели</item>
+        <item quantity="many">Добавлено %d приложений в цели</item>
+        <item quantity="other">Добавлено %d приложения в цели</item>
+    </plurals>
+    <plurals name="emoji_apps_done">
+        <item quantity="one">Заменён %1$d шрифт эмодзи в данных приложений. Приложения, использующие загружаемые эмодзи, теперь переключаются на системные эмодзи.</item>
+        <item quantity="few">Заменено %1$d шрифта эмодзи в данных приложений. Приложения, использующие загружаемые эмодзи, теперь переключаются на системные эмодзи.</item>
+        <item quantity="many">Заменено %1$d шрифтов эмодзи в данных приложений. Приложения, использующие загружаемые эмодзи, теперь переключаются на системные эмодзи.</item>
+        <item quantity="other">Заменено %1$d шрифта эмодзи в данных приложений. Приложения, использующие загружаемые эмодзи, теперь переключаются на системные эмодзи.</item>
+    </plurals>
+</resources>

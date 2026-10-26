@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+<plurals name="ts_added_installed_count">
+        <item quantity="other">대상에 앱 %d개를 추가했습니다.</item>
+    </plurals>
+    <plurals name="emoji_apps_done">
+        <item quantity="other">앱 데이터의 이모지 폰트 %1$d개를 교체했습니다. 다운로드형 이모지를 사용하는 앱은 이제 시스템 이모지로 대체됩니다.</item>
+    </plurals>
+</resources>
