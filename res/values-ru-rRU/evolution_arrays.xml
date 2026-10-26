@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="themes_boot_animation_entries">
+        <item>Evolution X</item>
+        <item>AOKP</item>
+        <item>CyanogenMod</item>
+        <item>ctOS</item>
+        <item>Cyberpunk</item>
+        <item>Dirty Unicorns</item>
+        <item>Google</item>
+        <item>PAC-ROM</item>
+        <item>Prism (Evolution X)</item>
+        <item>Dynamic Prism (Evolution X)</item>
+        <item>Resurrection Remix</item>
+        <item>SlimRoms</item>
+        <item>Valorant</item>
+        <item>Пользовательская</item>
+    </string-array>
+    <string-array name="wallpaper_effect_entries">
+        <item>Нет</item>
+        <item>Размытие с зерном</item>
+        <item>Хроматическая аберрация</item>
+        <item>Виньетирование</item>
+        <item>Пикселизация</item>
+        <item>Насыщенность</item>
+        <item>Сепия</item>
+        <item>Резкость</item>
+        <item>Оттенки серого</item>
+        <item>Негатив</item>
+        <item>Радиальное размытие</item>
+        <item>Постеризация</item>
+    </string-array>
+    <string-array name="nowplaying_icon_style_entries">
+        <item>Отключено</item>
+        <item>Значок приложения</item>
+        <item>Значок музыкальной ноты</item>
+    </string-array>
+    <string-array name="charging_animation_style_entries">
+        <item>Поток пузырьков</item>
+        <item>Неоновые брызги</item>
+        <item>Лучевые эффекты</item>
+        <item>Эффект плазмы</item>
+        <item>Квантовые искры</item>
+        <item>Рассеяние туманности</item>
+        <item>Цифровая матрица</item>
+        <item>Geoflow</item>
+    </string-array>
+    <string-array name="charging_color_mode_entries">
+        <item>Зелёный по умолчанию</item>
+        <item>Акцентный цвет</item>
+        <item>Радуга</item>
+    </string-array>
+    <string-array name="cutout_progress_finish_style_entries">
+        <item>Всплеск</item>
+        <item>Сегментный каскад</item>
+        <item>Скачок (мгновенно)</item>
+    </string-array>
+    <string-array name="cutout_progress_easing_entries">
+        <item>Линейная</item>
+        <item>Ускорение</item>
+        <item>Замедление</item>
+        <item>Плавное начало и конец</item>
+    </string-array>
+    <string-array name="cutout_progress_position_entries">
+        <item>Справа</item>
+        <item>Слева</item>
+        <item>Сверху</item>
+        <item>Снизу</item>
+        <item>Справа сверху</item>
+        <item>Слева сверху</item>
+        <item>Справа снизу</item>
+        <item>Слева снизу</item>
+    </string-array>
+    <string-array name="cutout_progress_truncate_entries">
+        <item>В середине</item>
+        <item>В начале</item>
+        <item>В конце</item>
+    </string-array>
+    <string-array name="lock_glymps_source_entries">
+        <item>Случайные обои (Picsum)</item>
+        <item>Список URL-адресов</item>
+        <item>Локальная папка</item>
+    </string-array>
+    <string-array name="lock_glymps_cache_size_entries">
+        <item>Обоев: 3 (~30 МБ)</item>
+        <item>Обоев: 5 (~50 МБ)</item>
+        <item>Обоев: 10 (~100 МБ)</item>
+    </string-array>
+    <string-array name="lock_glymps_change_on_entries">
+        <item>При включении экрана</item>
+        <item>При выключении экрана (рекомендуется)</item>
+        <item>По таймеру</item>
+    </string-array>
+    <string-array name="lock_glymps_timer_entries">
+        <item>5 минут</item>
+        <item>10 минут</item>
+        <item>15 минут</item>
+        <item>30 минут</item>
+        <item>1 час</item>
+        <item>2 часа</item>
+        <item>3 часа</item>
+        <item>6 часов</item>
+        <item>12 часов</item>
+        <item>24 часа</item>
+    </string-array>
+    <string-array name="quick_settings_data_usage_window_entries">
+        <item>Ежедневно</item>
+        <item>Еженедельно</item>
+    </string-array>
+    <string-array name="lockscreen_clock_style_names">
+        <item>Часы по умолчанию</item>
+        <item>Часы OnePlus</item>
+        <item>Часы OnePlus 2</item>
+        <item>Часы по центру</item>
+        <item>Простые часы</item>
+        <item>Часы MIUI</item>
+        <item>Часы IDE</item>
+        <item>Часы Moto</item>
+        <item>Стильные часы</item>
+        <item>Стильные часы 2</item>
+        <item>Стильные часы 3</item>
+        <item>Стильные часы 4</item>
+        <item>Стильные часы 5</item>
+        <item>Стильные часы 6</item>
+        <item>Стильные часы 7</item>
+        <item>Стильные часы 8</item>
+        <item>Стильные часы 9</item>
+        <item>Стильные часы 10</item>
+        <item>Текстовые часы</item>
+        <item>Часы LifeStyle</item>
+        <item>Android 9 Vibe</item>
+        <item>Часы NothingOS 1</item>
+        <item>Часы NothingOS 2</item>
+        <item>Многострочные часы</item>
+        <item>X Factor</item>
+        <item>Простые аналоговые</item>
+        <item>Блок</item>
+        <item>Пузыри</item>
+        <item>Часы с меткой</item>
+        <item>Часы iOS</item>
+        <item>Часы Taden</item>
+        <item>Часы Mont</item>
+        <item>Часы Encode</item>
+        <item>Часы NOS 3</item>
+        <item>Anci Outline</item>
+        <item>Anci Ovalium</item>
+        <item>Anci Rectangle</item>
+        <item>Anci Wallet</item>
+        <item>Anci Clavicula</item>
+        <item>Anci KLN</item>
+        <item>Anci Miring</item>
+        <item>Anci Scapula</item>
+        <item>Anci Sternum</item>
+        <item>Spark Circle</item>
+        <item>Spark List</item>
+        <item>Часы HyperOS</item>
+        <item>iOS 2</item>
+        <item>iOS 3</item>
+        <item>iOS 4</item>
+        <item>iOS 5</item>
+        <item>iOS 6</item>
+        <item>iOS 7</item>
+        <item>iOS 8</item>
+        <item>iOS 9</item>
+        <item>iOS 10</item>
+        <item>iOS 11</item>
+        <item>iOS 12</item>
+        <item>iOS 13</item>
+        <item>iOS 14</item>
+        <item>iOS 15</item>
+        <item>iOS 16</item>
+        <item>iOS 17</item>
+        <item>iOS 18</item>
+        <item>iOS 19</item>
+        <item>Big 1</item>
+        <item>Big 2</item>
+        <item>Big 3</item>
+        <item>Big 4</item>
+        <item>Sweet</item>
+        <item>Pixel</item>
+        <item>Samurai</item>
+        <item>Gateway</item>
+        <item>Высокие часы</item>
+        <item>GoBold monet</item>
+        <item>GoBold</item>
+        <item>Delirium</item>
+        <item>Delirium Dual</item>
+        <item>Skewrom</item>
+        <item>Skewrom 2</item>
+        <item>Taller</item>
+        <item>Taller 2</item>
+        <item>Taller 3</item>
+        <item>Modak</item>
+        <item>Galada</item>
+        <item>COS 1</item>
+        <item>COS 2</item>
+        <item>Neu</item>
+        <item>Neu2</item>
+        <item>Neu3</item>
+        <item>Badeen</item>
+        <item>Космическая эра</item>
+        <item>Ломаная линия</item>
+        <item>Крупные часы</item>
+    </string-array>
+</resources>

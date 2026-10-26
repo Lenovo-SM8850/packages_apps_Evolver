@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="themes_boot_animation_entries">
+        <item>Evolution X</item>
+        <item>AOKP</item>
+        <item>CyanogenMod</item>
+        <item>ctOS</item>
+        <item>Cyberpunk</item>
+        <item>Dirty Unicorns</item>
+        <item>Google</item>
+        <item>PAC-ROM</item>
+        <item>Prism (Evolution X)</item>
+        <item>Dynamic Prism (Evolution X)</item>
+        <item>Resurrection Remix</item>
+        <item>SlimRoms</item>
+        <item>Valorant</item>
+        <item>自訂</item>
+    </string-array>
+    <string-array name="wallpaper_effect_entries">
+        <item>無</item>
+        <item>模糊顆粒</item>
+        <item>色差</item>
+        <item>暈影</item>
+        <item>像素化</item>
+        <item>飽和度</item>
+        <item>棕褐色調</item>
+        <item>銳化</item>
+        <item>灰階</item>
+        <item>負片</item>
+        <item>放射狀模糊</item>
+        <item>色調分離</item>
+    </string-array>
+    <string-array name="nowplaying_icon_style_entries">
+        <item>已停用</item>
+        <item>應用程式圖示</item>
+        <item>音符圖示</item>
+    </string-array>
+    <string-array name="charging_animation_style_entries">
+        <item>泡泡流</item>
+        <item>霓虹光暈噴霧</item>
+        <item>光束效果</item>
+        <item>電漿效果</item>
+        <item>量子火花</item>
+        <item>星雲擴散</item>
+        <item>數位矩陣</item>
+        <item>Geoflow</item>
+    </string-array>
+    <string-array name="charging_color_mode_entries">
+        <item>預設綠色</item>
+        <item>強調色</item>
+        <item>彩虹</item>
+    </string-array>
+    <string-array name="cutout_progress_finish_style_entries">
+        <item>彈跳</item>
+        <item>分段串接</item>
+        <item>瞬間切換 (立即)</item>
+    </string-array>
+    <string-array name="cutout_progress_easing_entries">
+        <item>線性</item>
+        <item>加速</item>
+        <item>減速</item>
+        <item>緩入緩出</item>
+    </string-array>
+    <string-array name="cutout_progress_position_entries">
+        <item>右側</item>
+        <item>左側</item>
+        <item>頂部</item>
+        <item>底部</item>
+        <item>右上角</item>
+        <item>左上角</item>
+        <item>右下角</item>
+        <item>左下角</item>
+    </string-array>
+    <string-array name="cutout_progress_truncate_entries">
+        <item>中間</item>
+        <item>開頭</item>
+        <item>結尾</item>
+    </string-array>
+    <string-array name="lock_glymps_source_entries">
+        <item>隨機桌布 (Picsum)</item>
+        <item>自訂網址清單</item>
+        <item>本機資料夾</item>
+    </string-array>
+    <string-array name="lock_glymps_cache_size_entries">
+        <item>3 張桌布 (約 30MB)</item>
+        <item>5 張桌布 (約 50MB)</item>
+        <item>10 張桌布 (約 100MB)</item>
+    </string-array>
+    <string-array name="lock_glymps_change_on_entries">
+        <item>螢幕開啟時</item>
+        <item>螢幕關閉時 (建議)</item>
+        <item>依計時器</item>
+    </string-array>
+    <string-array name="lock_glymps_timer_entries">
+        <item>5 分鐘</item>
+        <item>10 分鐘</item>
+        <item>15 分鐘</item>
+        <item>30 分鐘</item>
+        <item>1 小時</item>
+        <item>2 小時</item>
+        <item>3 小時</item>
+        <item>6 小時</item>
+        <item>12 小時</item>
+        <item>24 小時</item>
+    </string-array>
+    <string-array name="quick_settings_data_usage_window_entries">
+        <item>每日</item>
+        <item>每週</item>
+    </string-array>
+    <string-array name="lockscreen_clock_style_names">
+        <item>預設時鐘</item>
+        <item>OnePlus 時鐘</item>
+        <item>OnePlus 時鐘 2</item>
+        <item>置中時鐘</item>
+        <item>簡約時鐘</item>
+        <item>MIUI 時鐘</item>
+        <item>IDE 時鐘</item>
+        <item>Moto 時鐘</item>
+        <item>時尚時鐘</item>
+        <item>時尚時鐘 2</item>
+        <item>時尚時鐘 3</item>
+        <item>時尚時鐘 4</item>
+        <item>時尚時鐘 5</item>
+        <item>時尚時鐘 6</item>
+        <item>時尚時鐘 7</item>
+        <item>時尚時鐘 8</item>
+        <item>時尚時鐘 9</item>
+        <item>時尚時鐘 10</item>
+        <item>文字時鐘</item>
+        <item>LifeStyle 時鐘</item>
+        <item>Android 9 Vibe</item>
+        <item>NothingOS 1 時鐘</item>
+        <item>NothingOS 2 時鐘</item>
+        <item>堆疊時鐘</item>
+        <item>X Factor</item>
+        <item>簡約類比</item>
+        <item>方塊</item>
+        <item>氣泡</item>
+        <item>標籤時鐘</item>
+        <item>iOS 時鐘</item>
+        <item>Taden 時鐘</item>
+        <item>Mont 時鐘</item>
+        <item>Encode 時鐘</item>
+        <item>NOS 時鐘 3</item>
+        <item>Anci Outline</item>
+        <item>Anci Ovalium</item>
+        <item>Anci Rectangle</item>
+        <item>Anci Wallet</item>
+        <item>Anci Clavicula</item>
+        <item>Anci KLN</item>
+        <item>Anci Miring</item>
+        <item>Anci Scapula</item>
+        <item>Anci Sternum</item>
+        <item>Spark Circle</item>
+        <item>Spark List</item>
+        <item>HyperOS 時鐘</item>
+        <item>iOS 2</item>
+        <item>iOS 3</item>
+        <item>iOS 4</item>
+        <item>iOS 5</item>
+        <item>iOS 6</item>
+        <item>iOS 7</item>
+        <item>iOS 8</item>
+        <item>iOS 9</item>
+        <item>iOS 10</item>
+        <item>iOS 11</item>
+        <item>iOS 12</item>
+        <item>iOS 13</item>
+        <item>iOS 14</item>
+        <item>iOS 15</item>
+        <item>iOS 16</item>
+        <item>iOS 17</item>
+        <item>iOS 18</item>
+        <item>iOS 19</item>
+        <item>Big 1</item>
+        <item>Big 2</item>
+        <item>Big 3</item>
+        <item>Big 4</item>
+        <item>Sweet</item>
+        <item>Pixel</item>
+        <item>Samurai</item>
+        <item>Gateway</item>
+        <item>高款時鐘</item>
+        <item>GoBold monet</item>
+        <item>GoBold</item>
+        <item>Delirium</item>
+        <item>Delirium Dual</item>
+        <item>Skewrom</item>
+        <item>Skewrom 2</item>
+        <item>Taller</item>
+        <item>Taller 2</item>
+        <item>Taller 3</item>
+        <item>Modak</item>
+        <item>Galada</item>
+        <item>COS 1</item>
+        <item>COS 2</item>
+        <item>Neu</item>
+        <item>Neu2</item>
+        <item>Neu3</item>
+        <item>Badeen</item>
+        <item>太空時代</item>
+        <item>折線</item>
+        <item>大型時鐘</item>
+    </string-array>
+</resources>

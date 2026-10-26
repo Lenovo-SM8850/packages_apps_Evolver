@@ -38,14 +38,6 @@
         <item>الأخضر الافتراضي</item><item>لون التمييز</item><item>قوس قزح</item>
     </string-array>
 
-    <string-array name="perapp_spoof_profile_labels">
-        <item>Black Shark 4 (الصين)</item><item>Poco F5</item><item>Samsung Galaxy S25 Ultra</item>
-        <item>Samsung Galaxy Z Fold 5</item><item>Honor Magic V2 RSR</item><item>Lenovo Legion Y700</item>
-        <item>Xiaomi 11T Pro</item><item>Xiaomi 13</item><item>Xiaomi 13 Pro</item><item>Xiaomi 14 Pro</item>
-        <item>OnePlus 12</item><item>OnePlus 13</item><item>Pixel 11 Pro XL</item><item>REDMAGIC 9 Pro</item>
-        <item>REDMAGIC 10 Pro</item><item>Realme 15 Pro 5G</item><item>ROG Phone 9 Pro</item><item>بدون</item>
-    </string-array>
-
     <string-array name="cutout_progress_finish_style_entries">
         <item>انبثاق</item><item>تتابع مقسّم</item><item>فوري</item>
     </string-array>

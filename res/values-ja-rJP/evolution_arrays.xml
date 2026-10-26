@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: Evolution X
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="themes_boot_animation_entries">
+        <item>Evolution X</item>
+        <item>AOKP</item>
+        <item>CyanogenMod</item>
+        <item>ctOS</item>
+        <item>サイバーパンク</item>
+        <item>Dirty Unicorns</item>
+        <item>Google</item>
+        <item>PAC-ROM</item>
+        <item>Prism (Evolution X)</item>
+        <item>Dynamic Prism (Evolution X)</item>
+        <item>Resurrection Remix</item>
+        <item>SlimRoms</item>
+        <item>Valorant</item>
+        <item>カスタム</item>
+    </string-array>
+    <string-array name="wallpaper_effect_entries">
+        <item>なし</item>
+        <item>ぼかしとグレイン</item>
+        <item>色収差</item>
+        <item>ビネット</item>
+        <item>ピクセル化</item>
+        <item>彩度</item>
+        <item>セピア</item>
+        <item>シャープ</item>
+        <item>グレースケール</item>
+        <item>ネガ</item>
+        <item>放射ブラー</item>
+        <item>ポスタライズ</item>
+    </string-array>
+    <string-array name="nowplaying_icon_style_entries">
+        <item>無効</item>
+        <item>アプリのアイコン</item>
+        <item>音符アイコン</item>
+    </string-array>
+    <string-array name="charging_animation_style_entries">
+        <item>バブル ストリーム</item>
+        <item>ネオングロー スプレー</item>
+        <item>ビーム エフェクト</item>
+        <item>プラズマ エフェクト</item>
+        <item>クォンタム スパーク</item>
+        <item>ネビュラ ディフュージョン</item>
+        <item>デジタル マトリックス</item>
+        <item>ジオフロー</item>
+    </string-array>
+    <string-array name="charging_color_mode_entries">
+        <item>デフォルトのグリーン</item>
+        <item>アクセントカラー</item>
+        <item>レインボー</item>
+    </string-array>
+    <string-array name="cutout_progress_finish_style_entries">
+        <item>ポップ</item>
+        <item>分割カスケード</item>
+        <item>スナップ（瞬時）</item>
+    </string-array>
+    <string-array name="cutout_progress_easing_entries">
+        <item>リニア</item>
+        <item>加速</item>
+        <item>減速</item>
+        <item>イーズイン・イーズアウト</item>
+    </string-array>
+    <string-array name="cutout_progress_position_entries">
+        <item>右</item>
+        <item>左</item>
+        <item>上</item>
+        <item>下</item>
+        <item>右上</item>
+        <item>左上</item>
+        <item>右下</item>
+        <item>左下</item>
+    </string-array>
+    <string-array name="cutout_progress_truncate_entries">
+        <item>中央</item>
+        <item>先頭</item>
+        <item>末尾</item>
+    </string-array>
+    <string-array name="lock_glymps_source_entries">
+        <item>ランダムな壁紙（Picsum）</item>
+        <item>カスタム URL リスト</item>
+        <item>ローカルフォルダ</item>
+    </string-array>
+    <string-array name="lock_glymps_cache_size_entries">
+        <item>壁紙 3 枚（約 30 MB）</item>
+        <item>壁紙 5 枚（約 50 MB）</item>
+        <item>壁紙 10 枚（約 100 MB）</item>
+    </string-array>
+    <string-array name="lock_glymps_change_on_entries">
+        <item>画面が ON になったとき</item>
+        <item>画面が OFF になったとき（おすすめ）</item>
+        <item>タイマー</item>
+    </string-array>
+    <string-array name="lock_glymps_timer_entries">
+        <item>5 分</item>
+        <item>10 分</item>
+        <item>15 分</item>
+        <item>30 分</item>
+        <item>1 時間</item>
+        <item>2 時間</item>
+        <item>3 時間</item>
+        <item>6 時間</item>
+        <item>12 時間</item>
+        <item>24 時間</item>
+    </string-array>
+    <string-array name="quick_settings_data_usage_window_entries">
+        <item>毎日</item>
+        <item>毎週</item>
+    </string-array>
+    <string-array name="lockscreen_clock_style_names">
+        <item>デフォルトの時計</item>
+        <item>OnePlus 時計</item>
+        <item>OnePlus 時計 2</item>
+        <item>中央の時計</item>
+        <item>シンプルな時計</item>
+        <item>MIUI 時計</item>
+        <item>IDE 時計</item>
+        <item>Moto 時計</item>
+        <item>スタイリッシュな時計</item>
+        <item>スタイリッシュな時計 2</item>
+        <item>スタイリッシュな時計 3</item>
+        <item>スタイリッシュな時計 4</item>
+        <item>スタイリッシュな時計 5</item>
+        <item>スタイリッシュな時計 6</item>
+        <item>スタイリッシュな時計 7</item>
+        <item>スタイリッシュな時計 8</item>
+        <item>スタイリッシュな時計 9</item>
+        <item>スタイリッシュな時計 10</item>
+        <item>テキスト時計</item>
+        <item>LifeStyle 時計</item>
+        <item>Android 9 Vibe</item>
+        <item>NothingOS 1 時計</item>
+        <item>NothingOS 2 時計</item>
+        <item>スタック時計</item>
+        <item>X Factor</item>
+        <item>シンプルアナログ</item>
+        <item>ブロック</item>
+        <item>バブル</item>
+        <item>ラベル時計</item>
+        <item>iOS 時計</item>
+        <item>Taden 時計</item>
+        <item>Mont 時計</item>
+        <item>Encode 時計</item>
+        <item>NOS 時計 3</item>
+        <item>Anci Outline</item>
+        <item>Anci Ovalium</item>
+        <item>Anci Rectangle</item>
+        <item>Anci Wallet</item>
+        <item>Anci Clavicula</item>
+        <item>Anci KLN</item>
+        <item>Anci Miring</item>
+        <item>Anci Scapula</item>
+        <item>Anci Sternum</item>
+        <item>Spark Circle</item>
+        <item>Spark List</item>
+        <item>HyperOS 時計</item>
+        <item>iOS 2</item>
+        <item>iOS 3</item>
+        <item>iOS 4</item>
+        <item>iOS 5</item>
+        <item>iOS 6</item>
+        <item>iOS 7</item>
+        <item>iOS 8</item>
+        <item>iOS 9</item>
+        <item>iOS 10</item>
+        <item>iOS 11</item>
+        <item>iOS 12</item>
+        <item>iOS 13</item>
+        <item>iOS 14</item>
+        <item>iOS 15</item>
+        <item>iOS 16</item>
+        <item>iOS 17</item>
+        <item>iOS 18</item>
+        <item>iOS 19</item>
+        <item>Big 1</item>
+        <item>Big 2</item>
+        <item>Big 3</item>
+        <item>Big 4</item>
+        <item>Sweet</item>
+        <item>Pixel</item>
+        <item>Samurai</item>
+        <item>Gateway</item>
+        <item>トール時計</item>
+        <item>GoBold monet</item>
+        <item>GoBold</item>
+        <item>Delirium</item>
+        <item>Delirium Dual</item>
+        <item>Skewrom</item>
+        <item>Skewrom 2</item>
+        <item>Taller</item>
+        <item>Taller 2</item>
+        <item>Taller 3</item>
+        <item>Modak</item>
+        <item>Galada</item>
+        <item>COS 1</item>
+        <item>COS 2</item>
+        <item>Neu</item>
+        <item>Neu2</item>
+        <item>Neu3</item>
+        <item>Badeen</item>
+        <item>スペースエイジ</item>
+        <item>ポリライン</item>
+        <item>大きな時計</item>
+    </string-array>
+</resources>
