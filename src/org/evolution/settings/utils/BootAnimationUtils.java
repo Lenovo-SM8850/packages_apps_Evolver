@@ -42,6 +42,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.function.BooleanSupplier;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.regex.Pattern;
@@ -188,6 +189,12 @@ public class BootAnimationUtils {
 
     public static AnimationDrawable getBootAnimationFramesFromPath(Context context, String path,
             int targetWidth, int targetHeight) {
+        return getBootAnimationFramesFromPath(context, path, targetWidth, targetHeight,
+                () -> false);
+    }
+
+    public static AnimationDrawable getBootAnimationFramesFromPath(Context context, String path,
+            int targetWidth, int targetHeight, BooleanSupplier isCancelled) {
         AnimationDrawable animationDrawable = new AnimationDrawable();
         File file = new File(path);
         if (!file.exists()) return animationDrawable;
@@ -225,7 +232,12 @@ public class BootAnimationUtils {
                 Part part = parts.get(i);
                 List<Drawable> frames = new ArrayList<>();
                 loadFramesFromPart(context, zipFile, frames, partFrames.get(i), stride,
-                        loadTrimData(zipFile, part.name), animSize, previewScale, colors, part.name);
+                        loadTrimData(zipFile, part.name), animSize, previewScale, colors, part.name,
+                        isCancelled);
+                if (isCancelled.getAsBoolean()) {
+                    for (Drawable frame : frames) recycleFrames(frame);
+                    break;
+                }
                 if (frames.isEmpty()) continue;
                 if (part.background != null) {
                     for (int f = 0; f < frames.size(); f++) {
@@ -249,7 +261,29 @@ public class BootAnimationUtils {
         } catch (Exception e) {
             Log.e(TAG, "Error loading boot animation frames from " + path, e);
         }
+        if (isCancelled.getAsBoolean()) {
+            recycleFrames(animationDrawable);
+            return null;
+        }
         return animationDrawable;
+    }
+
+    /** Recycles decoded frames when a preview result is abandoned. */
+    public static void recycleFrames(Drawable drawable) {
+        if (drawable instanceof AnimationDrawable) {
+            AnimationDrawable animation = (AnimationDrawable) drawable;
+            for (int i = 0; i < animation.getNumberOfFrames(); i++) {
+                recycleFrames(animation.getFrame(i));
+            }
+        } else if (drawable instanceof LayerDrawable) {
+            LayerDrawable layers = (LayerDrawable) drawable;
+            for (int i = 0; i < layers.getNumberOfLayers(); i++) {
+                recycleFrames(layers.getDrawable(i));
+            }
+        } else if (drawable instanceof BitmapDrawable) {
+            Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+            if (!bitmap.isRecycled()) bitmap.recycle();
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -500,7 +534,7 @@ public class BootAnimationUtils {
     private static void loadFramesFromPart(Context context, ZipFile zipFile,
             List<Drawable> out, List<String> frameNames,
             int stride, List<Rect> trimData, int[] animSize, float scale,
-            DynamicColors colors, String partName) {
+            DynamicColors colors, String partName, BooleanSupplier isCancelled) {
         try {
             final boolean hasSize = animSize[0] > 0 && animSize[1] > 0;
             // Decode at a fraction of the size instead of full frames; scale covers the rest.
@@ -513,6 +547,7 @@ public class BootAnimationUtils {
 
             // trim.txt has one line per frame of the part, so skipped frames still count
             for (int frameIndex = 0; frameIndex < frameNames.size(); frameIndex += stride) {
+                if (isCancelled.getAsBoolean()) return;
                 String entryName = frameNames.get(frameIndex);
                 ZipEntry entry = zipFile.getEntry(entryName);
                 if (entry == null) continue;

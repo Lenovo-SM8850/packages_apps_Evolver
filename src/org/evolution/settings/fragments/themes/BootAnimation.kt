@@ -85,6 +85,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
@@ -95,6 +96,7 @@ import org.evolution.settings.fragments.miscellaneous.expressiveVerticalScroll
 import org.evolution.settings.utils.BootAnimationUtils
 import java.io.File
 import java.io.FileOutputStream
+import java.util.function.BooleanSupplier
 import java.util.zip.CRC32
 import java.util.zip.ZipOutputStream
 import java.util.zip.ZipEntry
@@ -177,10 +179,18 @@ private fun BootAnimationScreen(context: android.content.Context) {
         previewJob[0] = scope.launch {
             isLoadingPreview = true
             previewDrawable = null
-            previewDrawable = withContext(Dispatchers.IO) {
-                loadDrawableForStyle(context, name, previewSize)
+            var loaded: Drawable? = null
+            try {
+                withContext(Dispatchers.IO) {
+                    loaded = loadDrawableForStyle(context, name, previewSize,
+                        BooleanSupplier { !isActive })
+                }
+                previewDrawable = loaded
+                loaded = null
+                isLoadingPreview = false
+            } finally {
+                loaded?.let { BootAnimationUtils.recycleFrames(it) }
             }
-            isLoadingPreview = false
         }
     }
 
@@ -605,21 +615,21 @@ private fun AnimationPreviewView(
 // ---------------------------------------------------------------------------
 
 private fun loadDrawableForStyle(
-    context: android.content.Context, name: String, size: IntSize,
+    context: android.content.Context, name: String, size: IntSize, isCancelled: BooleanSupplier,
 ): Drawable? {
     val zipPath = BootAnimationUtils.getPathForName(name) ?: return null
     if (!File(zipPath).exists()) {
         Log.w(TAG, "Boot animation zip not found for style $name: $zipPath")
         return null
     }
-    return loadFramesFromPath(context, zipPath, size)
+    return loadFramesFromPath(context, zipPath, size, isCancelled)
 }
 
 private fun loadFramesFromPath(
-    context: android.content.Context, zipPath: String, size: IntSize,
+    context: android.content.Context, zipPath: String, size: IntSize, isCancelled: BooleanSupplier,
 ): AnimationDrawable? {
     val original = BootAnimationUtils.getBootAnimationFramesFromPath(
-        context, zipPath, size.width, size.height,
+        context, zipPath, size.width, size.height, isCancelled,
     )
     if (original == null || original.numberOfFrames == 0) return null
     return AnimationDrawable().apply {
@@ -735,6 +745,7 @@ private fun decodeThumbnail(zipFile: File, name: String, size: Int): Bitmap? {
             for (i in order) {
                 val bitmap = placeTrimmed(zf, frameNames, i, size, colors) ?: continue
                 if (isMeaningfulFrame(bitmap)) return bitmap
+                bitmap.recycle()
             }
             null
         }
