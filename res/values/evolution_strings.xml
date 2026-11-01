@@ -1714,4 +1714,9 @@
     <string name="clock_preview_username">Username</string>
     <string name="clock_preview_device_name">Device name</string>
     <string name="clock_preview_no_preview">Nothing analog clock (no preview)</string>
+    <string name="miscellaneous_multitasking_category">Multitasking</string>
+    <string name="app_handle_mode_title">App handle</string>
+    <string name="app_handle_mode_show">Show</string>
+    <string name="app_handle_mode_transparent">Transparent</string>
+    <string name="app_handle_mode_off">Off</string>
 </resources>

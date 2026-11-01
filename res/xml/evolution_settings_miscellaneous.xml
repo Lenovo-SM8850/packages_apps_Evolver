@@ -21,6 +21,20 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="miscellaneous_multitasking_category"
+        android:title="@string/miscellaneous_multitasking_category">
+
+        <org.evolution.settings.preferences.SystemSettingListPreference
+            android:key="app_handle_mode"
+            android:title="@string/app_handle_mode_title"
+            android:summary="%s"
+            android:entries="@array/app_handle_mode_entries"
+            android:entryValues="@array/app_handle_mode_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="miscellaneous_gestures_category"
         android:title="@string/gestures_category_title">
 

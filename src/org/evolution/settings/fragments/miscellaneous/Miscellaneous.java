@@ -26,6 +26,7 @@ import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
+import com.android.wm.shell.shared.desktopmode.DesktopState;
 
 import java.util.List;
 
@@ -43,6 +44,8 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
     private static final String TAG = "Miscellaneous";
 
+    private static final String KEY_MULTITASKING_CATEGORY = "miscellaneous_multitasking_category";
+    private static final String KEY_APP_HANDLE_MODE = "app_handle_mode";
     private static final String KEY_THREE_FINGERS_SWIPE = "three_fingers_swipe";
     private static final String FLASHLIGHT_CALL_PREF = "flashlight_on_call";
     private static final String FLASHLIGHT_DND_PREF = "flashlight_on_call_ignore_dnd";
@@ -62,6 +65,10 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         final ContentResolver resolver = mContext.getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = mContext.getResources();
+
+        if (!DesktopState.getInstance(mContext).canEnterDesktopModeOrShowAppHandle()) {
+            prefScreen.removePreference(findPreference(KEY_MULTITASKING_CATEGORY));
+        }
 
         Action threeFingersSwipeAction = Action.fromSettings(getContentResolver(),
                 LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION,
@@ -158,6 +165,11 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
                     final Resources res = context.getResources();
+
+                    if (!DesktopState.getInstance(context).canEnterDesktopModeOrShowAppHandle()) {
+                        keys.add(KEY_MULTITASKING_CATEGORY);
+                        keys.add(KEY_APP_HANDLE_MODE);
+                    }
 
                     if (!Utils.deviceHasFlashlight(context)) {
                         keys.add(FLASHLIGHT_CALL_PREF);
