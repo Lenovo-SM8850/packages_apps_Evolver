@@ -12,12 +12,15 @@
         android:key="status_bar_gestures_category"
         android:title="@string/gestures_category_title">
 
-        <!-- Triple tap status bar to open the current app in a freeform window -->
-        <org.evolution.settings.preferences.SystemSettingSwitchPreference
-            android:key="status_bar_triple_tap_freeform"
-            android:title="@string/status_bar_triple_tap_freeform_title"
-            android:summary="@string/status_bar_triple_tap_freeform_summary"
-            android:defaultValue="false" />
+        <!-- Triple tap status bar action -->
+        <org.evolution.settings.preferences.SystemSettingListPreference
+            android:key="status_bar_triple_tap_action"
+            android:title="@string/status_bar_triple_tap_action_title"
+            android:dialogTitle="@string/status_bar_triple_tap_action_title"
+            android:entries="@array/gesture_action_entries"
+            android:entryValues="@array/gesture_action_values"
+            android:summary="%s"
+            android:defaultValue="0" />
 
         <!-- Status bar brightness control -->
         <org.evolution.settings.preferences.SystemSettingSwitchPreference
