@@ -44,8 +44,8 @@ import com.android.settingslib.spa.framework.theme.SettingsSpace
 /**
  * Spoofing hub. Compose host for the same entries the old preference screen had: the two
  * Play Integrity switches (TrickyStore, PIF) with their own sub-pages, device identity pages,
- * Tensor targets (non-Tensor devices only), the Photos / Snapchat overrides (installed apps
- * only) and a reset action. `res/xml/spoofing.xml` is kept only as the search index source.
+ * Tensor targets (non-Tensor devices only), the Photos / Netflix / Snapchat overrides (installed
+ * apps only) and a reset action. `res/xml/spoofing.xml` is kept only as the search index source.
  */
 @SearchIndexable
 class Spoofing : SettingsPreferenceFragment() {
@@ -116,11 +116,16 @@ class Spoofing : SettingsPreferenceFragment() {
         private const val TRICKYSTORE_ENABLED_KEY = "spoof_trickystore_enabled"
         private const val PIF_ENABLED_KEY = "spoof_pif_enabled"
         private const val PI_PHOTOS_SPOOF = "pi_photos_spoof"
+        private const val PI_NETFLIX_SPOOF = "pi_netflix_spoof"
         private const val PI_SNAPCHAT_SPOOF = "pi_snapchat_spoof"
         private const val KEY_TENSOR_TARGETS = "tensor_targets_settings"
 
         private const val PHOTOS_PACKAGE = "com.google.android.apps.photos"
+        private const val NETFLIX_PACKAGE = "com.netflix.mediaclient"
         private const val SNAPCHAT_PACKAGE = "com.snapchat.android"
+
+        // Profile id of the device the framework applies to Netflix
+        private const val NETFLIX_PROFILE_ID = "OP15"
 
         private fun isInstalled(context: Context, pkg: String): Boolean = try {
             context.packageManager.getPackageInfo(pkg, 0)
@@ -129,12 +134,19 @@ class Spoofing : SettingsPreferenceFragment() {
             false
         }
 
+        private fun profileLabel(context: Context, id: String): String =
+            context.resources.getStringArray(R.array.perapp_spoof_profiles)
+                .firstOrNull { it.substringBefore("|") == id }
+                ?.substringAfter("|")
+                ?: id
+
         @JvmField
         val SEARCH_INDEX_DATA_PROVIDER = object : BaseSearchIndexProvider(R.xml.spoofing) {
             override fun getNonIndexableKeys(context: Context): List<String> {
                 val keys = super.getNonIndexableKeys(context).toMutableList()
                 if (PixelPropsUtils.isTensorPixelDevice()) keys.add(KEY_TENSOR_TARGETS)
                 if (!isInstalled(context, PHOTOS_PACKAGE)) keys.add(PI_PHOTOS_SPOOF)
+                if (!isInstalled(context, NETFLIX_PACKAGE)) keys.add(PI_NETFLIX_SPOOF)
                 if (!isInstalled(context, SNAPCHAT_PACKAGE)) keys.add(PI_SNAPCHAT_SPOOF)
                 return keys
             }
@@ -151,6 +163,7 @@ class Spoofing : SettingsPreferenceFragment() {
 
             val isTensor = remember { PixelPropsUtils.isTensorPixelDevice() }
             val photosInstalled = remember { isInstalled(context, PHOTOS_PACKAGE) }
+            val netflixInstalled = remember { isInstalled(context, NETFLIX_PACKAGE) }
             val snapInstalled = remember { isInstalled(context, SNAPCHAT_PACKAGE) }
 
             var tsEnabled by remember(refreshKey) {
@@ -164,6 +177,9 @@ class Spoofing : SettingsPreferenceFragment() {
             }
             var photosSpoof by remember(refreshKey) {
                 mutableStateOf(Settings.Secure.getInt(resolver, PI_PHOTOS_SPOOF, 1) != 0)
+            }
+            var netflixSpoof by remember(refreshKey) {
+                mutableStateOf(Settings.Secure.getInt(resolver, PI_NETFLIX_SPOOF, 1) != 0)
             }
             var snapSpoof by remember(refreshKey) {
                 mutableStateOf(Settings.Secure.getInt(resolver, PI_SNAPCHAT_SPOOF, 0) != 0)
@@ -266,7 +282,7 @@ class Spoofing : SettingsPreferenceFragment() {
                     }
                 }
 
-                if (photosInstalled || snapInstalled) {
+                if (photosInstalled || netflixInstalled || snapInstalled) {
                     ExpressiveGroup(title = stringResource(R.string.spoofing_app_specific_category)) {
                         if (photosInstalled) {
                             item {
@@ -279,6 +295,24 @@ class Spoofing : SettingsPreferenceFragment() {
                                         Settings.Secure.putInt(
                                             resolver, PI_PHOTOS_SPOOF, if (it) 1 else 0)
                                         onAppSpoofChanged(PHOTOS_PACKAGE)
+                                    },
+                                )
+                            }
+                        }
+                        if (netflixInstalled) {
+                            item {
+                                ExpressiveSwitchRow(
+                                    titleText = stringResource(R.string.spoofing_netflix_title),
+                                    summaryText = stringResource(
+                                        R.string.spoofing_netflix_summary,
+                                        profileLabel(context, NETFLIX_PROFILE_ID),
+                                    ),
+                                    isChecked = netflixSpoof,
+                                    onChange = {
+                                        netflixSpoof = it
+                                        Settings.Secure.putInt(
+                                            resolver, PI_NETFLIX_SPOOF, if (it) 1 else 0)
+                                        onAppSpoofChanged(NETFLIX_PACKAGE)
                                     },
                                 )
                             }

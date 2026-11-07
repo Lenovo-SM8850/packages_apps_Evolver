@@ -1057,6 +1057,8 @@
     <string name="spoofing_app_specific_category">App-specific overrides</string>
     <string name="spoofing_photos_title">Google Photos</string>
     <string name="spoofing_photos_summary">Spoof Google Photos as a Pixel XL</string>
+    <string name="spoofing_netflix_title" translatable="false">Netflix</string>
+    <string name="spoofing_netflix_summary">Spoof Netflix as %1$s</string>
     <string name="spoofing_snap_title">Snapchat</string>
     <string name="spoofing_snap_summary">Spoof Snapchat as a Pixel XL to fix possible chat issues</string>
     <string name="spoofing_applying_changes">Applying spoof changes\u2026</string>

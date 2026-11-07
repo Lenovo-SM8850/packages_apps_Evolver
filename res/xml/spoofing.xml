@@ -76,6 +76,12 @@
             android:summary="@string/spoofing_photos_summary"
             android:defaultValue="true" />
 
+        <!-- Netflix; the summary is built at runtime -->
+        <org.evolution.settings.preferences.SecureSettingSwitchPreference
+            android:key="pi_netflix_spoof"
+            android:title="@string/spoofing_netflix_title"
+            android:defaultValue="true" />
+
         <!-- Snapchat -->
         <org.evolution.settings.preferences.SecureSettingSwitchPreference
             android:key="pi_snapchat_spoof"
